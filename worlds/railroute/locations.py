@@ -34,6 +34,9 @@ LOCATION_NAME_TO_ID = {
     "System Upgrades (Green) Tier 1 Purchase 7": 1010007,
     "System Upgrades (Green) Tier 1 Purchase 8": 1010008,
     "System Upgrades (Green) Tier 1 Purchase 9": 1010009,
+    "System Upgrades (Green) Tier 1 Purchase 10": 1010010,
+    "System Upgrades (Green) Tier 1 Purchase 11": 1010011,
+    "System Upgrades (Green) Tier 1 Purchase 12": 1010012,
 
     "System Upgrades (Green) Tier 2 Purchase 1": 1020001,
     "System Upgrades (Green) Tier 2 Purchase 2": 1020002,
@@ -43,6 +46,7 @@ LOCATION_NAME_TO_ID = {
     "System Upgrades (Green) Tier 2 Purchase 6": 1020006,
     "System Upgrades (Green) Tier 2 Purchase 7": 1020007,
     "System Upgrades (Green) Tier 2 Purchase 8": 1020008,
+    "System Upgrades (Green) Tier 2 Purchase 9": 1020009,
 
     "System Upgrades (Green) Tier 3 Purchase 1": 1030001,
     "System Upgrades (Green) Tier 3 Purchase 2": 1030002,
@@ -64,9 +68,11 @@ LOCATION_NAME_TO_ID = {
     "System Upgrades (Red) Tier 2 Purchase 3": 1050003,
     "System Upgrades (Red) Tier 2 Purchase 4": 1050004,
     "System Upgrades (Red) Tier 2 Purchase 5": 1050005,
+    "System Upgrades (Red) Tier 2 Purchase 6": 1050006,
 
     "System Upgrades (Red) Tier 3 Purchase 1": 1060001,
     "System Upgrades (Red) Tier 3 Purchase 2": 1060002,
+    "System Upgrades (Red) Tier 3 Purchase 3": 1060003,
 
     "Earn 8 Green XP": 1110008,
 }
@@ -114,7 +120,10 @@ def create_regular_locations(world: RailRouteWorld) -> None:
          "System Upgrades (Green) Tier 1 Purchase 6",
          "System Upgrades (Green) Tier 1 Purchase 7",
          "System Upgrades (Green) Tier 1 Purchase 8",
-         "System Upgrades (Green) Tier 1 Purchase 9"]
+         "System Upgrades (Green) Tier 1 Purchase 9",
+         "System Upgrades (Green) Tier 1 Purchase 10",
+         "System Upgrades (Green) Tier 1 Purchase 11",
+         "System Upgrades (Green) Tier 1 Purchase 12"]
     )
 
     system_upgrades_green_tier_2_locations = get_location_names_with_ids(
@@ -125,7 +134,8 @@ def create_regular_locations(world: RailRouteWorld) -> None:
          "System Upgrades (Green) Tier 2 Purchase 5",
          "System Upgrades (Green) Tier 2 Purchase 6",
          "System Upgrades (Green) Tier 2 Purchase 7",
-         "System Upgrades (Green) Tier 2 Purchase 8"]
+         "System Upgrades (Green) Tier 2 Purchase 8",
+         "System Upgrades (Green) Tier 2 Purchase 9"]
     )
 
     system_upgrades_green_tier_3_locations = get_location_names_with_ids(
@@ -170,12 +180,14 @@ def create_regular_locations(world: RailRouteWorld) -> None:
              "System Upgrades (Red) Tier 2 Purchase 2",
              "System Upgrades (Red) Tier 2 Purchase 3",
              "System Upgrades (Red) Tier 2 Purchase 4",
-             "System Upgrades (Red) Tier 2 Purchase 5"]
+             "System Upgrades (Red) Tier 2 Purchase 5",
+             "System Upgrades (Red) Tier 2 Purchase 6"]
         )
 
         system_upgrades_red_tier_3_locations = get_location_names_with_ids(
             ["System Upgrades (Red) Tier 3 Purchase 1",
-             "System Upgrades (Red) Tier 3 Purchase 2"]
+             "System Upgrades (Red) Tier 3 Purchase 2",
+             "System Upgrades (Red) Tier 3 Purchase 3"]
         )
 
         system_upgrades_red_tier_1.add_locations(system_upgrades_red_tier_1_locations, RailRouteLocation)

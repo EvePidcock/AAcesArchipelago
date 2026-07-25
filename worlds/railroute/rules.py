@@ -28,10 +28,13 @@ def set_all_entrance_rules(world: RailRouteWorld) -> None:
     green_1_to_2 = world.get_entrance("Green Tier 1 to 2")
     green_2_to_3 = world.get_entrance("Green Tier 2 to 3")
 
-    if world.options.system_upgrades_locked_behind_keys:
+    can_get_ten_green = HasAll("Autoblocks", "Automatic Routing")
+    can_get_forty_green = HasAll("Progressive Track Speed", "Progressive Contract Offers", "Progressive Station Cap", "Progressive Platform Cap", "InterCities")
+
+    if world.options.system_upgrades_locked_behind_keys: # TODO: Change it so that the "can_get_x_green" is the default, and the keys are added based on options
         world.set_rule(menu_to_green_1, Has("System Upgrades (Green) Tier 1 Unlock"))
-        world.set_rule(green_1_to_2, Has("System Upgrades (Green) Tier 2 Unlock"))
-        world.set_rule(green_2_to_3, Has("System Upgrades (Green) Tier 3 Unlock"))
+        world.set_rule(green_1_to_2, Has("System Upgrades (Green) Tier 2 Unlock") & can_get_ten_green)
+        world.set_rule(green_2_to_3, Has("System Upgrades (Green) Tier 3 Unlock") & can_get_forty_green)
 
 
     if world.options.red_trains:
@@ -40,9 +43,14 @@ def set_all_entrance_rules(world: RailRouteWorld) -> None:
         red_2_to_3 = world.get_entrance("Red Tier 2 to 3")
 
         if world.options.system_upgrades_locked_behind_keys:
-            world.set_rule(menu_to_red_1, Has("System Upgrades (Red) Tier 1 Unlock"))
-            world.set_rule(red_1_to_2, Has("System Upgrades (Red) Tier 2 Unlock"))
-            world.set_rule(red_2_to_3, Has("System Upgrades (Red) Tier 3 Unlock"))
+
+            can_get_ten_red = HasAll("Freights", "Regional trains")
+
+            can_get_eighty_red = HasAll("Tunnels", "Urban Transit Contracts", "Shunting Commands")
+
+            world.set_rule(menu_to_red_1, Has("System Upgrades (Red) Tier 1 Unlock") & can_get_ten_green)
+            world.set_rule(red_1_to_2, Has("System Upgrades (Red) Tier 2 Unlock") & can_get_ten_red)
+            world.set_rule(red_2_to_3, Has("System Upgrades (Red) Tier 3 Unlock") & can_get_eighty_red)
 
 
 def set_all_location_rules(world: RailRouteWorld) -> None:
@@ -64,4 +72,4 @@ def set_all_location_rules(world: RailRouteWorld) -> None:
 def set_completion_condition(world: RailRouteWorld) -> None:
     # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
     # So lets undo what we just did, and instead set the completion condition to:
-    world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
+    world.multiworld.completion_condition[world.player] = Has("Victory")

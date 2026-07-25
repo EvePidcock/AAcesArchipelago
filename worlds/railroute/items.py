@@ -16,36 +16,51 @@ ITEM_NAME_TO_ID = {
     "Autoblocks": 1010001,
     "Auto-accept Trains": 1010002,
     "Automatic Routing": 1010003,
-    "Auto-reverse Trains": 1010004,
-    "Manual Signal Route Preview": 1010005,
-    "Signaling Safety": 1010006,
-    "Platform Adjustments": 1010007,
-    "Train Alerts": 1010009,
+    "Perpetual circuit": 1010004,
+    "Auto-reverse Trains": 1010005,
+    "Manual Signal Route Preview": 1010006,
+    "Signalling safety": 1010007,
+    "Platform Adjustments": 1010008,
+    "Timetable Adjustments": 1010009,
+    # More Stations
+    "Train Alerts": 1010011,
+    "Relay Sensor": 1010012,
 
-    "Intercity Contracts": 1020002,
-    "Timetable Adjustments": 1020003,
-    "Routing Queue": 1020004,
-    "Departure Sensor": 1020005,
-    "Arrival Sensor": 1020006,
+    # Basic Tracks
+    "InterCities": 1020002,
+    # More Contract Offers
+    "Custom Contract Period": 1020004,
+    # Even Mores Stations
+    "Departure Sensor": 1020006,
+    "Arrival Sensor": 1020007,
+    # Advanced Tracks
+    "Waypoints": 1020009,
 
     "Routing Sensor": 1030001,
     "Structural Contracts Manager": 1030002,
     "Financial Contracts Manager": 1030003,
     "Regional Contracts Manager": 1030004,
-    "Faster Switches": 1030005,
+    # Even More Contract Offers
+    # Way More Contract Offers
+    # Unlimited stations
+    "Faster Switches": 1030008,
+    # Corridor Tracks
 
-    "Freights": 1040001,
-    "Regional Trains": 1040002,
+    "Regional trains": 1040001,
+    "Freights": 1040002,
     "Shunting Commands": 1040003,
-    "Shunting Tracks": 1040004,
+    "Shunting Track": 1040004,
 
-    "Stabling Sensor": 1050001,
-    "Urban Transit Contracts": 1050002,
-    "Tunnels": 1050004,
-    "Advanced Arrival Sensor": 1050005,
+    "Shunting Sensor": 1050001,
+    "Stabling Sensor": 1050002,
+    "Tunnels": 1050003,
+    "Urban Transit Contacts": 1050004,
+    "Loco Coupling": 1050005,
+    "Advanced arrival sensor": 1050006,
 
     "Regional Trains Stabling": 1060001,
-    "Advanced Routing Sensor": 1060002,
+    "Advanced routing sensor": 1060002,
+    "Custom contracts": 1060003,
 
     "Progressive Track Speed": 201,
     "Progressive Station Cap": 202,
@@ -70,38 +85,53 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Autoblocks": ItemClassification.progression,
     "Auto-accept Trains": ItemClassification.useful,
     "Automatic Routing": ItemClassification.progression,
+    "Perpetual circuit": ItemClassification.progression,
     "Auto-reverse Trains": ItemClassification.useful,
     "Manual Signal Route Preview": ItemClassification.useful,
-    "Signaling Safety": ItemClassification.useful,
-    "Platform Adjustments": ItemClassification.useful,
+    "Signalling safety": ItemClassification.useful,
+    "Platform Adjustments": ItemClassification.progression,
+    "Timetable Adjustments": ItemClassification.progression,
+    # More Stations
     "Train Alerts": ItemClassification.useful,
+    "Relay Sensor": ItemClassification.useful,
 
-    "Intercity Contracts": ItemClassification.progression,
-    "Timetable Adjustments": ItemClassification.useful,
-    "Routing Queue": ItemClassification.useful,
-    "Departure Sensor": ItemClassification.useful,
-    "Arrival Sensor": ItemClassification.useful,
+    # Basic Tracks
+    "InterCities": ItemClassification.progression,
+    # More Contract Offers
+    "Custom Contract Period": ItemClassification.useful,
+    # Even Mores Stations
+    "Departure Sensor": ItemClassification.progression,
+    "Arrival Sensor": ItemClassification.progression,
+    # Advanced Tracks
+    "Waypoints": ItemClassification.useful,
 
-    "Routing Sensor": ItemClassification.useful,
+    "Routing Sensor": ItemClassification.progression,
     "Structural Contracts Manager": ItemClassification.useful,
     "Financial Contracts Manager": ItemClassification.useful,
     "Regional Contracts Manager": ItemClassification.useful,
+    # Even More Contract Offers
+    # Way More Contract Offers
+    # Unlimited stations
     "Faster Switches": ItemClassification.useful,
+    # Corridor Tracks
 
+    "Regional trains": ItemClassification.progression,
     "Freights": ItemClassification.progression,
-    "Regional Trains": ItemClassification.progression,
-    "Shunting Commands": ItemClassification.useful,
-    "Shunting Tracks": ItemClassification.useful,
+    "Shunting Commands": ItemClassification.progression,
+    "Shunting Track": ItemClassification.progression,
 
+    "Shunting Sensor": ItemClassification.useful,
     "Stabling Sensor": ItemClassification.useful,
-    "Urban Transit Contracts": ItemClassification.progression,
     "Tunnels": ItemClassification.progression,
-    "Advanced Arrival Sensor": ItemClassification.useful,
+    "Urban Transit Contacts": ItemClassification.progression,
+    "Loco Coupling": ItemClassification.useful,
+    "Advanced arrival sensor": ItemClassification.useful,
 
-    "Regional Trains Stabling": ItemClassification.useful,
-    "Advanced Routing Sensor": ItemClassification.useful,
+    "Regional Trains Stabling": ItemClassification.progression,
+    "Advanced routing sensor": ItemClassification.useful,
+    "Custom contracts": ItemClassification.useful,
 
-    "Progressive Track Speed": ItemClassification.progression | ItemClassification.useful,
+    "Progressive Track Speed": ItemClassification.progression,
     "Progressive Station Cap": ItemClassification.progression,
     "Progressive Platform Cap": ItemClassification.progression,
     "Progressive Contract Offers": ItemClassification.progression,
@@ -162,17 +192,20 @@ def create_all_items(world: RailRouteWorld) -> None:
         world.create_item("Autoblocks"),
         world.create_item("Auto-accept Trains"),
         world.create_item("Automatic Routing"),
+        world.create_item("Perpetual circuit"),
         world.create_item("Auto-reverse Trains"),
         world.create_item("Manual Signal Route Preview"),
-        world.create_item("Signaling Safety"),
+        world.create_item("Signalling safety"),
         world.create_item("Platform Adjustments"),
-        world.create_item("Train Alerts"),
-
-        world.create_item("Intercity Contracts"),
         world.create_item("Timetable Adjustments"),
-        world.create_item("Routing Queue"),
+        world.create_item("Train Alerts"),
+        world.create_item("Relay Sensor"),
+
+        world.create_item("InterCities"),
+        world.create_item("Custom Contract Period"),
         world.create_item("Departure Sensor"),
         world.create_item("Arrival Sensor"),
+        world.create_item("Waypoints"),
 
         world.create_item("Routing Sensor"),
         world.create_item("Structural Contracts Manager"),
@@ -181,8 +214,16 @@ def create_all_items(world: RailRouteWorld) -> None:
         world.create_item("Faster Switches"),
 
         world.create_item("Progressive Track Speed"),
+        world.create_item("Progressive Track Speed"),
+        world.create_item("Progressive Track Speed"),
+        world.create_item("Progressive Station Cap"),
+        world.create_item("Progressive Station Cap"),
         world.create_item("Progressive Station Cap"),
         world.create_item("Progressive Platform Cap"),
+        world.create_item("Progressive Platform Cap"),
+        world.create_item("Progressive Platform Cap"),
+        world.create_item("Progressive Contract Offers"),
+        world.create_item("Progressive Contract Offers"),
         world.create_item("Progressive Contract Offers"),
 
         world.create_item("Bonus Star"),
@@ -191,17 +232,20 @@ def create_all_items(world: RailRouteWorld) -> None:
 
     if world.options.red_trains:
         itempool.append(world.create_item("Freights"))
-        itempool.append(world.create_item("Regional Trains"))
+        itempool.append(world.create_item("Regional trains"))
         itempool.append(world.create_item("Shunting Commands"))
-        itempool.append(world.create_item("Shunting Tracks"))
+        itempool.append(world.create_item("Shunting Track"))
 
+        itempool.append(world.create_item("Shunting Sensor"))
         itempool.append(world.create_item("Stabling Sensor"))
         itempool.append(world.create_item("Urban Transit Contracts"))
         itempool.append(world.create_item("Tunnels"))
+        itempool.append(world.create_item("Loco Coupling"))
         itempool.append(world.create_item("Advanced Arrival Sensor"))
 
         itempool.append(world.create_item("Regional Trains Stabling"))
-        itempool.append(world.create_item("Advanced Routing Sensor"))
+        itempool.append(world.create_item("Advanced routing sensor"))
+        itempool.append(world.create_item("Custom contracts"))
 
     if world.options.system_upgrades_locked_behind_keys:
         itempool.append(world.create_item("System Upgrades (Green) Tier 1 Unlock"))
