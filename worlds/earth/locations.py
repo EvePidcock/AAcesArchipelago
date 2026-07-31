@@ -4,7 +4,11 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import ItemClassification, Location
 
+from pkgutil import get_data
+
 from . import items
+
+import json, os
 
 if TYPE_CHECKING:
     from .world import EarthWorld
@@ -25,56 +29,138 @@ if TYPE_CHECKING:
 #       YY: Green (10) or Red (20)
 #       ZZZ: Count
 LOCATION_NAME_TO_ID = {
-    "System Upgrades (Green) Tier 1 Purchase 1": 1010001,
-    "System Upgrades (Green) Tier 1 Purchase 2": 1010002,
-    "System Upgrades (Green) Tier 1 Purchase 3": 1010003,
-    "System Upgrades (Green) Tier 1 Purchase 4": 1010004,
-    "System Upgrades (Green) Tier 1 Purchase 5": 1010005,
-    "System Upgrades (Green) Tier 1 Purchase 6": 1010006,
-    "System Upgrades (Green) Tier 1 Purchase 7": 1010007,
-    "System Upgrades (Green) Tier 1 Purchase 8": 1010008,
-    "System Upgrades (Green) Tier 1 Purchase 9": 1010009,
-    "System Upgrades (Green) Tier 1 Purchase 10": 1010010,
-    "System Upgrades (Green) Tier 1 Purchase 11": 1010011,
-    "System Upgrades (Green) Tier 1 Purchase 12": 1010012,
 
-    "System Upgrades (Green) Tier 2 Purchase 1": 1020001,
-    "System Upgrades (Green) Tier 2 Purchase 2": 1020002,
-    "System Upgrades (Green) Tier 2 Purchase 3": 1020003,
-    "System Upgrades (Green) Tier 2 Purchase 4": 1020004,
-    "System Upgrades (Green) Tier 2 Purchase 5": 1020005,
-    "System Upgrades (Green) Tier 2 Purchase 6": 1020006,
-    "System Upgrades (Green) Tier 2 Purchase 7": 1020007,
-    "System Upgrades (Green) Tier 2 Purchase 8": 1020008,
-    "System Upgrades (Green) Tier 2 Purchase 9": 1020009,
+    # Point Checks (10XXX)
+    "Score 50 Points": 10050,
+    "Score 100 Points": 10100,
+    "Score 150 Points": 10150,
+    "Score 200 Points": 10200,
 
-    "System Upgrades (Green) Tier 3 Purchase 1": 1030001,
-    "System Upgrades (Green) Tier 3 Purchase 2": 1030002,
-    "System Upgrades (Green) Tier 3 Purchase 3": 1030003,
-    "System Upgrades (Green) Tier 3 Purchase 4": 1030004,
-    "System Upgrades (Green) Tier 3 Purchase 5": 1030005,
-    "System Upgrades (Green) Tier 3 Purchase 6": 1030006,
-    "System Upgrades (Green) Tier 3 Purchase 7": 1030007,
-    "System Upgrades (Green) Tier 3 Purchase 8": 1030008,
-    "System Upgrades (Green) Tier 3 Purchase 9": 1030009,
+    # Fauna Checks (20XXX)
+    "Hedgehog Claim": 20001,
+    "Dung Beetle Claim": 20002,
+    "American Bison Claim": 20003,
+    "Red Deer Claim": 20004,
+    "Lubber Grasshopper Claim": 20005,
+    "Wild Boar Claim": 20006,
+    "Andean Condor Claim": 20007,
+    "Green Tree Ant Claim": 20008,
+    "Bald Eagle Claim": 20009,
+    "Pale-Billed Woodpecker Claim": 20010,
+    "Green Iguana Claim": 20011,
+    "Spotted Hyena Claim": 20012,
+    "Red Squirrel Claim": 20013,
+    "Yellow-Bellied Marmot Claim": 20014,
+    "Brown-Throated Sloth Claim": 20015,
+    "Western Moose Claim": 20016,
+    "Sri Lankan Leopard Claim": 20017,
+    "Atlantic Puffin Claim": 20018,
+    "Earthworm Claim": 20019,
+    "European Mole Claim": 20020,
+    "Barn Owl Claim": 20021,
+    "Talamanca Hummingbird Claim": 20022,
+    "Echidna Claim": 20023,
+    "Kingfisher Claim": 20024,
+    "Rainbow Shield Bug Claim": 20025,
+    "Arctic Tern Claim": 20026,
+    "Margay Claim": 20027,
+    "Praying Mantis Claim": 20028,
+    "Yellow Cheeked Gibbon Claim": 20029,
+    "Hippopotamus Claim": 20030,
+    "Indonesian Pit Viper Claim": 20031,
+    "King Penguin Claim": 20032,
+    "Siamese Rhinoceros Claim": 20033,
+    "Wood Duck Claim": 20034,
+    "Grey Wolf Claim": 20035,
+    "Seven-Spotted Ladybug Claim": 20036,
+    "Mountain Gorilla Claim": 20037,
+    "Black Wildebeest Claim": 20038,
+    "Bornean Orangutan Claim": 20039,
+    "Siberian Tiger Claim": 20040,
+    "Mountain Lion Claim": 20041,
+    "Plains Zebra Claim": 20042,
+    "Northern Giraffe Claim": 20043,
+    "Cairns Birdwing Butterfly Claim": 20044,
+    "Red-Eyed Tree Frog Claim": 20045,
+    "Brown Bear Claim": 20046,
+    "Fire Salamander Claim": 20047,
+    "Panther Chameleon Claim": 20048,
+    "Western Honeybee Claim": 20049,
+    "African Bush Elephant Claim": 20050,
+    "Arctic Fox Claim": 20051,
+    "American Alligator Claim": 20052,
 
-    "System Upgrades (Red) Tier 1 Purchase 1": 1040001,
-    "System Upgrades (Red) Tier 1 Purchase 2": 1040002,
-    "System Upgrades (Red) Tier 1 Purchase 3": 1040003,
-    "System Upgrades (Red) Tier 1 Purchase 4": 1040004,
-
-    "System Upgrades (Red) Tier 2 Purchase 1": 1050001,
-    "System Upgrades (Red) Tier 2 Purchase 2": 1050002,
-    "System Upgrades (Red) Tier 2 Purchase 3": 1050003,
-    "System Upgrades (Red) Tier 2 Purchase 4": 1050004,
-    "System Upgrades (Red) Tier 2 Purchase 5": 1050005,
-    "System Upgrades (Red) Tier 2 Purchase 6": 1050006,
-
-    "System Upgrades (Red) Tier 3 Purchase 1": 1060001,
-    "System Upgrades (Red) Tier 3 Purchase 2": 1060002,
-    "System Upgrades (Red) Tier 3 Purchase 3": 1060003,
-
-    "Earn 8 Green XP": 1110008,
+    # Ecosystem Checks (30XXX) -- Cols/rows = 18, diagonals = 24, flora count = 28, habitat = 18, font = 18
+    "Finland Snow Forest (18 pts)": 30001,
+    "Chic-Choc Mountains (18 pts)": 30002,
+    "Irati (18 pts)": 30003,
+    "Odisha Semi-Evergreen (21 pts)": 30004,
+    "Daintree (24 pts)": 30005,
+    "Blackforest (28 pts)": 30006,
+    "Reunion Island (20 pts)": 30007,
+    "Sakurajima (18 pts)": 30008,
+    "Namib Desert (18 pts)": 30009,
+    "Denali National Park (18 pts)": 30010,
+    "Monteverde Cloud Forest (28 pts)": 30011,
+    "Everglades (24 pts)": 30012,
+    "Amazon Rain Forest (24 pts)": 30013,
+    "Borneo Lowland Rain Forest (24 pts)": 30014,
+    "MacMillan Park (20 pts)": 30015,
+    "Great Basin Desert (18 pts)": 30016,
+    "Ngorongoro Crater (18 pts)": 30017,
+    "Waiotapu (18 pts)": 30018,
+    "Tasmanian Temperate Rain Forest (18 pts)": 30019,
+    "Batanta Island (18 pts)": 30020,
+    "Mauna Kea (18 pts)": 30021,
+    "Aconcagua (18 pts)": 30022,
+    "Bashkiriya National Park (20 pts)": 30023,
+    "Valin Mountain (20 pts)": 30024,
+    "Arabian Desert (20 pts)": 30025,
+    "Bhutan Rain Forest (24 pts)": 30026,
+    "Tai Poutini National Park (18 pts)": 30027,
+    "Madagascar Humid Canopy (18 pts)": 30028,
+    "Great Hungarian Plain (28 pts)": 30029,
+    "Caerlaverock Nature Reserve (24 pts)": 30030,
+    "Yuanjiang Savanna (18 pts)": 30031,
+    "Sierra Nevada de Santa Marta (18 pts)": 30032,
+    "Knysna-Amatole Forests (18 pts)": 30033,
+    "Jiuzhaigou Valley (22 pts)": 30034,
+    "Tongass National Forest (18 pts)": 30035,
+    "Bwindi Impenetrable Forest (18 pts)": 30036,
+    "New Guinea Rain Forest (20 pts)": 30037,
+    "Atacama Desert (24 pts)": 30038,
+    "Twin Islands (20 pts)": 30039,
+    "Lonely Island (20 pts)": 30040,
+    "Serengeti (18 pts)": 30041,
+    "Okavango (18 pts)": 30042,
+    "Antarctica (18 pts)": 30043,
+    "Great Plains (24 pts)": 30044,
+    "Himalayas (21 pts)": 30045,
+    "Alps (21 pts)": 30046,
+    "Thai Highlands (18 pts)": 30047,
+    "Sudd Swamp (18 pts)": 30048,
+    "Tangkoko Nature Reserve (24 pts)": 30049,
+    "Siberian Taiga (20 pts)": 30050,
+    "Australian Temperate Forest (21 pts)": 30051,
+    "Yagishiri Island (20 pts)": 30052,
+    "Mount Kilimanjaro (20 pts)": 30053,
+    "Indian Evergreen Forest (30 pts)": 30054,
+    "Mbeliling Mountain (18 pts)": 30055,
+    "Atlas Mountains (18 pts)": 30056,
+    "Rocky Mountains (18 pts)": 30057,
+    "Nile Delta (18 pts)": 30058,
+    "Redwood National Park (18 pts)": 30059,
+    "Congolian Rain Forest (20 pts)": 30060,
+    "Yellowstone Caldera (18 pts)": 30061,
+    "Angat Watershed Forest (25 pts)": 30062,
+    "Great Steppe (28 pts)": 30063,
+    "Florida Scrub (24 pts)": 30064,
+    "Okefenokee Swamp (14 pts)": 30065,
+    "Magdelen Islands (20 pts)": 30066,
+    "Miyawaki Forest (20 pts)": 30067,
+    "Quiver Tree Forest (20 pts)": 30068,
+    "St-Hilaire Mount (20 pts)": 30069,
+    "Khao Yai (20 pts)": 30070
 }
 
 
@@ -102,97 +188,32 @@ def create_all_locations(world: EarthWorld) -> None:
 def create_regular_locations(world: EarthWorld) -> None:
     # Finally, we need to put the Locations ("checks") into their regions.
     # Once again, before we do anything, we can grab our regions we created by using world.get_region()
-    menu = world.get_region("Menu")
-    system_upgrades_green_tier_1 = world.get_region("Tier 1 System Upgrades (Green)")
-    system_upgrades_green_tier_2 = world.get_region("Tier 2 System Upgrades (Green)")
-    system_upgrades_green_tier_3 = world.get_region("Tier 3 System Upgrades (Green)")
+    # Create card locations
+    CARD_NAME_TO_ID = {}
+    EVENT_NAME_TO_ID = {}
 
-    # A simpler way to do this is by using the region.add_locations helper.
-    # For this, you need to have a dict of location names to their IDs (i.e. a subset of location_name_to_id)
-    # Aha! So that's why we made that "get_location_names_with_ids" helper method earlier.
-    # You also need to pass your overridden Location class.
-    system_upgrades_green_tier_1_locations = get_location_names_with_ids(
-        ["System Upgrades (Green) Tier 1 Purchase 1",
-         "System Upgrades (Green) Tier 1 Purchase 2",
-         "System Upgrades (Green) Tier 1 Purchase 3",
-         "System Upgrades (Green) Tier 1 Purchase 4",
-         "System Upgrades (Green) Tier 1 Purchase 5",
-         "System Upgrades (Green) Tier 1 Purchase 6",
-         "System Upgrades (Green) Tier 1 Purchase 7",
-         "System Upgrades (Green) Tier 1 Purchase 8",
-         "System Upgrades (Green) Tier 1 Purchase 9",
-         "System Upgrades (Green) Tier 1 Purchase 10",
-         "System Upgrades (Green) Tier 1 Purchase 11",
-         "System Upgrades (Green) Tier 1 Purchase 12"]
-    )
+    earth_cards = get_data(__name__, "earthCards.txt").decode("utf-8").strip().split("\n")
+    card_id = 40000
 
-    system_upgrades_green_tier_2_locations = get_location_names_with_ids(
-        ["System Upgrades (Green) Tier 2 Purchase 1",
-         "System Upgrades (Green) Tier 2 Purchase 2",
-         "System Upgrades (Green) Tier 2 Purchase 3",
-         "System Upgrades (Green) Tier 2 Purchase 4",
-         "System Upgrades (Green) Tier 2 Purchase 5",
-         "System Upgrades (Green) Tier 2 Purchase 6",
-         "System Upgrades (Green) Tier 2 Purchase 7",
-         "System Upgrades (Green) Tier 2 Purchase 8",
-         "System Upgrades (Green) Tier 2 Purchase 9"]
-    )
+    for line in earth_cards:
+        card = json.loads(line.strip())
+        card_id += 1
+        CARD_NAME_TO_ID.update({f"Play card \"{card['Name']}\"": card_id})
 
-    system_upgrades_green_tier_3_locations = get_location_names_with_ids(
-        ["System Upgrades (Green) Tier 3 Purchase 1",
-         "System Upgrades (Green) Tier 3 Purchase 2",
-         "System Upgrades (Green) Tier 3 Purchase 3",
-         "System Upgrades (Green) Tier 3 Purchase 4",
-         "System Upgrades (Green) Tier 3 Purchase 5",
-         "System Upgrades (Green) Tier 3 Purchase 6",
-         "System Upgrades (Green) Tier 3 Purchase 7",
-         "System Upgrades (Green) Tier 3 Purchase 8",
-         "System Upgrades (Green) Tier 3 Purchase 9"]
-    )
+    event_cards = get_data(__name__, "eventCards.txt").decode("utf-8").strip().split("\n")
+    card_id = 41000
 
+    for line in event_cards:
+        card = json.loads(line.strip())
+        card_id += 1
+        EVENT_NAME_TO_ID.update({f"Play event \"{card['Name']}\"": card_id})
 
-    system_upgrades_green_tier_1.add_locations(system_upgrades_green_tier_1_locations, EarthLocation)
-    system_upgrades_green_tier_2.add_locations(system_upgrades_green_tier_2_locations, EarthLocation)
-    system_upgrades_green_tier_3.add_locations(system_upgrades_green_tier_3_locations, EarthLocation)
+    world.get_region("Main").add_locations(CARD_NAME_TO_ID)
+    world.get_region("Main").add_locations(LOCATION_NAME_TO_ID)
+    world.get_region("Events").add_locations(EVENT_NAME_TO_ID)
 
-#   Score check locations
-
-    green_xp_locations = get_location_names_with_ids(["Earn 8 Green XP"])
-
-    menu.add_locations(green_xp_locations, EarthLocation)
-
-
-#   Red train system upgrades
-    if world.options.red_trains:
-        system_upgrades_red_tier_1 = world.get_region("Tier 1 System Upgrades (Red)")
-        system_upgrades_red_tier_2 = world.get_region("Tier 2 System Upgrades (Red)")
-        system_upgrades_red_tier_3 = world.get_region("Tier 3 System Upgrades (Red)")
-
-        system_upgrades_red_tier_1_locations = get_location_names_with_ids(
-            ["System Upgrades (Red) Tier 1 Purchase 1",
-             "System Upgrades (Red) Tier 1 Purchase 2",
-             "System Upgrades (Red) Tier 1 Purchase 3",
-             "System Upgrades (Red) Tier 1 Purchase 4"]
-        )
-
-        system_upgrades_red_tier_2_locations = get_location_names_with_ids(
-            ["System Upgrades (Red) Tier 2 Purchase 1",
-             "System Upgrades (Red) Tier 2 Purchase 2",
-             "System Upgrades (Red) Tier 2 Purchase 3",
-             "System Upgrades (Red) Tier 2 Purchase 4",
-             "System Upgrades (Red) Tier 2 Purchase 5",
-             "System Upgrades (Red) Tier 2 Purchase 6"]
-        )
-
-        system_upgrades_red_tier_3_locations = get_location_names_with_ids(
-            ["System Upgrades (Red) Tier 3 Purchase 1",
-             "System Upgrades (Red) Tier 3 Purchase 2",
-             "System Upgrades (Red) Tier 3 Purchase 3"]
-        )
-
-        system_upgrades_red_tier_1.add_locations(system_upgrades_red_tier_1_locations, EarthLocation)
-        system_upgrades_red_tier_2.add_locations(system_upgrades_red_tier_2_locations, EarthLocation)
-        system_upgrades_red_tier_3.add_locations(system_upgrades_red_tier_3_locations, EarthLocation)
+    LOCATION_NAME_TO_ID.update(CARD_NAME_TO_ID)
+    LOCATION_NAME_TO_ID.update(EVENT_NAME_TO_ID)
 
 
 
@@ -227,8 +248,8 @@ def create_events(world: EarthWorld) -> None:
     # Luckily, we have another event we want to create: The Victory event.
     # We will use this event to track whether the player can win the game.
     # The Victory event is a completely optional abstraction - This will be discussed more in set_rules().
-    world.get_region("Menu").add_event(
-        "Game finished", "Victory", location_type=EarthLocation, item_type=items.RailRouteItem
+    world.get_region("Events").add_event(
+        "Game finished", "Victory", location_type=EarthLocation, item_type=items.EarthItem
     )
 
     # If you create all your regions and locations line-by-line like this,

@@ -35,9 +35,12 @@ class EarthWorld(World):
     # The WebWorld is a definition class that governs how this world will be displayed on the website.
     web = web_world.EarthWebWorld()
 
+    starting_islands = []
+    starting_climates = []
+
     # This is how we associate the options defined in our options.py with our world.
-    options_dataclass = railroute_options.RailRouteOptions
-    options: railroute_options.RailRouteOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
+    options_dataclass = railroute_options.EarthOptions
+    options: railroute_options.EarthOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
 
     # Our world class must have a static location_name_to_id and item_name_to_id defined.
     # We define these in regions.py and items.py respectively, so we just set them here.
@@ -46,7 +49,45 @@ class EarthWorld(World):
 
     # There is always one region that the generator starts from & assumes you can always go back to.
     # This defaults to "Menu", but you can change it by overriding origin_region_name.
-    origin_region_name = "Menu"
+    origin_region_name = "Main"
+
+    def generate_early(self) -> None:
+        island_unlocks = ["Island Unlock: Fogo / Whakaari",
+                    "Island Unlock: Kauai / Vulcano",
+                    "Island Unlock: La Palma / Metis Shoal",
+                    "Island Unlock: Barren / Santorini",
+                    "Island Unlock: Kyushu / Jamaica",
+                    "Island Unlock: Lombok / Hawai'i",
+                    "Island Unlock: Deception / Nisyros",
+                    "Island Unlock: Iceland / Mo'orea",
+                    "Island Unlock: Nishinoshima / Luzon",
+                    "Island Unlock: Jan Mayen / Kunashir",
+                    "Island Unlock: Ross Island / Vancouver Island",
+                    "Island Unlock: Java Island / Madagascar Island"]
+        climate_unlocks = ["Climate Unlock: Hemiboreal / Tropical Savanna",
+                    "Climate Unlock: Dry Winter Subtropical Highland / Tropical Rain Forest",
+                    "Climate Unlock: Tundra / Tropical Monsoon",
+                    "Climate Unlock: Marine West Coast / Mediterranean Cold Summer",
+                    "Climate Unlock: Arid / Humid Subtropical",
+                    "Climate Unlock: Subpolar Oceanic / Mediterranean Hot Summer",
+                    "Climate Unlock: Oceanic / Subtropical Highland",
+                    "Climate Unlock: Boreal / Ice Cap",
+                    "Climate Unlock: Hot Summer Continental / Desert",
+                    "Climate Unlock: Semi-Arid / Dry Winter Subpolar Oceanic",
+                    "Climate Unlock: Cold Arid Desert / Hot Steppe",
+                    "Climate Unlock: Cold Winter Continental / Temperate Hot Summer"]
+
+        starting_islands_count = self.options.starting_islands_count.value
+        starting_climates_count = self.options.starting_climates_count.value
+
+        self.starting_islands = self.random.sample(island_unlocks, starting_islands_count)
+        self.starting_climates = self.random.sample(climate_unlocks, starting_climates_count)
+
+        for island in self.starting_islands:
+            self.options.start_inventory.value[island] = 1
+
+        for climate in self.starting_climates:
+            self.options.start_inventory.value[climate] = 1
 
     # Our world class must have certain functions ("steps") that get called during generation.
     # The main ones are: create_regions, set_rules, create_items.
@@ -79,6 +120,12 @@ class EarthWorld(World):
     # slot_data is just a dictionary using basic types, that will be converted to json when sent to the client.
     def fill_slot_data(self) -> Mapping[str, Any]:
         # If you need access to the player's chosen options on the client side, there is a helper for that.
-        return self.options.as_dict(
-            "red_trains", "system_upgrades_locked_behind_keys"
-        )
+        slot_data = {"starting_islands": self.starting_islands, "starting_climates": self.starting_climates}
+        slot_data.update(self.options.as_dict(
+            "starting_islands_count", "starting_climates_count"
+        ))
+        return slot_data
+
+    @staticmethod
+    def interpret_slot_data(slot_data: dict[str, Any]) -> Any:
+        return slot_data

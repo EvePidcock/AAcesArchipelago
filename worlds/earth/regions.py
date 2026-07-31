@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from BaseClasses import Entrance, Region
+from rule_builder.rules import Has
 
 if TYPE_CHECKING:
     from .world import EarthWorld
@@ -24,24 +25,13 @@ def create_and_connect_regions(world: EarthWorld) -> None:
 
 def create_all_regions(world: EarthWorld) -> None:
     # Creating a region is as simple as calling the constructor of the Region class.
-    menu = Region("Menu", world.player, world.multiworld)
-    system_upgrades_green_tier_1 = Region("Tier 1 System Upgrades (Green)", world.player, world.multiworld)
-    system_upgrades_green_tier_2 = Region("Tier 2 System Upgrades (Green)", world.player, world.multiworld)
-    system_upgrades_green_tier_3 = Region("Tier 3 System Upgrades (Green)", world.player, world.multiworld)
+    main = Region("Main", world.player, world.multiworld)
+    events = Region("Events", world.player, world.multiworld)
 
 
     # Let's put all these regions in a list.
-    regions = [menu, system_upgrades_green_tier_1, system_upgrades_green_tier_2, system_upgrades_green_tier_3]
+    regions = [main, events]
 
-    # Some regions may only exist if the player enables certain options.
-    # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
-    if world.options.red_trains:
-        system_upgrades_red_tier_1 = Region("Tier 1 System Upgrades (Red)", world.player, world.multiworld)
-        system_upgrades_red_tier_2 = Region("Tier 2 System Upgrades (Red)", world.player, world.multiworld)
-        system_upgrades_red_tier_3 = Region("Tier 3 System Upgrades (Red)", world.player, world.multiworld)
-        regions.append(system_upgrades_red_tier_1)
-        regions.append(system_upgrades_red_tier_2)
-        regions.append(system_upgrades_red_tier_3)
 
     # We now need to add these regions to multiworld.regions so that AP knows about their existence.
     world.multiworld.regions += regions
@@ -52,24 +42,10 @@ def connect_regions(world: EarthWorld) -> None:
     # But wait, we no longer have access to the region variables we created in create_all_regions()!
     # Luckily, once you've submitted your regions to multiworld.regions,
     # you can get them at any time using world.get_region(...).
-    menu = world.get_region("Menu")
-    system_upgrades_green_tier_1 = world.get_region("Tier 1 System Upgrades (Green)")
-    system_upgrades_green_tier_2 = world.get_region("Tier 2 System Upgrades (Green)")
-    system_upgrades_green_tier_3 = world.get_region("Tier 3 System Upgrades (Green)")
+    main = world.get_region("Main")
+    events = world.get_region("Events")
 
-    # An even easier way is to use the region.connect helper.
-    menu.connect(system_upgrades_green_tier_1, "Menu to Green Tier 1")
-    system_upgrades_green_tier_1.connect(system_upgrades_green_tier_2, "Green Tier 1 to 2")
-    system_upgrades_green_tier_2.connect(system_upgrades_green_tier_3, "Green Tier 2 to 3")
+    main.connect(events, "Main to Events", Has("Event Cards"))
 
-    # Some Entrances may only exist if the player enables certain options.
-    # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
-    # In this case, we previously created an extra "Top Middle Room" region that we now need to connect to Overworld.
-    if world.options.red_trains:
-        system_upgrades_red_tier_1 = world.get_region("Tier 1 System Upgrades (Red)")
-        system_upgrades_red_tier_2 = world.get_region("Tier 2 System Upgrades (Red)")
-        system_upgrades_red_tier_3 = world.get_region("Tier 3 System Upgrades (Red)")
+    return
 
-        menu.connect(system_upgrades_red_tier_1, "Menu to Red Tier 1")
-        system_upgrades_red_tier_1.connect(system_upgrades_red_tier_2, "Red Tier 1 to 2")
-        system_upgrades_red_tier_2.connect(system_upgrades_red_tier_3, "Red Tier 2 to 3")

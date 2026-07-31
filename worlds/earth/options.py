@@ -18,24 +18,24 @@ from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle
 # A toggle is an option that can either be on or off. This will be represented by a checkbox on the website.
 # The default for a toggle is "off".
 # If you want a toggle to be on by default, you can use the "DefaultOnToggle" class instead of the "Toggle" class.
-class RedTrains(Toggle):
+class StartingIslandsCount(Range):
     """
-    Whether red trains should be included
+    How many island cards to start with
     """
+    display_name = "Starting Islands Count"
+    range_start = 1
+    range_end = 12
+    default = 2
 
-    # The docstring of an option is used as the description on the website and in the template yaml.
 
-    # You'll also want to set a display name, which will determine what the option is called on the website.
-    display_name = "Red Trains"
-
-
-class SystemUpgradesLockedBehindKeys(Toggle):
+class StartingClimatesCount(Range):
     """
-    Locks the different tiers of system upgrade purchases behind items in the pool.
-    If off, the vanilla method of unlocking the different tiers (stars) is used
+    How many climate cards to start with
     """
-
-    display_name = "System Upgrade Tier Keys"
+    display_name = "Starting Climates Count"
+    range_start = 1
+    range_end = 12
+    default = 2
 
 
 
@@ -44,23 +44,23 @@ class SystemUpgradesLockedBehindKeys(Toggle):
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
 # This is in the format "option_name_in_snake_case: OptionClassName".
 @dataclass
-class RailRouteOptions(PerGameCommonOptions):
-    red_trains: RedTrains
-    system_upgrades_locked_behind_keys: SystemUpgradesLockedBehindKeys
+class EarthOptions(PerGameCommonOptions):
+    starting_islands_count: StartingIslandsCount
+    starting_climates_count: StartingClimatesCount
 
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
     OptionGroup(
         "Gameplay Options",
-        [RedTrains, SystemUpgradesLockedBehindKeys]
+        [StartingIslandsCount, StartingClimatesCount]
     )
 ]
 
 # Finally, we can define some option presets if we want the player to be able to quickly choose a specific "mode".
 option_presets = {
     "Default": {
-        "red_trains": True,
-        "system_upgrades_locked_behind_keys": True
+        "starting_islands_count": 2,
+        "starting_climates_count": 2
     }
 }

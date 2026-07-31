@@ -1,5 +1,5 @@
 from __future__ import annotations
-from rule_builder.rules import Has, True_, HasAll
+from rule_builder.rules import Has, True_, HasAll, HasAllCounts
 
 from typing import TYPE_CHECKING
 
@@ -24,33 +24,7 @@ def set_all_rules(world: EarthWorld) -> None:
 def set_all_entrance_rules(world: EarthWorld) -> None:
     # First, we need to actually grab our entrances. Luckily, there is a helper method for this.
 
-    menu_to_green_1 = world.get_entrance("Menu to Green Tier 1")
-    green_1_to_2 = world.get_entrance("Green Tier 1 to 2")
-    green_2_to_3 = world.get_entrance("Green Tier 2 to 3")
-
-    can_get_ten_green = HasAll("Autoblocks", "Automatic Routing")
-    can_get_forty_green = HasAll("Progressive Track Speed", "Progressive Contract Offers", "Progressive Station Cap", "Progressive Platform Cap", "InterCities")
-
-    if world.options.system_upgrades_locked_behind_keys: # TODO: Change it so that the "can_get_x_green" is the default, and the keys are added based on options
-        world.set_rule(menu_to_green_1, Has("System Upgrades (Green) Tier 1 Unlock"))
-        world.set_rule(green_1_to_2, Has("System Upgrades (Green) Tier 2 Unlock") & can_get_ten_green)
-        world.set_rule(green_2_to_3, Has("System Upgrades (Green) Tier 3 Unlock") & can_get_forty_green)
-
-
-    if world.options.red_trains:
-        menu_to_red_1 = world.get_entrance("Menu to Red Tier 1")
-        red_1_to_2 = world.get_entrance("Red Tier 1 to 2")
-        red_2_to_3 = world.get_entrance("Red Tier 2 to 3")
-
-        if world.options.system_upgrades_locked_behind_keys:
-
-            can_get_ten_red = HasAll("Freights", "Regional trains")
-
-            can_get_eighty_red = HasAll("Tunnels", "Urban Transit Contracts", "Shunting Commands")
-
-            world.set_rule(menu_to_red_1, Has("System Upgrades (Red) Tier 1 Unlock") & can_get_ten_green)
-            world.set_rule(red_1_to_2, Has("System Upgrades (Red) Tier 2 Unlock") & can_get_ten_red)
-            world.set_rule(red_2_to_3, Has("System Upgrades (Red) Tier 3 Unlock") & can_get_eighty_red)
+    return
 
 
 def set_all_location_rules(world: EarthWorld) -> None:
@@ -63,13 +37,31 @@ def set_all_location_rules(world: EarthWorld) -> None:
     # So, we need to set requirements on the Locations themselves.
     # Since combat is a bit more complicated, we'll use this chance to cover some advanced access rule concepts.
 
-    victory = world.get_location("Game finished")
-    world.set_rule(victory, HasAll("Autoblocks", "Progressive Contract Offers", "Progressive Track Speed", "System Upgrades (Green) Tier 3 Unlock"))
-    return
+    event_ecosystem = world.get_location("Angat Watershed Forest (25 pts)")
+    world.set_rule(event_ecosystem, Has("Event Cards"))
 
+    event_fauna = world.get_location("Green Tree Ant Claim")
+    world.set_rule(event_fauna, Has("Event Cards"))
+
+    set_ecosystem = world.get_location("Sakurajima (18 pts)")
+    world.set_rule(set_ecosystem, Has("Event Cards"))
+
+    set_fauna = world.get_location("Fire Salamander Claim")
+    world.set_rule(set_fauna, Has("Event Cards"))
+
+    victory = world.get_location("Game finished")
+    world.set_rule(victory, HasAllCounts({"Sprout Storage": 1,
+                                          "Germination": 1,
+                                          "Progressive Starting Leaf": 4,
+                                          "Progressive Score Cap": 4,
+                                          "Progressive Green Call": 5,
+                                          "Progressive Red Call": 3,
+                                          "Progressive Blue Call": 3,
+                                          "Progressive Yellow Call": 3}))
+    return
 
 
 def set_completion_condition(world: EarthWorld) -> None:
     # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
     # So lets undo what we just did, and instead set the completion condition to:
-    world.multiworld.completion_condition[world.player] = Has("Victory")
+    world.set_completion_rule(Has("Victory"))

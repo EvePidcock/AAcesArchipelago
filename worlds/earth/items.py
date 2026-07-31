@@ -13,145 +13,106 @@ if TYPE_CHECKING:
 
 #these ids are sorta arbitrary rn? idk
 ITEM_NAME_TO_ID = {
-    "Autoblocks": 1010001,
-    "Auto-accept Trains": 1010002,
-    "Automatic Routing": 1010003,
-    "Perpetual circuit": 1010004,
-    "Auto-reverse Trains": 1010005,
-    "Manual Signal Route Preview": 1010006,
-    "Signalling safety": 1010007,
-    "Platform Adjustments": 1010008,
-    "Timetable Adjustments": 1010009,
-    # More Stations
-    "Train Alerts": 1010011,
-    "Relay Sensor": 1010012,
+    "Progressive Green Call": 1001,
+    "Progressive Red Call": 1002,
+    "Progressive Blue Call": 1003,
+    "Progressive Yellow Call": 1004,
 
-    # Basic Tracks
-    "InterCities": 1020002,
-    # More Contract Offers
-    "Custom Contract Period": 1020004,
-    # Even Mores Stations
-    "Departure Sensor": 1020006,
-    "Arrival Sensor": 1020007,
-    # Advanced Tracks
-    "Waypoints": 1020009,
+    "Event Cards": 2001,
+    "Sprout Storage": 2002,
+    "Germination": 2003,
 
-    "Routing Sensor": 1030001,
-    "Structural Contracts Manager": 1030002,
-    "Financial Contracts Manager": 1030003,
-    "Regional Contracts Manager": 1030004,
-    # Even More Contract Offers
-    # Way More Contract Offers
-    # Unlimited stations
-    "Faster Switches": 1030008,
-    # Corridor Tracks
+    "Progressive Starting Soil": 3001,
+    "Progressive Starting Sprout": 3002,
+    "Progressive Starting Seed": 3003,
+    "Progressive Starting Leaf": 3004,
+    "Progressive Starting Card Draw": 3005,
 
-    "Regional trains": 1040001,
-    "Freights": 1040002,
-    "Shunting Commands": 1040003,
-    "Shunting Track": 1040004,
+    "Progressive Score Cap": 4001,
 
-    "Shunting Sensor": 1050001,
-    "Stabling Sensor": 1050002,
-    "Tunnels": 1050003,
-    "Urban Transit Contacts": 1050004,
-    "Loco Coupling": 1050005,
-    "Advanced arrival sensor": 1050006,
+    "Island Unlock: Fogo / Whakaari": 5001,
+    "Island Unlock: Kauai / Vulcano": 5002,
+    "Island Unlock: La Palma / Metis Shoal": 5003,
+    "Island Unlock: Barren / Santorini": 5004,
+    "Island Unlock: Kyushu / Jamaica": 5005,
+    "Island Unlock: Lombok / Hawai'i": 5006,
+    "Island Unlock: Deception / Nisyros": 5007,
+    "Island Unlock: Iceland / Mo'orea": 5008,
+    "Island Unlock: Nishinoshima / Luzon": 5009,
+    "Island Unlock: Jan Mayen / Kunashir": 5010,
+    "Island Unlock: Ross Island / Vancouver Island": 5011,
+    "Island Unlock: Java Island / Madagascar Island": 5012,
 
-    "Regional Trains Stabling": 1060001,
-    "Advanced routing sensor": 1060002,
-    "Custom contracts": 1060003,
+    "Climate Unlock: Hemiboreal / Tropical Savanna": 5101,
+    "Climate Unlock: Dry Winter Subtropical Highland / Tropical Rain Forest": 5102,
+    "Climate Unlock: Tundra / Tropical Monsoon": 5103,
+    "Climate Unlock: Marine West Coast / Mediterranean Cold Summer": 5104,
+    "Climate Unlock: Arid / Humid Subtropical": 5105,
+    "Climate Unlock: Subpolar Oceanic / Mediterranean Hot Summer": 5106,
+    "Climate Unlock: Oceanic / Subtropical Highland": 5107,
+    "Climate Unlock: Boreal / Ice Cap": 5108,
+    "Climate Unlock: Hot Summer Continental / Desert": 5109,
+    "Climate Unlock: Semi-Arid / Dry Winter Subpolar Oceanic": 5110,
+    "Climate Unlock: Cold Arid Desert / Hot Steppe": 5111,
+    "Climate Unlock: Cold Winter Continental / Temperate Hot Summer": 5112,
 
-    "Progressive Track Speed": 201,
-    "Progressive Station Cap": 202,
-    "Progressive Platform Cap": 203,
-    "Progressive Contract Offers": 204,
-
-    "System Upgrades (Green) Tier 1 Unlock": 101,
-    "System Upgrades (Green) Tier 2 Unlock": 102,
-    "System Upgrades (Green) Tier 3 Unlock": 103,
-    "System Upgrades (Red) Tier 1 Unlock": 111,
-    "System Upgrades (Red) Tier 2 Unlock": 112,
-    "System Upgrades (Red) Tier 3 Unlock": 113,
-
-    "Bonus Star": 5,
-    "Money": 6
-
+    "Filler": 9001
 }
 
 # Items should have a defined default classification.
 # In our case, we will make a dictionary from item name to classification.
 DEFAULT_ITEM_CLASSIFICATIONS = {
-    "Autoblocks": ItemClassification.progression,
-    "Auto-accept Trains": ItemClassification.useful,
-    "Automatic Routing": ItemClassification.progression,
-    "Perpetual circuit": ItemClassification.progression,
-    "Auto-reverse Trains": ItemClassification.useful,
-    "Manual Signal Route Preview": ItemClassification.useful,
-    "Signalling safety": ItemClassification.useful,
-    "Platform Adjustments": ItemClassification.progression,
-    "Timetable Adjustments": ItemClassification.progression,
-    # More Stations
-    "Train Alerts": ItemClassification.useful,
-    "Relay Sensor": ItemClassification.useful,
+    "Progressive Green Call": ItemClassification.progression,
+    "Progressive Red Call": ItemClassification.progression,
+    "Progressive Blue Call": ItemClassification.progression,
+    "Progressive Yellow Call": ItemClassification.progression,
 
-    # Basic Tracks
-    "InterCities": ItemClassification.progression,
-    # More Contract Offers
-    "Custom Contract Period": ItemClassification.useful,
-    # Even Mores Stations
-    "Departure Sensor": ItemClassification.progression,
-    "Arrival Sensor": ItemClassification.progression,
-    # Advanced Tracks
-    "Waypoints": ItemClassification.useful,
+    "Event Cards": ItemClassification.progression,
+    "Sprout Storage": ItemClassification.progression | ItemClassification.useful,
+    "Germination": ItemClassification.progression | ItemClassification.useful,
 
-    "Routing Sensor": ItemClassification.progression,
-    "Structural Contracts Manager": ItemClassification.useful,
-    "Financial Contracts Manager": ItemClassification.useful,
-    "Regional Contracts Manager": ItemClassification.useful,
-    # Even More Contract Offers
-    # Way More Contract Offers
-    # Unlimited stations
-    "Faster Switches": ItemClassification.useful,
-    # Corridor Tracks
+    "Progressive Starting Soil": ItemClassification.useful,
+    "Progressive Starting Sprout": ItemClassification.useful,
+    "Progressive Starting Seed": ItemClassification.useful,
+    "Progressive Starting Leaf": ItemClassification.progression,
+    "Progressive Starting Card Draw": ItemClassification.useful,
 
-    "Regional trains": ItemClassification.progression,
-    "Freights": ItemClassification.progression,
-    "Shunting Commands": ItemClassification.progression,
-    "Shunting Track": ItemClassification.progression,
+    "Progressive Score Cap": ItemClassification.progression,
 
-    "Shunting Sensor": ItemClassification.useful,
-    "Stabling Sensor": ItemClassification.useful,
-    "Tunnels": ItemClassification.progression,
-    "Urban Transit Contacts": ItemClassification.progression,
-    "Loco Coupling": ItemClassification.useful,
-    "Advanced arrival sensor": ItemClassification.useful,
+    "Island Unlock: Fogo / Whakaari": ItemClassification.progression,
+    "Island Unlock: Kauai / Vulcano": ItemClassification.progression,
+    "Island Unlock: La Palma / Metis Shoal": ItemClassification.progression,
+    "Island Unlock: Barren / Santorini": ItemClassification.progression,
+    "Island Unlock: Kyushu / Jamaica": ItemClassification.progression,
+    "Island Unlock: Lombok / Hawai'i": ItemClassification.progression,
+    "Island Unlock: Deception / Nisyros": ItemClassification.progression,
+    "Island Unlock: Iceland / Mo'orea": ItemClassification.progression,
+    "Island Unlock: Nishinoshima / Luzon": ItemClassification.progression,
+    "Island Unlock: Jan Mayen / Kunashir": ItemClassification.progression,
+    "Island Unlock: Ross Island / Vancouver Island": ItemClassification.progression,
+    "Island Unlock: Java Island / Madagascar Island": ItemClassification.progression,
 
-    "Regional Trains Stabling": ItemClassification.progression,
-    "Advanced routing sensor": ItemClassification.useful,
-    "Custom contracts": ItemClassification.useful,
+    "Climate Unlock: Hemiboreal / Tropical Savanna": ItemClassification.progression,
+    "Climate Unlock: Dry Winter Subtropical Highland / Tropical Rain Forest": ItemClassification.progression,
+    "Climate Unlock: Tundra / Tropical Monsoon": ItemClassification.progression,
+    "Climate Unlock: Marine West Coast / Mediterranean Cold Summer": ItemClassification.progression,
+    "Climate Unlock: Arid / Humid Subtropical": ItemClassification.progression,
+    "Climate Unlock: Subpolar Oceanic / Mediterranean Hot Summer": ItemClassification.progression,
+    "Climate Unlock: Oceanic / Subtropical Highland": ItemClassification.progression,
+    "Climate Unlock: Boreal / Ice Cap": ItemClassification.progression,
+    "Climate Unlock: Hot Summer Continental / Desert": ItemClassification.progression,
+    "Climate Unlock: Semi-Arid / Dry Winter Subpolar Oceanic": ItemClassification.progression,
+    "Climate Unlock: Cold Arid Desert / Hot Steppe": ItemClassification.progression,
+    "Climate Unlock: Cold Winter Continental / Temperate Hot Summer": ItemClassification.progression,
 
-    "Progressive Track Speed": ItemClassification.progression,
-    "Progressive Station Cap": ItemClassification.progression,
-    "Progressive Platform Cap": ItemClassification.progression,
-    "Progressive Contract Offers": ItemClassification.progression,
-
-    "System Upgrades (Green) Tier 1 Unlock": ItemClassification.progression,
-    "System Upgrades (Green) Tier 2 Unlock": ItemClassification.progression,
-    "System Upgrades (Green) Tier 3 Unlock": ItemClassification.progression,
-    "System Upgrades (Red) Tier 1 Unlock": ItemClassification.progression,
-    "System Upgrades (Red) Tier 2 Unlock": ItemClassification.progression,
-    "System Upgrades (Red) Tier 3 Unlock": ItemClassification.progression,
-
-    "Bonus Star": ItemClassification.useful | ItemClassification.filler,
-    "Money": ItemClassification.filler,
+    "Filler": ItemClassification.filler,
 }
 
 
 # Each Item instance must correctly report the "game" it belongs to.
 # To make this simple, it is common practice to subclass the basic Item class and override the "game" field.
 class EarthItem(Item):
-    game = "Rail Route"
+    game = "Earth"
 
 
 # Ontop of our regular itempool, our world must be able to create arbitrary amounts of filler as requested by core.
@@ -159,7 +120,7 @@ class EarthItem(Item):
 # For now, let's make a function that returns the name of a random filler item here in items.py.
 def get_random_filler_item_name(world: EarthWorld) -> str:
 
-    return "Money"
+    return "Filler"
 
 
 def create_item_with_correct_classification(world: EarthWorld, name: str) -> EarthItem:
@@ -189,73 +150,83 @@ def create_all_items(world: EarthWorld) -> None:
     # First, we create a list containing all the items that always exist.
 
     itempool: list[Item] = [
-        world.create_item("Autoblocks"),
-        world.create_item("Auto-accept Trains"),
-        world.create_item("Automatic Routing"),
-        world.create_item("Perpetual circuit"),
-        world.create_item("Auto-reverse Trains"),
-        world.create_item("Manual Signal Route Preview"),
-        world.create_item("Signalling safety"),
-        world.create_item("Platform Adjustments"),
-        world.create_item("Timetable Adjustments"),
-        world.create_item("Train Alerts"),
-        world.create_item("Relay Sensor"),
+        world.create_item("Progressive Green Call"),
+        world.create_item("Progressive Green Call"),
+        world.create_item("Progressive Green Call"),
+        world.create_item("Progressive Green Call"),
+        world.create_item("Progressive Green Call"),
+        world.create_item("Progressive Green Call"),
+        world.create_item("Progressive Green Call"),
+        world.create_item("Progressive Red Call"),
+        world.create_item("Progressive Red Call"),
+        world.create_item("Progressive Red Call"),
+        world.create_item("Progressive Red Call"),
+        world.create_item("Progressive Red Call"),
+        world.create_item("Progressive Blue Call"),
+        world.create_item("Progressive Blue Call"),
+        world.create_item("Progressive Blue Call"),
+        world.create_item("Progressive Blue Call"),
+        world.create_item("Progressive Blue Call"),
+        world.create_item("Progressive Yellow Call"),
+        world.create_item("Progressive Yellow Call"),
+        world.create_item("Progressive Yellow Call"),
+        world.create_item("Progressive Yellow Call"),
+        world.create_item("Progressive Yellow Call"),
 
-        world.create_item("InterCities"),
-        world.create_item("Custom Contract Period"),
-        world.create_item("Departure Sensor"),
-        world.create_item("Arrival Sensor"),
-        world.create_item("Waypoints"),
+        world.create_item("Event Cards"),
+        world.create_item("Sprout Storage"),
+        world.create_item("Germination"),
 
-        world.create_item("Routing Sensor"),
-        world.create_item("Structural Contracts Manager"),
-        world.create_item("Financial Contracts Manager"),
-        world.create_item("Regional Contracts Manager"),
-        world.create_item("Faster Switches"),
+        world.create_item("Progressive Starting Soil"),
+        world.create_item("Progressive Starting Soil"),
+        world.create_item("Progressive Starting Soil"),
+        world.create_item("Progressive Starting Soil"),
+        world.create_item("Progressive Starting Sprout"),
+        world.create_item("Progressive Starting Sprout"),
+        world.create_item("Progressive Starting Sprout"),
+        world.create_item("Progressive Starting Seed"),
+        world.create_item("Progressive Starting Seed"),
+        world.create_item("Progressive Starting Leaf"),
+        world.create_item("Progressive Starting Leaf"),
+        world.create_item("Progressive Starting Leaf"),
+        world.create_item("Progressive Starting Leaf"),
+        world.create_item("Progressive Starting Leaf"),
+        world.create_item("Progressive Starting Card Draw"),
+        world.create_item("Progressive Starting Card Draw"),
+        world.create_item("Progressive Starting Card Draw"),
 
-        world.create_item("Progressive Track Speed"),
-        world.create_item("Progressive Track Speed"),
-        world.create_item("Progressive Track Speed"),
-        world.create_item("Progressive Station Cap"),
-        world.create_item("Progressive Station Cap"),
-        world.create_item("Progressive Station Cap"),
-        world.create_item("Progressive Platform Cap"),
-        world.create_item("Progressive Platform Cap"),
-        world.create_item("Progressive Platform Cap"),
-        world.create_item("Progressive Contract Offers"),
-        world.create_item("Progressive Contract Offers"),
-        world.create_item("Progressive Contract Offers"),
+        world.create_item("Progressive Score Cap"),
+        world.create_item("Progressive Score Cap"),
+        world.create_item("Progressive Score Cap"),
+        world.create_item("Progressive Score Cap"),
+        world.create_item("Progressive Score Cap"),
 
-        world.create_item("Bonus Star"),
-        world.create_item("Money")
+        world.create_item("Island Unlock: Fogo / Whakaari"),
+        world.create_item("Island Unlock: Kauai / Vulcano"),
+        world.create_item("Island Unlock: La Palma / Metis Shoal"),
+        world.create_item("Island Unlock: Barren / Santorini"),
+        world.create_item("Island Unlock: Kyushu / Jamaica"),
+        world.create_item("Island Unlock: Lombok / Hawai'i"),
+        world.create_item("Island Unlock: Deception / Nisyros"),
+        world.create_item("Island Unlock: Iceland / Mo'orea"),
+        world.create_item("Island Unlock: Nishinoshima / Luzon"),
+        world.create_item("Island Unlock: Jan Mayen / Kunashir"),
+        world.create_item("Island Unlock: Ross Island / Vancouver Island"),
+        world.create_item("Island Unlock: Java Island / Madagascar Island"),
+
+        world.create_item("Climate Unlock: Hemiboreal / Tropical Savanna"),
+        world.create_item("Climate Unlock: Dry Winter Subtropical Highland / Tropical Rain Forest"),
+        world.create_item("Climate Unlock: Tundra / Tropical Monsoon"),
+        world.create_item("Climate Unlock: Marine West Coast / Mediterranean Cold Summer"),
+        world.create_item("Climate Unlock: Arid / Humid Subtropical"),
+        world.create_item("Climate Unlock: Subpolar Oceanic / Mediterranean Hot Summer"),
+        world.create_item("Climate Unlock: Oceanic / Subtropical Highland"),
+        world.create_item("Climate Unlock: Boreal / Ice Cap"),
+        world.create_item("Climate Unlock: Hot Summer Continental / Desert"),
+        world.create_item("Climate Unlock: Semi-Arid / Dry Winter Subpolar Oceanic"),
+        world.create_item("Climate Unlock: Cold Arid Desert / Hot Steppe"),
+        world.create_item("Climate Unlock: Cold Winter Continental / Temperate Hot Summer"),
     ]
-
-    if world.options.red_trains:
-        itempool.append(world.create_item("Freights"))
-        itempool.append(world.create_item("Regional trains"))
-        itempool.append(world.create_item("Shunting Commands"))
-        itempool.append(world.create_item("Shunting Track"))
-
-        itempool.append(world.create_item("Shunting Sensor"))
-        itempool.append(world.create_item("Stabling Sensor"))
-        itempool.append(world.create_item("Urban Transit Contracts"))
-        itempool.append(world.create_item("Tunnels"))
-        itempool.append(world.create_item("Loco Coupling"))
-        itempool.append(world.create_item("Advanced Arrival Sensor"))
-
-        itempool.append(world.create_item("Regional Trains Stabling"))
-        itempool.append(world.create_item("Advanced routing sensor"))
-        itempool.append(world.create_item("Custom contracts"))
-
-    if world.options.system_upgrades_locked_behind_keys:
-        itempool.append(world.create_item("System Upgrades (Green) Tier 1 Unlock"))
-        itempool.append(world.create_item("System Upgrades (Green) Tier 2 Unlock"))
-        itempool.append(world.create_item("System Upgrades (Green) Tier 3 Unlock"))
-
-        if world.options.red_trains:
-            itempool.append(world.create_item("System Upgrades (Red) Tier 1 Unlock"))
-            itempool.append(world.create_item("System Upgrades (Red) Tier 2 Unlock"))
-            itempool.append(world.create_item("System Upgrades (Red) Tier 3 Unlock"))
 
     # Archipelago requires that each world submits as many locations as it submits items.
     # This is where we can use our filler and trap items.
