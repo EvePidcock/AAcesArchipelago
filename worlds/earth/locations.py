@@ -17,17 +17,6 @@ if TYPE_CHECKING:
 # We will have a lookup from location name to ID here that, in world.py, we will import and bind to the world class.
 # Even if a location doesn't exist on specific options, it must be present in this lookup.
 
-# ID Format: XXYYZZZ
-#
-# XX:
-#   10 = System Upgrades
-#        YY: Tier
-#           10 = Green 1, 20 = Green 2, 30 = Green 3, 40 = Red 1, 50 = Red 2, 60 = Red 3
-#        ZZZ: id
-#
-#   11 = Earning Green/Red Trains
-#       YY: Green (10) or Red (20)
-#       ZZZ: Count
 LOCATION_NAME_TO_ID = {
 
     # Point Checks (10XXX)
@@ -198,7 +187,7 @@ def create_regular_locations(world: EarthWorld) -> None:
     for line in earth_cards:
         card = json.loads(line.strip())
         card_id += 1
-        CARD_NAME_TO_ID.update({f"Play card \"{card['Name']}\"": card_id})
+        CARD_NAME_TO_ID.update({f"Play card {card['Name']}": card_id})
 
     event_cards = get_data(__name__, "eventCards.txt").decode("utf-8").strip().split("\n")
     card_id = 41000
@@ -206,7 +195,7 @@ def create_regular_locations(world: EarthWorld) -> None:
     for line in event_cards:
         card = json.loads(line.strip())
         card_id += 1
-        EVENT_NAME_TO_ID.update({f"Play event \"{card['Name']}\"": card_id})
+        EVENT_NAME_TO_ID.update({f"Play event {card['Name']}": card_id})
 
     world.get_region("Main").add_locations(CARD_NAME_TO_ID)
     world.get_region("Main").add_locations(LOCATION_NAME_TO_ID)
