@@ -37,8 +37,26 @@ class StartingClimatesCount(Range):
     range_end = 12
     default = 2
 
+class StartWithSproutStorage(Toggle):
+    """
+    Should the Sprout Storage be unlocked initially
+    """
+    display_name = "Starting Sprout Storage"
+    default = False
 
+class StartingLeaf(Toggle):
+    """
+    Should you start with a leaf
+    """
+    display_name = "Starting Leaf"
+    default = True
 
+class StartingSeed(Toggle):
+    """
+    Should you start with a seed
+    """
+    display_name = "Starting Seed"
+    default = False
 
 
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
@@ -47,13 +65,16 @@ class StartingClimatesCount(Range):
 class EarthOptions(PerGameCommonOptions):
     starting_islands_count: StartingIslandsCount
     starting_climates_count: StartingClimatesCount
+    starting_sprout_storage: StartWithSproutStorage
+    starting_leaf: StartingLeaf
+    starting_seed: StartingSeed
 
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
     OptionGroup(
         "Gameplay Options",
-        [StartingIslandsCount, StartingClimatesCount]
+        [StartingIslandsCount, StartingClimatesCount, StartWithSproutStorage, StartingLeaf, StartingSeed]
     )
 ]
 
@@ -61,6 +82,9 @@ option_groups = [
 option_presets = {
     "Default": {
         "starting_islands_count": 2,
-        "starting_climates_count": 2
+        "starting_climates_count": 2,
+        "starting_sprout_storage": False,
+        "starting_leaf": True,
+        "starting_seed": False
     }
 }

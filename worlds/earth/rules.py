@@ -50,14 +50,21 @@ def set_all_location_rules(world: EarthWorld) -> None:
     world.set_rule(set_fauna, Has("Event Cards"))
 
     victory = world.get_location("Game finished")
-    world.set_rule(victory, HasAllCounts({"Sprout Storage": 1,
+    world.set_rule(victory, HasAllCounts({"Progressive Sprout Storage Cap": 2,
                                           "Germination": 1,
                                           "Progressive Starting Leaf": 4,
                                           "Progressive Score Cap": 4,
                                           "Progressive Green Call": 5,
                                           "Progressive Red Call": 3,
                                           "Progressive Blue Call": 3,
-                                          "Progressive Yellow Call": 3}))
+                                          "Progressive Yellow Call": 3,
+                                          "Progressive Green Ability Activation": 3,
+                                          "Progressive Red Ability Activation": 4,
+                                          "Progressive Blue Ability Activation": 4,
+                                          "Progressive Yellow Ability Activation": 4,
+                                          "Tableau Black Abilities": 1,
+                                          "Terrain Abilities (Scoring)": 1
+                                          }))
     return
 
 

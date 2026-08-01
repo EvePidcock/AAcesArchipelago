@@ -6,7 +6,7 @@ from worlds.AutoWorld import World
 
 # Imports of your world's files must be relative.
 from . import items, locations, regions, rules, web_world
-from . import options as railroute_options  # rename due to a name conflict with World.options
+from . import options as earth_options  # rename due to a name conflict with World.options
 
 # APQuest will go through all the parts of the world api one step at a time,
 # with many examples and comments across multiple files.
@@ -39,8 +39,8 @@ class EarthWorld(World):
     starting_climates = []
 
     # This is how we associate the options defined in our options.py with our world.
-    options_dataclass = railroute_options.EarthOptions
-    options: railroute_options.EarthOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
+    options_dataclass = earth_options.EarthOptions
+    options: earth_options.EarthOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
 
     # Our world class must have a static location_name_to_id and item_name_to_id defined.
     # We define these in regions.py and items.py respectively, so we just set them here.
