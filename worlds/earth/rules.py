@@ -1,5 +1,5 @@
 from __future__ import annotations
-from rule_builder.rules import Has, True_, HasAll, HasAllCounts
+from rule_builder.rules import Has, True_, HasAll, HasAllCounts, HasAny
 
 from typing import TYPE_CHECKING
 
@@ -49,23 +49,168 @@ def set_all_location_rules(world: EarthWorld) -> None:
     set_fauna = world.get_location("Fire Salamander Claim")
     world.set_rule(set_fauna, Has("Event Cards"))
 
+    condor = world.get_location("Andean Condor Claim")
+    gorilla = world.get_location("Mountain Gorilla Claim")
+    mole = world.get_location("European Mole Claim")
+    worm = world.get_location("Earthworm Claim")
+    eagle = world.get_location("Bald Eagle Claim")
+    woodpecker = world.get_location("Pale-Billed Woodpecker Claim")
+    marmot = world.get_location("Yellow-Bellied Marmot Claim")
+    squirrel = world.get_location("Red Squirrel Claim")
+
+    world.set_rule(condor, HasAllCounts({"Progressive Yellow Call": 3, "Progressive Yellow Ability Activation": 2}))
+    world.set_rule(gorilla, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 1, "Progressive Blue Call": 2, "Progressive Blue Ability Activation": 1}))
+    world.set_rule(mole, HasAllCounts({"Progressive Red Call": 3, "Progressive Red Ability Activation": 2}))
+    world.set_rule(worm, HasAllCounts({"Progressive Red Call": 3, "Progressive Red Ability Activation": 2}))
+    world.set_rule(eagle, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 1}))
+    world.set_rule(woodpecker, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 1}))
+    world.set_rule(marmot, HasAllCounts({"Progressive Blue Call": 3, "Progressive Blue Ability Activation": 2}))
+    world.set_rule(squirrel, HasAllCounts({"Progressive Blue Call": 2, "Progressive Blue Ability Activation": 1}))
+
+    canopies = world.get_location("Bwindi Impenetrable Forest (18 pts)")
+    all_cubes = world.get_location("Tongass National Forest (18 pts)")
+    soil = world.get_location("Great Plains (24 pts)")
+    compost = world.get_location("Amazon Rain Forest (24 pts)")
+    cards = world.get_location("Borneo Lowland Rain Forest (24 pts)")
+    growth = world.get_location("Madagascar Humid Canopy (18 pts)")
+    cubes = world.get_location("Tai Poutini National Park (18 pts)")
+
+    world.set_rule(canopies, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 2}))
+    world.set_rule(soil, HasAllCounts({"Progressive Red Call": 3, "Progressive Red Ability Activation": 2}))
+    world.set_rule(compost, HasAllCounts({"Progressive Red Call": 3, "Progressive Red Ability Activation": 2}))
+    world.set_rule(growth, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 2}))
+    world.set_rule(cards, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 2}))
+    world.set_rule(all_cubes, HasAllCounts({"Progressive Blue Call": 3, "Progressive Blue Ability Activation": 2}))
+    world.set_rule(cubes, HasAllCounts({"Progressive Blue Call": 2, "Progressive Blue Ability Activation": 2}))
+
+    if world.options.kinder_card_logic:
+        black_ability_locs = ["Play card Bamboo Forest",
+                                "Play card Compost-filled Grounds",
+                                "Play card African Baobab",
+                                "Play card Volcanic Grounds",
+                                "Play card Strangler Fig",
+                                "Play card Giant Bearded Fig",
+                                "Play card American Beech",
+                                "Play card Red Gram",
+                                "Play card Netted Rhodotus",
+                                "Play card Tor-Grass",
+                                "Play card Pomegranate Tree",
+                                "Play card Flooded Delta",
+                                "Play card White Snowdrop",
+                                "Play card Indian Oyster",
+                                "Play card Horn of Plenty",
+                                "Play card Siberian Elm",
+                                "Play card English Walnut",
+                                "Play card Luxuriant Woodland",
+                                "Play card Chernozem",
+                                "Play card Chinese Elm",
+                                "Play card Volcanic Ash Plain",
+                                "Play card Monsoon Irrigated Plateau",
+                                "Play card Sunny Hillside",
+                                "Antarctica (18 pts)"]
+        for loc in black_ability_locs:
+            world.set_rule(world.get_location(loc), Has("Tableau Black Abilities"))
+
+        world.set_rule(world.get_location("Brown Bear Claim"), HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)"))
+        world.set_rule(world.get_location("Mount Kilimanjaro (20 pts)"), HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)"))
+
+        scoring_brown_abilities = ["Play card Rainbow Mountain",
+                                    "Play card Strait",
+                                    "Play card Meadow",
+                                    "Play card Forest Meadow",
+                                    "Play card Volcanic Crater",
+                                    "Play card Gigantic Island",
+                                    "Play card Desert",
+                                    "Play card Rain Forest",
+                                    "Play card Mountain Forest",
+                                    "Play card Tropical Sierra",
+                                    "Play card Mountain Ridge",
+                                    "Play card Tropical Jungle",
+                                    "Play card Cordillera",
+                                    "Play card Volcanic Island",
+                                    "Play card Putrefied Land",
+                                    "Play card Prairie",
+                                    "Play card Permafrost",
+                                    "Play card Badlands",
+                                    "Play card Stream",
+                                    "Play card Taiga",
+                                    "Play card Pasture",
+                                    "Play card Glacier",
+                                    "Play card Crater",
+                                    "Play card Blooming Land",
+                                    "Play card Volcano",
+                                    "Play card River",
+                                    "Play card Cold Peaked Mount",
+                                    "Play card Savanna",
+                                    "Play card Jungle",
+                                    "Play card Prominent Peak",
+                                    "Play card Sub-Frigid Grassland",
+                                    "Play card Mixed Forest",
+                                    "Play card Lake",
+                                    "Play card Plain",
+                                    "Play card Blossoming Lands",
+                                    "Play card Grassland",
+                                    "Play card Swamp",
+                                    "Play card Impoverished Land",
+                                    "Play card Bayou",
+                                    "Play card Cloud Forest",
+                                    "Play card Scrubland",
+                                    "Play card Redwood Forest",
+                                    "Play card Canyon",
+                                    "Play card Boreal Forest",
+                                    "Play card Shrubland",
+                                    "Play card Forest Edge",
+                                    "Play card Floodplain",
+                                    "Play card Wetland",
+                                    "Play card Fertile Land",
+                                    "Play card Beach",
+                                    "Play card Lava Field",
+                                    "Play card Tropical Forest",
+                                    "Play card Rocky Mountains",
+                                    "Play card Mineral-rich Land",
+                                    "Play card Giant Forest"]
+        for loc in scoring_brown_abilities:
+            world.set_rule(world.get_location(loc), Has("Terrain Abilities (Scoring)"))
+
+        cheapening_brown_abilities = ["Play card Organic Soil",
+                                        "Play card Sand Dunes",
+                                        "Play card Water Pools",
+                                        "Play card Solidified Magma",
+                                        "Play card Arable Land",
+                                        "Play card Aridisol",
+                                        "Play card Tundra",
+                                        "Play card Clay Soil",
+                                        "Play card Sandy Soil",
+                                        "Play card Riverside",
+                                        "Play card Alfisol",
+                                        "Play card Fallen Sequoia"]
+        for loc in cheapening_brown_abilities:
+            world.set_rule(world.get_location(loc), Has("Terrain Abilities (Cheapening)"))
+
+        replacement_brown_abilities = ["Play card Flatland", "Play card Alluvial Sediments", "Play card Lava Plain"]
+        for loc in replacement_brown_abilities:
+            world.set_rule(world.get_location(loc), Has("Terrain Abilities (Replacement)"))
+
+        world.set_rule(world.get_location("Play card Volcanic Island"), Has("Event Cards"))
+        world.set_rule(world.get_location("Play card Cacao Tree"), Has("Event Cards"))
+        world.set_rule(world.get_location("Play card Tropical Sierra"), Has("Event Cards"))
+
     victory = world.get_location("Game finished")
     world.set_rule(victory, HasAllCounts({"Progressive Sprout Storage Cap": 2,
                                           "Germination": 1,
                                           "Progressive Starting Leaf": 4,
                                           "Progressive Score Cap": 4,
                                           "Progressive Green Call": 5,
-                                          "Progressive Red Call": 3,
-                                          "Progressive Blue Call": 3,
-                                          "Progressive Yellow Call": 3,
-                                          "Progressive Green Ability Activation": 3,
-                                          "Progressive Red Ability Activation": 4,
-                                          "Progressive Blue Ability Activation": 4,
-                                          "Progressive Yellow Ability Activation": 4,
+                                          "Progressive Red Call": 4,
+                                          "Progressive Blue Call": 4,
+                                          "Progressive Yellow Call": 4,
+                                          "Progressive Green Ability Activation": 4,
+                                          "Progressive Red Ability Activation": 5,
+                                          "Progressive Blue Ability Activation": 5,
+                                          "Progressive Yellow Ability Activation": 5,
                                           "Tableau Black Abilities": 1,
                                           "Terrain Abilities (Scoring)": 1
                                           }))
-    return
 
 
 def set_completion_condition(world: EarthWorld) -> None:

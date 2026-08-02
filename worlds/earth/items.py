@@ -81,13 +81,13 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Progressive Blue Ability Activation": ItemClassification.progression,
     "Progressive Yellow Ability Activation": ItemClassification.progression,
 
-    "Tableau Black Abilities": ItemClassification.progression | ItemClassification.useful,
-    "Terrain Abilities (Cheapening)": ItemClassification.useful,
+    "Tableau Black Abilities": ItemClassification.progression,
+    "Terrain Abilities (Cheapening)": ItemClassification.progression,
     "Terrain Abilities (Scoring)": ItemClassification.progression,
-    "Terrain Abilities (Replacement)": ItemClassification.useful,
+    "Terrain Abilities (Replacement)": ItemClassification.progression,
 
-    "Event Cards": ItemClassification.progression,
-    "Progressive Sprout Storage Cap": ItemClassification.progression | ItemClassification.useful,
+    "Event Cards": ItemClassification.progression | ItemClassification.useful,
+    "Progressive Sprout Storage Cap": ItemClassification.progression,
     "Germination": ItemClassification.progression | ItemClassification.useful,
 
     "Progressive Starting Soil": ItemClassification.useful,
@@ -227,6 +227,9 @@ def create_all_items(world: EarthWorld) -> None:
         world.create_item("Progressive Red Ability Activation"),
         world.create_item("Progressive Red Ability Activation"),
         world.create_item("Progressive Red Ability Activation"),
+        world.create_item("Progressive Red Ability Activation"),
+        world.create_item("Progressive Red Ability Activation"),
+        world.create_item("Progressive Red Ability Activation"),
 
         world.create_item("Progressive Blue Ability Activation"),
         world.create_item("Progressive Blue Ability Activation"),
@@ -243,7 +246,13 @@ def create_all_items(world: EarthWorld) -> None:
         world.create_item("Progressive Blue Ability Activation"),
         world.create_item("Progressive Blue Ability Activation"),
         world.create_item("Progressive Blue Ability Activation"),
+        world.create_item("Progressive Blue Ability Activation"),
+        world.create_item("Progressive Blue Ability Activation"),
+        world.create_item("Progressive Blue Ability Activation"),
 
+        world.create_item("Progressive Yellow Ability Activation"),
+        world.create_item("Progressive Yellow Ability Activation"),
+        world.create_item("Progressive Yellow Ability Activation"),
         world.create_item("Progressive Yellow Ability Activation"),
         world.create_item("Progressive Yellow Ability Activation"),
         world.create_item("Progressive Yellow Ability Activation"),
@@ -279,6 +288,8 @@ def create_all_items(world: EarthWorld) -> None:
         world.create_item("Progressive Sprout Storage Cap"),
         world.create_item("Progressive Sprout Storage Cap"),
         world.create_item("Progressive Sprout Storage Cap"),
+        world.create_item("Progressive Sprout Storage Cap"),
+        world.create_item("Progressive Sprout Storage Cap"),
 
         world.create_item("Progressive Starting Soil"),
         world.create_item("Progressive Starting Soil"),
@@ -305,7 +316,9 @@ def create_all_items(world: EarthWorld) -> None:
         world.create_item("Progressive Starting Card Draw"),
         world.create_item("Progressive Starting Card Draw"),
         world.create_item("Progressive Starting Card Draw"),
+        world.create_item("Progressive Starting Card Draw"),
 
+        world.create_item("Progressive Score Cap"),
         world.create_item("Progressive Score Cap"),
         world.create_item("Progressive Score Cap"),
         world.create_item("Progressive Score Cap"),

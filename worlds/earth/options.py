@@ -58,6 +58,13 @@ class StartingSeed(Toggle):
     display_name = "Starting Seed"
     default = False
 
+class KinderCardLogic(Toggle):
+    """
+    If on, you will not be logically required to play a card with a black or brown ability you can not activate
+    """
+    display_name = "Kinder Card Logic"
+    default = True
+
 
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
 # This is in the format "option_name_in_snake_case: OptionClassName".
@@ -68,13 +75,14 @@ class EarthOptions(PerGameCommonOptions):
     starting_sprout_storage: StartWithSproutStorage
     starting_leaf: StartingLeaf
     starting_seed: StartingSeed
+    kinder_card_logic: KinderCardLogic
 
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
     OptionGroup(
         "Gameplay Options",
-        [StartingIslandsCount, StartingClimatesCount, StartWithSproutStorage, StartingLeaf, StartingSeed]
+        [StartingIslandsCount, StartingClimatesCount, StartWithSproutStorage, StartingLeaf, StartingSeed, KinderCardLogic]
     )
 ]
 
@@ -85,6 +93,7 @@ option_presets = {
         "starting_climates_count": 2,
         "starting_sprout_storage": False,
         "starting_leaf": True,
-        "starting_seed": False
+        "starting_seed": False,
+        "kinder_card_logic": True
     }
 }
