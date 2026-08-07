@@ -18,6 +18,34 @@ from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle
 # A toggle is an option that can either be on or off. This will be represented by a checkbox on the website.
 # The default for a toggle is "off".
 # If you want a toggle to be on by default, you can use the "DefaultOnToggle" class instead of the "Toggle" class.
+class FlowerHunt(Toggle):
+    """
+    Require a certain number of "Flower" items to goal
+    """
+    display_name = "Flower Hunt"
+    default = True
+
+
+class FlowerItemsRequired(Range):
+    """
+    How many "Flower" items needed to goal. Does nothing if Flower Hunt is off.
+    """
+    display_name = "Required Flowers to Goal"
+    range_start = 10
+    range_end = 100
+    default = 40
+
+
+class FlowerItemsTotal(Range):
+    """
+    How many "Flower" items to put in the item pool. Does nothing if Flower Hunt is off.
+    """
+    display_name = "Total Flowers"
+    range_start = 10
+    range_end = 120
+    default = 50
+
+
 class StartingIslandsCount(Range):
     """
     How many island *cards* to start with (min 1)
@@ -77,6 +105,9 @@ class KinderCardLogic(Toggle):
 # This is in the format "option_name_in_snake_case: OptionClassName".
 @dataclass
 class EarthOptions(PerGameCommonOptions):
+    flower_hunt: FlowerHunt
+    flowers_required: FlowerItemsRequired
+    flowers_total: FlowerItemsTotal
     starting_islands_count: StartingIslandsCount
     starting_climates_count: StartingClimatesCount
     starting_sprout_storage: StartWithSproutStorage
@@ -89,6 +120,10 @@ class EarthOptions(PerGameCommonOptions):
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
     OptionGroup(
+        "Goal Options",
+        [FlowerHunt, FlowerItemsRequired, FlowerItemsTotal]
+    ),
+    OptionGroup(
         "Gameplay Options",
         [StartingIslandsCount, StartingClimatesCount, StartWithSproutStorage, StartingLeaf, StartingSeed, StartingPersonalEcosystem, KinderCardLogic]
     )
@@ -97,6 +132,9 @@ option_groups = [
 # Finally, we can define some option presets if we want the player to be able to quickly choose a specific "mode".
 option_presets = {
     "Default": {
+        "flower_hunt": True,
+        "flowers_required": 40,
+        "flowers_total": 50,
         "starting_islands_count": 2,
         "starting_climates_count": 2,
         "starting_sprout_storage": False,
@@ -106,6 +144,9 @@ option_presets = {
         "kinder_card_logic": True
     },
     "Pain": {
+        "flower_hunt": True,
+        "flowers_required": 80,
+        "flowers_total": 100,
         "starting_islands_count": 1,
         "starting_climates_count": 0,
         "starting_sprout_storage": False,
@@ -115,6 +156,9 @@ option_presets = {
         "kinder_card_logic": False
     },
     "Easier Start": {
+        "flower_hunt": True,
+        "flowers_required": 35,
+        "flowers_total": 50,
         "starting_islands_count": 4,
         "starting_climates_count": 4,
         "starting_sprout_storage": True,

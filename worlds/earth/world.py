@@ -122,7 +122,7 @@ class EarthWorld(World):
         # If you need access to the player's chosen options on the client side, there is a helper for that.
         slot_data = {"starting_islands": self.starting_islands, "starting_climates": self.starting_climates}
         slot_data.update(self.options.as_dict(
-            "starting_islands_count", "starting_climates_count", "kinder_card_logic"
+            "flower_hunt", "flowers_required", "flowers_total", "starting_islands_count", "starting_climates_count", "kinder_card_logic"
         ))
         return slot_data
 

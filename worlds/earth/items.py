@@ -66,6 +66,8 @@ ITEM_NAME_TO_ID = {
     "Climate Unlock: Cold Arid Desert / Hot Steppe": 5111,
     "Climate Unlock: Cold Winter Continental / Temperate Hot Summer": 5112,
 
+    "Flower": 6001,
+
     "Filler": 9001
 }
 
@@ -125,6 +127,8 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Climate Unlock: Semi-Arid / Dry Winter Subpolar Oceanic": ItemClassification.progression,
     "Climate Unlock: Cold Arid Desert / Hot Steppe": ItemClassification.progression,
     "Climate Unlock: Cold Winter Continental / Temperate Hot Summer": ItemClassification.progression,
+
+    "Flower": ItemClassification.progression,
 
     "Filler": ItemClassification.filler,
 }
@@ -383,6 +387,11 @@ def create_all_items(world: EarthWorld) -> None:
 
     for item in starting_ability_items:
         world.push_precollected(item)
+
+    if world.options.flower_hunt:
+        flowers_needed = world.options.flowers_required.value
+        flowers_total = max(flowers_needed, world.options.flowers_total.value)
+        itempool += [world.create_item("Flower") for _ in range(flowers_total)]
 
     # Archipelago requires that each world submits as many locations as it submits items.
     # This is where we can use our filler and trap items.

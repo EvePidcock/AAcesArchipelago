@@ -1,5 +1,5 @@
 from __future__ import annotations
-from rule_builder.rules import Has, True_, HasAll, HasAllCounts, HasAny, HasAnyCount, HasFromList
+from rule_builder.rules import Has, True_, HasAll, HasAllCounts, HasAny, HasAnyCount, HasFromListUnique
 
 from typing import TYPE_CHECKING
 
@@ -294,7 +294,7 @@ def set_all_location_rules(world: EarthWorld) -> None:
         world.set_rule(world.get_location("Play card Cacao Tree"), Has("Event Cards"))
         world.set_rule(world.get_location("Play card Tropical Sierra"), Has("Event Cards"))
 
-    has_four_climates = HasFromList("Climate Unlock: Hemiboreal / Tropical Savanna",
+    has_four_climates = HasFromListUnique("Climate Unlock: Hemiboreal / Tropical Savanna",
                             "Climate Unlock: Dry Winter Subtropical Highland / Tropical Rain Forest",
                             "Climate Unlock: Tundra / Tropical Monsoon",
                             "Climate Unlock: Marine West Coast / Mediterranean Cold Summer",
@@ -307,7 +307,7 @@ def set_all_location_rules(world: EarthWorld) -> None:
                             "Climate Unlock: Cold Arid Desert / Hot Steppe",
                             "Climate Unlock: Cold Winter Continental / Temperate Hot Summer", count = 4)
 
-    has_six_islands = HasFromList("Island Unlock: Fogo / Whakaari",
+    has_six_islands = HasFromListUnique("Island Unlock: Fogo / Whakaari",
                            "Island Unlock: Kauai / Vulcano",
                            "Island Unlock: La Palma / Metis Shoal",
                            "Island Unlock: Barren / Santorini",
@@ -338,7 +338,12 @@ def set_all_location_rules(world: EarthWorld) -> None:
                                           })
 
     victory = world.get_location("Game finished")
-    world.set_rule(victory, has_needed_items_and_unlocks & has_four_climates & has_six_islands)
+    if world.options.flower_hunt:
+        flowers_needed = world.options.flowers_required.value
+        has_all_flowers = Has("Flower", count=flowers_needed)
+        world.set_rule(victory, has_needed_items_and_unlocks & has_four_climates & has_six_islands & has_all_flowers)
+    else:
+        world.set_rule(victory, has_needed_items_and_unlocks & has_four_climates & has_six_islands)
 
 
 def set_completion_condition(world: EarthWorld) -> None:
