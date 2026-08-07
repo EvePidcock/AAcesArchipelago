@@ -20,7 +20,7 @@ from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle
 # If you want a toggle to be on by default, you can use the "DefaultOnToggle" class instead of the "Toggle" class.
 class StartingIslandsCount(Range):
     """
-    How many island cards to start with
+    How many island *cards* to start with (min 1)
     """
     display_name = "Starting Islands Count"
     range_start = 1
@@ -30,10 +30,10 @@ class StartingIslandsCount(Range):
 
 class StartingClimatesCount(Range):
     """
-    How many climate cards to start with
+    How many climate *cards* to start with (min 0)
     """
     display_name = "Starting Climates Count"
-    range_start = 1
+    range_start = 0
     range_end = 12
     default = 2
 
@@ -58,6 +58,13 @@ class StartingSeed(Toggle):
     display_name = "Starting Seed"
     default = False
 
+class StartingPersonalEcosystem(Toggle):
+    """
+    Should you start with the ability to choose a personal ecosystem
+    """
+    display_name = "Starting Personal Ecosystem"
+    default = False
+
 class KinderCardLogic(Toggle):
     """
     If on, you will not be logically required to play a card with a black or brown ability you can not activate
@@ -75,6 +82,7 @@ class EarthOptions(PerGameCommonOptions):
     starting_sprout_storage: StartWithSproutStorage
     starting_leaf: StartingLeaf
     starting_seed: StartingSeed
+    starting_personal_ecosystem: StartingPersonalEcosystem
     kinder_card_logic: KinderCardLogic
 
 
@@ -82,7 +90,7 @@ class EarthOptions(PerGameCommonOptions):
 option_groups = [
     OptionGroup(
         "Gameplay Options",
-        [StartingIslandsCount, StartingClimatesCount, StartWithSproutStorage, StartingLeaf, StartingSeed, KinderCardLogic]
+        [StartingIslandsCount, StartingClimatesCount, StartWithSproutStorage, StartingLeaf, StartingSeed, StartingPersonalEcosystem, KinderCardLogic]
     )
 ]
 
@@ -94,6 +102,25 @@ option_presets = {
         "starting_sprout_storage": False,
         "starting_leaf": True,
         "starting_seed": False,
+        "starting_personal_ecosystem": False,
+        "kinder_card_logic": True
+    },
+    "Pain": {
+        "starting_islands_count": 1,
+        "starting_climates_count": 0,
+        "starting_sprout_storage": False,
+        "starting_leaf": False,
+        "starting_seed": False,
+        "starting_personal_ecosystem": False,
+        "kinder_card_logic": False
+    },
+    "Easier Start": {
+        "starting_islands_count": 4,
+        "starting_climates_count": 4,
+        "starting_sprout_storage": True,
+        "starting_leaf": True,
+        "starting_seed": True,
+        "starting_personal_ecosystem": True,
         "kinder_card_logic": True
     }
 }

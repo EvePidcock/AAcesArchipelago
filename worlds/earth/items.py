@@ -30,6 +30,7 @@ ITEM_NAME_TO_ID = {
     "Event Cards": 2001,
     "Progressive Sprout Storage Cap": 2002,
     "Germination": 2003,
+    "Personal Ecosystem": 2004,
 
     "Progressive Starting Soil": 3001,
     "Progressive Starting Sprout": 3002,
@@ -89,6 +90,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Event Cards": ItemClassification.progression | ItemClassification.useful,
     "Progressive Sprout Storage Cap": ItemClassification.progression,
     "Germination": ItemClassification.progression | ItemClassification.useful,
+    "Personal Ecosystem": ItemClassification.progression | ItemClassification.useful,
 
     "Progressive Starting Soil": ItemClassification.useful,
     "Progressive Starting Sprout": ItemClassification.useful,
@@ -373,6 +375,11 @@ def create_all_items(world: EarthWorld) -> None:
 
     if world.options.starting_sprout_storage:
         starting_ability_items.append(world.create_item("Progressive Sprout Storage Cap"))
+
+    if world.options.starting_personal_ecosystem:
+        starting_ability_items.append(world.create_item("Personal Ecosystem"))
+    else:
+        itempool.append(world.create_item("Personal Ecosystem"))
 
     for item in starting_ability_items:
         world.push_precollected(item)

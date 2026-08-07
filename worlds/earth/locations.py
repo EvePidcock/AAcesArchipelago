@@ -54,7 +54,7 @@ LOCATION_NAME_TO_ID = {
     "Hippopotamus Claim": 20030,
     "Indonesian Pit Viper Claim": 20031,
     "King Penguin Claim": 20032,
-    "Siamese Rhinoceros Claim": 20033,
+    "Siamese Rhinoceros Beetle Claim": 20033,
     "Wood Duck Claim": 20034,
     "Grey Wolf Claim": 20035,
     "Seven-Spotted Ladybug Claim": 20036,
