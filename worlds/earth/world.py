@@ -24,7 +24,7 @@ from . import options as earth_options  # rename due to a name conflict with Wor
 # It is recommended that you read these in that specific order, then come back to the world class.
 class EarthWorld(World):
     """
-    Rail Route is a game about
+    Earth is an engine-building tableau-building board game for 1-6 players. This AP implementation is for the solo mode.
     """
 
     # The docstring should contain a description of the game, to be displayed on the WebHost.
