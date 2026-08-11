@@ -68,7 +68,12 @@ ITEM_NAME_TO_ID = {
 
     "Flower": 6001,
 
-    "Filler": 9001
+    "A Cool Bird": 9001,
+    "A Neat Mushroom": 9002,
+    "A Pretty Tree": 9003,
+    "A Lush Bush": 9004,
+    "A Raging River": 9005,
+    "A Little Bug": 9006
 }
 
 # Items should have a defined default classification.
@@ -130,7 +135,12 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
 
     "Flower": ItemClassification.progression,
 
-    "Filler": ItemClassification.filler,
+    "A Cool Bird": ItemClassification.filler,
+    "A Neat Mushroom": ItemClassification.filler,
+    "A Pretty Tree": ItemClassification.filler,
+    "A Lush Bush": ItemClassification.filler,
+    "A Raging River": ItemClassification.filler,
+    "A Little Bug": ItemClassification.filler
 }
 
 
@@ -145,7 +155,9 @@ class EarthItem(Item):
 # For now, let's make a function that returns the name of a random filler item here in items.py.
 def get_random_filler_item_name(world: EarthWorld) -> str:
 
-    return "Filler"
+    filler_items = ["A Cool Bird", "A Neat Mushroom", "A Pretty Tree", "A Lush Bush", "A Raging River", "A Little Bug"]
+
+    return world.random.sample(filler_items, 1)[0]
 
 
 def create_item_with_correct_classification(world: EarthWorld, name: str) -> EarthItem:

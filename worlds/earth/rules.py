@@ -99,7 +99,8 @@ def set_all_location_rules(world: EarthWorld) -> None:
                                             "Progressive Starting Leaf": 2,
                                             "Progressive Sprout Storage Cap": 2,
                                             "Progressive Green Ability Activation": 2,
-                                            "Event Cards": 1
+                                            "Event Cards": 1,
+                                            "Progressive Score Cap": 1
                                             }))
 
     world.set_rule(points150, HasAllCounts({"Personal Ecosystem": 1,
@@ -109,7 +110,8 @@ def set_all_location_rules(world: EarthWorld) -> None:
                                             "Progressive Blue Call": 2,
                                             "Progressive Green Ability Activation": 2,
                                             "Event Cards": 1,
-                                            "Terrain Abilities (Scoring)": 1
+                                            "Terrain Abilities (Scoring)": 1,
+                                            "Progressive Score Cap": 2
                                             }))
 
     world.set_rule(points200, HasAllCounts({"Personal Ecosystem": 1,
@@ -122,7 +124,8 @@ def set_all_location_rules(world: EarthWorld) -> None:
                                             "Progressive Green Ability Activation": 2,
                                             "Event Cards": 1,
                                             "Terrain Abilities (Scoring)": 1,
-                                            "Germination": 1
+                                            "Germination": 1,
+                                            "Progressive Score Cap": 3
                                             }))
 
     needs_eight_cards_played = ["Wood Duck Claim",
@@ -323,7 +326,7 @@ def set_all_location_rules(world: EarthWorld) -> None:
     has_needed_items_and_unlocks = HasAllCounts({"Progressive Sprout Storage Cap": 4,
                                           "Germination": 1,
                                           "Progressive Starting Leaf": 4,
-                                          "Progressive Score Cap": 4,
+                                          "Progressive Score Cap": 5,
                                           "Progressive Green Call": 6,
                                           "Progressive Red Call": 4,
                                           "Progressive Blue Call": 4,
