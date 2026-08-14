@@ -286,7 +286,6 @@ def create_all_items(world: EarthWorld) -> None:
         world.create_item("Progressive Yellow Ability Activation"),
         world.create_item("Progressive Yellow Ability Activation"),
         world.create_item("Progressive Yellow Ability Activation"),
-        world.create_item("Progressive Yellow Ability Activation"),
 
         world.create_item("Tableau Black Abilities"),
         world.create_item("Terrain Abilities (Cheapening)"),
@@ -373,11 +372,11 @@ def create_all_items(world: EarthWorld) -> None:
 
     starting_ability_items = [
         world.create_item("Progressive Green Call"),
-        world.create_item("Progressive Red Call"),
-        world.create_item("Progressive Blue Call"),
-        world.create_item("Progressive Yellow Call"),
+        #world.create_item("Progressive Red Call"),
+        #world.create_item("Progressive Blue Call"),
+        #world.create_item("Progressive Yellow Call"),
 
-        world.create_item("Progressive Green Ability Activation"),
+        #world.create_item("Progressive Green Ability Activation"),
         world.create_item("Progressive Red Ability Activation"),
         world.create_item("Progressive Blue Ability Activation"),
         world.create_item("Progressive Yellow Ability Activation")
