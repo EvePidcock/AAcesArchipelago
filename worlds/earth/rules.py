@@ -1,10 +1,8 @@
 from __future__ import annotations
-from rule_builder.rules import Has, True_, HasAll, HasAllCounts, HasAny, HasAnyCount, HasFromListUnique
 
+from rule_builder.rules import Has, True_, HasAll, HasAllCounts, HasAny, HasAnyCount, HasFromListUnique, Rule
+from . import locations
 from typing import TYPE_CHECKING
-
-from BaseClasses import CollectionState
-from worlds.generic.Rules import add_rule, set_rule
 
 if TYPE_CHECKING:
     from .world import EarthWorld
@@ -22,66 +20,95 @@ def set_all_rules(world: EarthWorld) -> None:
 
 
 def set_all_entrance_rules(world: EarthWorld) -> None:
-    # First, we need to actually grab our entrances. Luckily, there is a helper method for this.
 
     return
 
+def set_ecosystem_rules(world: EarthWorld) -> None:
+    ecosystems = locations.get_ecosystem_locs()
+
+    for ecosystem in ecosystems:
+        rule = True_()
+
+        if ecosystem.needs_events:
+            rule = rule & Has("Event Cards")
+
+        if ecosystem.red_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Red Call": ecosystem.red_calls, "Progressive Red Ability Activation": ecosystem.red_calls - 1})
+
+        if ecosystem.blue_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Blue Call": ecosystem.blue_calls, "Progressive Blue Ability Activation": ecosystem.blue_calls - 1})
+
+        if ecosystem.yellow_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Yellow Call": ecosystem.yellow_calls, "Progressive Yellow Ability Activation": ecosystem.yellow_calls - 1})
+
+        if ecosystem.needed_cards > 0:
+            calls = (ecosystem.needed_cards + 1) // 2 - 1
+            rule = rule & Has("Progressive Green Call", count=calls)
+            if ecosystem.red_calls < 2:
+                if ecosystem.needed_cards > 8:
+                    rule = rule & (HasAnyCount({"Progressive Red Call": 3, "Progressive Blue Call": 3})
+                                   | HasAllCounts({"Progressive Red Call": 2, "Progressive Blue Call": 1})
+                                   | HasAllCounts({"Progressive Red Call": 1, "Progressive Blue Call": 2}))
+                elif ecosystem.needed_cards > 4:
+                    rule = rule & (HasAnyCount({"Progressive Red Call": 2, "Progressive Blue Call": 2})
+                                   | HasAllCounts({"Progressive Red Call": 1, "Progressive Blue Call": 1}))
+                else:
+                    rule = rule & HasAnyCount({"Progressive Red Call": 1, "Progressive Blue Call": 1})
+
+        if world.options.kinder_card_logic:
+            if ecosystem.name == "Antarctica":
+                rule = rule & Has("Tableau Black Abilities")
+            elif ecosystem.name == "Mount Kilimanjaro":
+                rule = rule & HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)")
+
+        world.set_rule(world.get_location(locations.get_loc_name_from_eco(ecosystem)), rule)
+
+def set_fauna_rules(world: EarthWorld) -> None:
+    faunas = locations.get_fauna_locs()
+
+    for fauna in faunas:
+        rule = True_()
+
+        if fauna.needs_events:
+            rule = rule & Has("Event Cards")
+
+        if fauna.red_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Red Call": fauna.red_calls,
+                                        "Progressive Red Ability Activation": fauna.red_calls - 1})
+
+        if fauna.blue_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Blue Call": fauna.blue_calls,
+                                        "Progressive Blue Ability Activation": fauna.blue_calls - 1})
+
+        if fauna.yellow_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Yellow Call": fauna.yellow_calls,
+                                        "Progressive Yellow Ability Activation": fauna.yellow_calls - 1})
+
+        if fauna.needed_cards > 0:
+            calls = (fauna.needed_cards + 1) // 2 - 1
+            rule = rule & Has("Progressive Green Call", count=calls)
+            if fauna.red_calls < 2:
+                if fauna.needed_cards > 8:
+                    rule = rule & (HasAnyCount({"Progressive Red Call": 3, "Progressive Blue Call": 3})
+                                   | HasAllCounts({"Progressive Red Call": 2, "Progressive Blue Call": 1})
+                                   | HasAllCounts({"Progressive Red Call": 1, "Progressive Blue Call": 2}))
+                elif fauna.needed_cards > 4:
+                    rule = rule & (HasAnyCount({"Progressive Red Call": 2, "Progressive Blue Call": 2})
+                                   | HasAllCounts({"Progressive Red Call": 1, "Progressive Blue Call": 1}))
+                else:
+                    rule = rule & HasAnyCount({"Progressive Red Call": 1, "Progressive Blue Call": 1})
+
+        if world.options.kinder_card_logic:
+            if fauna.name == "Brown Bear":
+                rule = rule & HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)")
+
+        world.set_rule(world.get_location(locations.get_loc_name_from_fauna(fauna)), rule)
 
 def set_all_location_rules(world: EarthWorld) -> None:
-    # Location rules work no differently from Entrance rules.
-    # Most of our locations are chests that can simply be opened by walking up to them.
-    # Thus, their logical requirements are covered by the Entrance rules of the Entrances that were required to
-    # reach the region that the chest sits in.
-    # However, our two enemies work differently.
-    # Entering the room with the enemy is not enough, you also need to have enough combat items to be able to defeat it.
-    # So, we need to set requirements on the Locations themselves.
-    # Since combat is a bit more complicated, we'll use this chance to cover some advanced access rule concepts.
 
-    event_ecosystem = world.get_location("Angat Watershed Forest (25 pts)")
-    world.set_rule(event_ecosystem, Has("Event Cards"))
+    set_ecosystem_rules(world)
 
-    event_fauna = world.get_location("Green Tree Ant Claim")
-    world.set_rule(event_fauna, Has("Event Cards"))
-
-    set_ecosystem = world.get_location("Sakurajima (18 pts)")
-    world.set_rule(set_ecosystem, Has("Event Cards"))
-
-    set_fauna = world.get_location("Fire Salamander Claim")
-    world.set_rule(set_fauna, Has("Event Cards"))
-
-    condor = world.get_location("Andean Condor Claim")
-    gorilla = world.get_location("Mountain Gorilla Claim")
-    mole = world.get_location("European Mole Claim")
-    worm = world.get_location("Earthworm Claim")
-    eagle = world.get_location("Bald Eagle Claim")
-    woodpecker = world.get_location("Pale-Billed Woodpecker Claim")
-    marmot = world.get_location("Yellow-Bellied Marmot Claim")
-    squirrel = world.get_location("Red Squirrel Claim")
-
-    world.set_rule(condor, HasAllCounts({"Progressive Yellow Call": 3, "Progressive Yellow Ability Activation": 2}))
-    world.set_rule(gorilla, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 1, "Progressive Blue Call": 2, "Progressive Blue Ability Activation": 1}))
-    world.set_rule(mole, HasAllCounts({"Progressive Red Call": 3, "Progressive Red Ability Activation": 2}))
-    world.set_rule(worm, HasAllCounts({"Progressive Red Call": 3, "Progressive Red Ability Activation": 2}))
-    world.set_rule(eagle, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 1}))
-    world.set_rule(woodpecker, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 1}))
-    world.set_rule(marmot, HasAllCounts({"Progressive Blue Call": 3, "Progressive Blue Ability Activation": 2}))
-    world.set_rule(squirrel, HasAllCounts({"Progressive Blue Call": 2, "Progressive Blue Ability Activation": 1}))
-
-    canopies = world.get_location("Bwindi Impenetrable Forest (18 pts)")
-    all_cubes = world.get_location("Tongass National Forest (18 pts)")
-    soil = world.get_location("Great Plains (24 pts)")
-    compost = world.get_location("Amazon Rain Forest (24 pts)")
-    cards = world.get_location("Borneo Lowland Rain Forest (24 pts)")
-    growth = world.get_location("Madagascar Humid Canopy (18 pts)")
-    cubes = world.get_location("Tai Poutini National Park (18 pts)")
-
-    world.set_rule(canopies, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 2}))
-    world.set_rule(soil, HasAllCounts({"Progressive Red Call": 3, "Progressive Red Ability Activation": 2}))
-    world.set_rule(compost, HasAllCounts({"Progressive Red Call": 3, "Progressive Red Ability Activation": 2}))
-    world.set_rule(growth, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 2}))
-    world.set_rule(cards, HasAllCounts({"Progressive Yellow Call": 2, "Progressive Yellow Ability Activation": 2}))
-    world.set_rule(all_cubes, HasAllCounts({"Progressive Blue Call": 3, "Progressive Blue Ability Activation": 2}))
-    world.set_rule(cubes, HasAllCounts({"Progressive Blue Call": 2, "Progressive Blue Ability Activation": 2}))
+    set_fauna_rules(world)
 
     points50 = world.get_location("Score 50 Points")
     points100 = world.get_location("Score 100 Points")
@@ -128,63 +155,6 @@ def set_all_location_rules(world: EarthWorld) -> None:
                                             "Progressive Score Cap": 3
                                             }))
 
-    needs_eight_cards_played = ["Wood Duck Claim",
-                                "Siamese Rhinoceros Beetle Claim",
-                                "Hedgehog Claim",
-                                "Dung Beetle Claim",
-                                "Arctic Fox Claim",
-                                "American Alligator Claim",
-                                "Sri Lankan Leopard Claim",
-                                "Atlantic Puffin Claim",
-                                "Yellow Cheeked Gibbon Claim",
-                                "Hippopotamus Claim",
-                                "Mountain Lion Claim",
-                                "Plains Zebra Claim",
-                                "Northern Giraffe Claim",
-                                "Cairns Birdwing Butterfly Claim",
-                                "Red Squirrel Claim",
-                                "Western Moose Claim",
-                                "Seven-Spotted Ladybug Claim",
-                                "Black Wildebeest Claim",
-                                "Fire Salamander Claim",
-                                "Indonesian Pit Viper Claim",
-                                "Margay Claim",
-                                "Western Honeybee Claim",
-                                "Pale-Billed Woodpecker Claim"]
-    needs_four_plus_cards_played = ["Red Deer Claim",
-                                    "American Bison Claim",
-                                    "Kingfisher Claim",
-                                    "Echidna Claim",
-                                    "Siberian Tiger Claim",
-                                    "Bornean Orangutan Claim",
-                                    "Lubber Grasshopper Claim",
-                                    "Wild Boar Claim",
-                                    "Brown Bear Claim",
-                                    "Green Iguana Claim",
-                                    "Bald Eagle Claim",
-                                    "African Bush Elephant Claim",
-                                    "Praying Mantis Claim",
-                                    "King Penguin Claim",
-                                    "Panther Chameleon Claim",
-                                    "Mountain Gorilla Claim",
-                                    "Grey Wolf Claim",
-                                    "Brown-Throated Sloth Claim",
-                                    "Yellow-Bellied Marmot Claim"]
-    ecosystems_that_need_cards_played = [key for key, value in world.location_name_to_id.items() if (30000 < value < 40000)]
-    ecosystems_that_need_cards_played.remove("Great Plains (24 pts)")
-    ecosystems_that_need_cards_played.remove("Amazon Rain Forest (24 pts)")
-    ecosystems_that_need_cards_played.remove("Borneo Lowland Rain Forest (24 pts)")
-    ecosystems_that_need_cards_played.remove("Angat Watershed Forest (25 pts)")
-
-    for loc in ecosystems_that_need_cards_played:
-        world.set_rule(world.get_location(loc), HasAllCounts({"Progressive Green Call": 3}))
-
-    for loc in needs_eight_cards_played:
-        world.set_rule(world.get_location(loc), HasAllCounts({"Progressive Green Call": 3}))
-
-    for loc in needs_four_plus_cards_played:
-        world.set_rule(world.get_location(loc), HasAllCounts({"Progressive Green Call": 2}))
-
     if world.options.kinder_card_logic:
         black_ability_locs = ["Play card Bamboo Forest",
                                 "Play card Compost-filled Grounds",
@@ -208,13 +178,9 @@ def set_all_location_rules(world: EarthWorld) -> None:
                                 "Play card Chinese Elm",
                                 "Play card Volcanic Ash Plain",
                                 "Play card Monsoon Irrigated Plateau",
-                                "Play card Sunny Hillside",
-                                "Antarctica (18 pts)"]
+                                "Play card Sunny Hillside"]
         for loc in black_ability_locs:
             world.set_rule(world.get_location(loc), Has("Tableau Black Abilities"))
-
-        world.set_rule(world.get_location("Brown Bear Claim"), HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)"))
-        world.set_rule(world.get_location("Mount Kilimanjaro (20 pts)"), HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)"))
 
         scoring_brown_abilities = ["Play card Rainbow Mountain",
                                     "Play card Strait",
@@ -225,11 +191,11 @@ def set_all_location_rules(world: EarthWorld) -> None:
                                     "Play card Desert",
                                     "Play card Rain Forest",
                                     "Play card Mountain Forest",
-                                    "Play card Tropical Sierra",
+                                    #"Play card Tropical Sierra",
                                     "Play card Mountain Ridge",
                                     "Play card Tropical Jungle",
                                     "Play card Cordillera",
-                                    "Play card Volcanic Island",
+                                    #"Play card Volcanic Island",
                                     "Play card Putrefied Land",
                                     "Play card Prairie",
                                     "Play card Permafrost",
@@ -293,52 +259,57 @@ def set_all_location_rules(world: EarthWorld) -> None:
         for loc in replacement_brown_abilities:
             world.set_rule(world.get_location(loc), Has("Terrain Abilities (Replacement)"))
 
-        world.set_rule(world.get_location("Play card Volcanic Island"), Has("Event Cards"))
+        world.set_rule(world.get_location("Play card Volcanic Island"), Has("Event Cards") & Has("Terrain Abilities (Scoring)"))
         world.set_rule(world.get_location("Play card Cacao Tree"), Has("Event Cards"))
-        world.set_rule(world.get_location("Play card Tropical Sierra"), Has("Event Cards"))
+        world.set_rule(world.get_location("Play card Tropical Sierra"), Has("Event Cards") & Has("Terrain Abilities (Scoring)"))
 
-    has_four_climates = HasFromListUnique("Climate Unlock: Hemiboreal / Tropical Savanna",
-                            "Climate Unlock: Dry Winter Subtropical Highland / Tropical Rain Forest",
-                            "Climate Unlock: Tundra / Tropical Monsoon",
-                            "Climate Unlock: Marine West Coast / Mediterranean Cold Summer",
-                            "Climate Unlock: Arid / Humid Subtropical",
-                            "Climate Unlock: Subpolar Oceanic / Mediterranean Hot Summer",
-                            "Climate Unlock: Oceanic / Subtropical Highland",
-                            "Climate Unlock: Boreal / Ice Cap",
-                            "Climate Unlock: Hot Summer Continental / Desert",
-                            "Climate Unlock: Semi-Arid / Dry Winter Subpolar Oceanic",
-                            "Climate Unlock: Cold Arid Desert / Hot Steppe",
-                            "Climate Unlock: Cold Winter Continental / Temperate Hot Summer", count = 4)
+    has_four_climates = HasFromListUnique(
+        "Climate Unlock: Hemiboreal / Tropical Savanna",
+        "Climate Unlock: Dry Winter Subtropical Highland / Tropical Rain Forest",
+        "Climate Unlock: Tundra / Tropical Monsoon",
+        "Climate Unlock: Marine West Coast / Mediterranean Cold Summer",
+        "Climate Unlock: Arid / Humid Subtropical",
+        "Climate Unlock: Subpolar Oceanic / Mediterranean Hot Summer",
+        "Climate Unlock: Oceanic / Subtropical Highland",
+        "Climate Unlock: Boreal / Ice Cap",
+        "Climate Unlock: Hot Summer Continental / Desert",
+        "Climate Unlock: Semi-Arid / Dry Winter Subpolar Oceanic",
+        "Climate Unlock: Cold Arid Desert / Hot Steppe",
+        "Climate Unlock: Cold Winter Continental / Temperate Hot Summer",
+        count = 4)
 
-    has_six_islands = HasFromListUnique("Island Unlock: Fogo / Whakaari",
-                           "Island Unlock: Kauai / Vulcano",
-                           "Island Unlock: La Palma / Metis Shoal",
-                           "Island Unlock: Barren / Santorini",
-                           "Island Unlock: Kyushu / Jamaica",
-                           "Island Unlock: Lombok / Hawai'i",
-                           "Island Unlock: Deception / Nisyros",
-                           "Island Unlock: Iceland / Mo'orea",
-                           "Island Unlock: Nishinoshima / Luzon",
-                           "Island Unlock: Jan Mayen / Kunashir",
-                           "Island Unlock: Ross Island / Vancouver Island",
-                           "Island Unlock: Java Island / Madagascar Island", count = 6)
+    has_six_islands = HasFromListUnique(
+        "Island Unlock: Fogo / Whakaari",
+        "Island Unlock: Kauai / Vulcano",
+        "Island Unlock: La Palma / Metis Shoal",
+        "Island Unlock: Barren / Santorini",
+        "Island Unlock: Kyushu / Jamaica",
+        "Island Unlock: Lombok / Hawai'i",
+        "Island Unlock: Deception / Nisyros",
+        "Island Unlock: Iceland / Mo'orea",
+        "Island Unlock: Nishinoshima / Luzon",
+        "Island Unlock: Jan Mayen / Kunashir",
+        "Island Unlock: Ross Island / Vancouver Island",
+        "Island Unlock: Java Island / Madagascar Island",
+        count = 6)
 
-    has_needed_items_and_unlocks = HasAllCounts({"Progressive Sprout Storage Cap": 4,
-                                          "Germination": 1,
-                                          "Progressive Starting Leaf": 4,
-                                          "Progressive Score Cap": 5,
-                                          "Progressive Green Call": 6,
-                                          "Progressive Red Call": 4,
-                                          "Progressive Blue Call": 4,
-                                          "Progressive Yellow Call": 4,
-                                          "Progressive Green Ability Activation": 4,
-                                          "Progressive Red Ability Activation": 5,
-                                          "Progressive Blue Ability Activation": 5,
-                                          "Progressive Yellow Ability Activation": 5,
-                                          "Tableau Black Abilities": 1,
-                                          "Terrain Abilities (Scoring)": 1,
-                                          "Personal Ecosystem": 1
-                                          })
+    has_needed_items_and_unlocks = HasAllCounts({
+        "Progressive Sprout Storage Cap": 4,
+        "Germination": 1,
+        "Progressive Starting Leaf": 4,
+        "Progressive Score Cap": 5,
+        "Progressive Green Call": 6,
+        "Progressive Red Call": 4,
+        "Progressive Blue Call": 4,
+        "Progressive Yellow Call": 4,
+        "Progressive Green Ability Activation": 4,
+        "Progressive Red Ability Activation": 5,
+        "Progressive Blue Ability Activation": 5,
+        "Progressive Yellow Ability Activation": 5,
+        "Tableau Black Abilities": 1,
+        "Terrain Abilities (Scoring)": 1,
+        "Personal Ecosystem": 1
+        })
 
     victory = world.get_location("Game finished")
     if world.options.flower_hunt:

@@ -24,7 +24,7 @@ from . import options as earth_options  # rename due to a name conflict with Wor
 # It is recommended that you read these in that specific order, then come back to the world class.
 class EarthWorld(World):
     """
-    Rail Route is a game about
+    Earth is a tableau-building, engine-building board game for 1-6 players. This implementation is of the solo game mode
     """
 
     # The docstring should contain a description of the game, to be displayed on the WebHost.
@@ -44,7 +44,7 @@ class EarthWorld(World):
 
     # Our world class must have a static location_name_to_id and item_name_to_id defined.
     # We define these in regions.py and items.py respectively, so we just set them here.
-    location_name_to_id = locations.LOCATION_NAME_TO_ID
+    location_name_to_id = locations.get_loc_names_to_id_dict()
     item_name_to_id = items.ITEM_NAME_TO_ID
 
     # There is always one region that the generator starts from & assumes you can always go back to.
