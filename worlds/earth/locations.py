@@ -117,7 +117,7 @@ LOCATION_NAME_TO_ID = {
     "Twin Islands (20 pts)": 30039,
     "Lonely Island (20 pts)": 30040,
     "Serengeti (18 pts)": 30041,
-    "Okavango (18 pts)": 30042,
+    "Okavango Delta (18 pts)": 30042,
     "Antarctica (18 pts)": 30043,
     "Great Plains (24 pts)": 30044,
     "Himalayas (21 pts)": 30045,
