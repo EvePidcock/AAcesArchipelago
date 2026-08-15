@@ -1,114 +1,69 @@
 from __future__ import annotations
 
+
 from rule_builder.rules import Has, True_, HasAll, HasAllCounts, HasAny, HasAnyCount, HasFromListUnique, Rule
-from . import locations
-from typing import TYPE_CHECKING
+from . import LocationBuilder
+from typing import TYPE_CHECKING, List
 
 if TYPE_CHECKING:
     from .world import EarthWorld
 
 
 def set_all_rules(world: EarthWorld) -> None:
-    # In order for AP to generate an item layout that is actually possible for the player to complete,
-    # we need to define rules for our Entrances and Locations.
-    # Note: Regions do not have rules, the Entrances connecting them do!
-    # We'll do entrances first, then locations, and then finally we set our victory condition.
-
-    set_all_entrance_rules(world)
     set_all_location_rules(world)
     set_completion_condition(world)
 
 
-def set_all_entrance_rules(world: EarthWorld) -> None:
+def set_ecosystem_and_fauna_rules(world: EarthWorld) -> None:
+    ecosystems = LocationBuilder.get_ecosystem_locs()
+    fauna = LocationBuilder.get_fauna_locs()
 
-    return
+    eco_and_fauna_locs: List[LocationBuilder.EcoOrFaunaLoc] = []
+    eco_and_fauna_locs.extend(ecosystems)
+    eco_and_fauna_locs.extend(fauna)
 
-def set_ecosystem_rules(world: EarthWorld) -> None:
-    ecosystems = locations.get_ecosystem_locs()
-
-    for ecosystem in ecosystems:
+    for loc in eco_and_fauna_locs:
         rule = True_()
 
-        if ecosystem.needs_events:
+        if loc.needs_events:
             rule = rule & Has("Event Cards")
 
-        if ecosystem.red_calls > 0:
-            rule = rule & HasAllCounts({"Progressive Red Call": ecosystem.red_calls, "Progressive Red Ability Activation": ecosystem.red_calls - 1})
+        if loc.red_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Red Call": loc.red_calls, "Progressive Red Ability Activation": loc.red_calls - 1})
 
-        if ecosystem.blue_calls > 0:
-            rule = rule & HasAllCounts({"Progressive Blue Call": ecosystem.blue_calls, "Progressive Blue Ability Activation": ecosystem.blue_calls - 1})
+        if loc.blue_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Blue Call": loc.blue_calls, "Progressive Blue Ability Activation": loc.blue_calls - 1})
 
-        if ecosystem.yellow_calls > 0:
-            rule = rule & HasAllCounts({"Progressive Yellow Call": ecosystem.yellow_calls, "Progressive Yellow Ability Activation": ecosystem.yellow_calls - 1})
+        if loc.yellow_calls > 0:
+            rule = rule & HasAllCounts({"Progressive Yellow Call": loc.yellow_calls, "Progressive Yellow Ability Activation": loc.yellow_calls - 1})
 
-        if ecosystem.needed_cards > 0:
-            calls = (ecosystem.needed_cards + 1) // 2 - 1
+        if loc.needed_cards > 0:
+            calls = (loc.needed_cards + 1) // 2 - 1
             rule = rule & Has("Progressive Green Call", count=calls)
-            if ecosystem.red_calls < 2:
-                if ecosystem.needed_cards > 8:
+            if loc.red_calls < 2:
+                if loc.needed_cards > 8:
                     rule = rule & (HasAnyCount({"Progressive Red Call": 3, "Progressive Blue Call": 3})
                                    | HasAllCounts({"Progressive Red Call": 2, "Progressive Blue Call": 1})
                                    | HasAllCounts({"Progressive Red Call": 1, "Progressive Blue Call": 2}))
-                elif ecosystem.needed_cards > 4:
+                elif loc.needed_cards > 4:
                     rule = rule & (HasAnyCount({"Progressive Red Call": 2, "Progressive Blue Call": 2})
                                    | HasAllCounts({"Progressive Red Call": 1, "Progressive Blue Call": 1}))
                 else:
                     rule = rule & HasAnyCount({"Progressive Red Call": 1, "Progressive Blue Call": 1})
 
         if world.options.kinder_card_logic:
-            if ecosystem.name == "Antarctica":
+            if loc.name == "Antarctica":
                 rule = rule & Has("Tableau Black Abilities")
-            elif ecosystem.name == "Mount Kilimanjaro":
+            elif loc.name == "Mount Kilimanjaro":
+                rule = rule & HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)")
+            elif loc.name == "Brown Bear":
                 rule = rule & HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)")
 
-        world.set_rule(world.get_location(locations.get_loc_name_from_eco(ecosystem)), rule)
-
-def set_fauna_rules(world: EarthWorld) -> None:
-    faunas = locations.get_fauna_locs()
-
-    for fauna in faunas:
-        rule = True_()
-
-        if fauna.needs_events:
-            rule = rule & Has("Event Cards")
-
-        if fauna.red_calls > 0:
-            rule = rule & HasAllCounts({"Progressive Red Call": fauna.red_calls,
-                                        "Progressive Red Ability Activation": fauna.red_calls - 1})
-
-        if fauna.blue_calls > 0:
-            rule = rule & HasAllCounts({"Progressive Blue Call": fauna.blue_calls,
-                                        "Progressive Blue Ability Activation": fauna.blue_calls - 1})
-
-        if fauna.yellow_calls > 0:
-            rule = rule & HasAllCounts({"Progressive Yellow Call": fauna.yellow_calls,
-                                        "Progressive Yellow Ability Activation": fauna.yellow_calls - 1})
-
-        if fauna.needed_cards > 0:
-            calls = (fauna.needed_cards + 1) // 2 - 1
-            rule = rule & Has("Progressive Green Call", count=calls)
-            if fauna.red_calls < 2:
-                if fauna.needed_cards > 8:
-                    rule = rule & (HasAnyCount({"Progressive Red Call": 3, "Progressive Blue Call": 3})
-                                   | HasAllCounts({"Progressive Red Call": 2, "Progressive Blue Call": 1})
-                                   | HasAllCounts({"Progressive Red Call": 1, "Progressive Blue Call": 2}))
-                elif fauna.needed_cards > 4:
-                    rule = rule & (HasAnyCount({"Progressive Red Call": 2, "Progressive Blue Call": 2})
-                                   | HasAllCounts({"Progressive Red Call": 1, "Progressive Blue Call": 1}))
-                else:
-                    rule = rule & HasAnyCount({"Progressive Red Call": 1, "Progressive Blue Call": 1})
-
-        if world.options.kinder_card_logic:
-            if fauna.name == "Brown Bear":
-                rule = rule & HasAny("Terrain Abilities (Cheapening)", "Terrain Abilities (Scoring)", "Terrain Abilities (Replacement)")
-
-        world.set_rule(world.get_location(locations.get_loc_name_from_fauna(fauna)), rule)
+        world.set_rule(world.get_location(LocationBuilder.get_loc_name_from_obj(loc)), rule)
 
 def set_all_location_rules(world: EarthWorld) -> None:
 
-    set_ecosystem_rules(world)
-
-    set_fauna_rules(world)
+    set_ecosystem_and_fauna_rules(world)
 
     points50 = world.get_location("Score 50 Points")
     points100 = world.get_location("Score 100 Points")
@@ -321,6 +276,4 @@ def set_all_location_rules(world: EarthWorld) -> None:
 
 
 def set_completion_condition(world: EarthWorld) -> None:
-    # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
-    # So lets undo what we just did, and instead set the completion condition to:
     world.set_completion_rule(Has("Victory"))

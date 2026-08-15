@@ -1,87 +1,19 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING
 
-import json
-import pkgutil
-
-from BaseClasses import ItemClassification, Location
+from BaseClasses import Location, Region, Item
 
 from . import items
 
 if TYPE_CHECKING:
     from .world import EarthWorld
 
-class EcosystemLoc:
-    def __init__(self, name, points, needs_events, red_calls, blue_calls, yellow_calls, needed_cards, id):
-        self.name = name
-        self.points = points
-        self.needs_events = needs_events
-        self.red_calls = red_calls
-        self.blue_calls = blue_calls
-        self.yellow_calls = yellow_calls
-        self.needed_cards = needed_cards
-        self.id = id
-    # name: str
-    # points: int
-    # needs_events: bool
-    # red_calls, blue_calls, yellow_calls: int
-    # needed_cards: int
-    # id: int (long)
-
-def ecosystem_obj_decoder(l_obj):
-    return EcosystemLoc(l_obj['name'], l_obj['points'], l_obj['needs_event_cards'], l_obj['red_calls'], l_obj['blue_calls'], l_obj['yellow_calls'], l_obj['played_cards_needed'], l_obj['id'])
-
-def get_ecosystem_locs() -> list[EcosystemLoc]:
-    ecosystem_raw_data = pkgutil.get_data(
-        __name__, "data/ecosystems.json")
-    if ecosystem_raw_data:
-        location_data = json.loads(
-            ecosystem_raw_data, object_hook=ecosystem_obj_decoder)
-        eco_list: List[EcosystemLoc] = list(location_data)
-        return eco_list
-    empty_list: List[EcosystemLoc] = []
-    return empty_list
-
-def get_loc_name_from_eco(eco: EcosystemLoc) -> str:
-    return f"{eco.name} ({eco.points} pts)"
-
-class FaunaLoc:
-    def __init__(self, name, needs_events, red_calls, blue_calls, yellow_calls, needed_cards, id):
-        self.name = name
-        self.needs_events = needs_events
-        self.red_calls = red_calls
-        self.blue_calls = blue_calls
-        self.yellow_calls = yellow_calls
-        self.needed_cards = needed_cards
-        self.id = id
-    # name: str
-    # needs_events: bool
-    # red_calls, blue_calls, yellow_calls: int
-    # needed_cards: int
-    # id: int (long)
-
-def fauna_obj_decoder(l_obj):
-    return FaunaLoc(l_obj['name'], l_obj['needs_event_cards'], l_obj['red_calls'], l_obj['blue_calls'], l_obj['yellow_calls'], l_obj['played_cards_needed'], l_obj['id'])
-
-def get_fauna_locs() -> list[FaunaLoc]:
-    fauna_raw_data = pkgutil.get_data(
-        __name__, "data/fauna.json")
-    if fauna_raw_data:
-        location_data = json.loads(
-            fauna_raw_data, object_hook=fauna_obj_decoder)
-        fauna_list: List[FaunaLoc] = list(location_data)
-        return fauna_list
-    empty_list: List[FaunaLoc] = []
-    return empty_list
-
-def get_loc_name_from_fauna(fauna: FaunaLoc) -> str:
-    return f"{fauna.name} Claim"
-
-# Each Location instance must correctly report the "game" it belongs to.
-# To make this simple, it is common practice to subclass the basic Location class and override the "game" field.
 class EarthLocation(Location):
     game = "Earth"
+
+    def __init__(self, player, name, id: int, region: Region):
+        super().__init__(player, name, id, region)
 
 def get_loc_names_to_id_dict() -> dict[str, int]:
     loc_name_to_id = {
@@ -576,27 +508,17 @@ def get_loc_names_to_id_dict() -> dict[str, int]:
     }
     return loc_name_to_id
 
-# Let's make one more helper method before we begin actually creating locations.
-# Later on in the code, we'll want specific subsections of LOCATION_NAME_TO_ID.
-# To reduce the chance of copy-paste errors writing something like {"Chest": LOCATION_NAME_TO_ID["Chest"]},
-# let's make a helper method that takes a list of location names and returns them as a dict with their IDs.
-# Note: There is a minor typing quirk here. Some functions want location addresses to be an "int | None",
-# so while our function here only ever returns dict[str, int], we annotate it as dict[str, int | None].
 def get_location_names_with_ids(location_names: list[str]) -> dict[str, int | None]:
     return {location_name: get_loc_names_to_id_dict()[location_name] for location_name in location_names}
-
 
 def create_all_locations(world: EarthWorld) -> None:
     create_regular_locations(world)
     create_events(world)
 
-
 def create_regular_locations(world: EarthWorld) -> None:
-    # Finally, we need to put the Locations ("checks") into their regions.
-    # Once again, before we do anything, we can grab our regions we created by using world.get_region()
-
     event_cards = [key for key, value in get_loc_names_to_id_dict().items() if value > 41000]
-    all_others = [key for key, value in get_loc_names_to_id_dict().items() if value < 41000]
+    cards = [key for key, value in get_loc_names_to_id_dict().items() if (40000 < value < 41000)]
+    all_others = [key for key, value in get_loc_names_to_id_dict().items() if value < 40000]
 
     main = world.get_region("Main")
     events = world.get_region("Events")
@@ -604,44 +526,30 @@ def create_regular_locations(world: EarthWorld) -> None:
     main.add_locations(get_location_names_with_ids(all_others), EarthLocation)
     events.add_locations(get_location_names_with_ids(event_cards), EarthLocation)
 
+    card_names_and_ids = get_location_names_with_ids(cards)
+
+    allowed_progression_cards_count = world.options.allowed_progression_cards.value
+
+    card_ids = [id for card, id in card_names_and_ids.items()]
+
+    allowed_ids = world.random.sample(card_ids, allowed_progression_cards_count)
+
+    locs = []
+
+    for card, id in card_names_and_ids.items():
+        if id is None:
+            continue
+        loc = EarthLocation(world.player, card, id, main)
+        if id not in allowed_ids:
+            loc.item_rule = non_progression_only
+        locs.append(loc)
+
+    main.locations += locs
+
+def non_progression_only(item: Item) -> bool:
+    return not item.advancement
 
 def create_events(world: EarthWorld) -> None:
-    # Sometimes, the player may perform in-game actions that allow them to progress which are not related to Items.
-    # In our case, the player must press a button in the top left room to open the final boss door.
-    # AP has something for this purpose: "Event locations" and "Event items".
-    # An event location is no different than a regular location, except it has the address "None".
-    # It is treated during generation like any other location, but then it is discarded.
-    # This location cannot be "sent" and its item cannot be "received", but the item can be used in logic rules.
-    # Since we are creating more locations and adding them to regions, we need to grab those regions again first.
-    #top_left_room = world.get_region("Top Left Room")
-    #final_boss_room = world.get_region("Final Boss Room")
-
-    # One way to create an event is simply to use one of the normal methods of creating a location.
-    #button_in_top_left_room = RailRouteLocation(world.player, "Top Left Room Button", None, top_left_room)
-    #top_left_room.locations.append(button_in_top_left_room)
-
-    # We then need to put an event item onto the location.
-    # An event item is an item whose code is "None" (same as the event location's address),
-    # and whose classification is "progression". Item creation will be discussed more in items.py.
-    # Note: Usually, items are created in world.create_items(), which for us happens in items.py.
-    # However, when the location of an item is known ahead of time (as is the case with an event location/item pair),
-    # it is common practice to create the item when creating the location.
-    # Since locations also have to be finalized after world.create_regions(), which runs before world.create_items(),
-    # we'll create both the event location and the event item in our locations.py code.
-    #button_item = items.RailRouteItem("Top Left Room Button Pressed", ItemClassification.progression, None, world.player)
-    #button_in_top_left_room.place_locked_item(button_item)
-
-    # A way simpler way to do create an event location/item pair is by using the region.create_event helper.
-    # Luckily, we have another event we want to create: The Victory event.
-    # We will use this event to track whether the player can win the game.
-    # The Victory event is a completely optional abstraction - This will be discussed more in set_rules().
     world.get_region("Events").add_event(
         "Game finished", "Victory", location_type=EarthLocation, item_type=items.EarthItem
     )
-
-    # If you create all your regions and locations line-by-line like this,
-    # the length of your create_regions might get out of hand.
-    # Many worlds use more data-driven approaches using dataclasses or NamedTuples.
-    # However, it is worth understanding how the actual creation of regions and locations works,
-    # That way, we're not just mindlessly copy-pasting! :)
-    return
