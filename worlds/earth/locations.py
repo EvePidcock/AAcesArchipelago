@@ -518,13 +518,16 @@ def create_all_locations(world: EarthWorld) -> None:
 def create_regular_locations(world: EarthWorld) -> None:
     event_cards = [key for key, value in get_loc_names_to_id_dict().items() if value > 41000]
     cards = [key for key, value in get_loc_names_to_id_dict().items() if (40000 < value < 41000)]
-    all_others = [key for key, value in get_loc_names_to_id_dict().items() if value < 40000]
+    fauna_locs = [key for key, value in get_loc_names_to_id_dict().items() if (20000 < value < 30000)]
+    all_others = [key for key, value in get_loc_names_to_id_dict().items() if ((30000 < value < 40000) or value < 20000)]
 
     main = world.get_region("Main")
     events = world.get_region("Events")
+    fauna = world.get_region("Fauna")
 
     main.add_locations(get_location_names_with_ids(all_others), EarthLocation)
     events.add_locations(get_location_names_with_ids(event_cards), EarthLocation)
+    fauna.add_locations(get_location_names_with_ids(fauna_locs), EarthLocation)
 
     card_names_and_ids = get_location_names_with_ids(cards)
 

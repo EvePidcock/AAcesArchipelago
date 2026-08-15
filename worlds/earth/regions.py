@@ -16,8 +16,9 @@ def create_and_connect_regions(world: EarthWorld) -> None:
 def create_all_regions(world: EarthWorld) -> None:
     main = Region("Main", world.player, world.multiworld)
     events = Region("Events", world.player, world.multiworld)
+    fauna = Region("Fauna", world.player, world.multiworld)
 
-    regions = [main, events]
+    regions = [main, events, fauna]
 
     world.multiworld.regions += regions
 
@@ -25,6 +26,7 @@ def create_all_regions(world: EarthWorld) -> None:
 def connect_regions(world: EarthWorld) -> None:
     main = world.get_region("Main")
     events = world.get_region("Events")
+    fauna = world.get_region("Fauna")
 
     main.connect(events, "Main to Events", Has("Event Cards"))
-
+    main.connect(fauna, "Main to Fauna", Has("Progressive Starting Leaf"))
