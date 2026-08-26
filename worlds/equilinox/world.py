@@ -6,7 +6,7 @@ from worlds.AutoWorld import World
 
 # Imports of your world's files must be relative.
 from . import items, locations, regions, rules, web_world
-from . import options as earth_options  # rename due to a name conflict with World.options
+from . import options as equilinox_options  # rename due to a name conflict with World.options
 
 
 class EquilinoxWorld(World):
@@ -22,8 +22,10 @@ class EquilinoxWorld(World):
     starting_islands = []
     starting_climates = []
 
-    options_dataclass = earth_options.EquilinoxOptions
-    options: earth_options.EquilinoxOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
+    options_dataclass = equilinox_options.EquilinoxOptions
+    options: equilinox_options.EquilinoxOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
+
+    items.set_item_names_to_id()
 
     location_name_to_id = locations.get_loc_names_to_id_dict()
     item_name_to_id = items.ITEM_NAME_TO_ID

@@ -1,0 +1,626 @@
+[
+  {
+    "name": "Chicken",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 1
+  },
+  {
+    "name": "Sheep",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 2
+  },
+  {
+    "name": "Trout",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 3
+  },
+  {
+    "name": "Redfish",
+    "evolution_stage": 2,
+    "previous_evolution": "Trout",
+    "evolution_requirement": {
+      "color": "Pink",
+      "nearby_species": "Kelp",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 4
+  },
+  {
+    "name": "Guinea Pig",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 5
+  },
+  {
+    "name": "Wild Boar",
+    "evolution_stage": 2,
+    "previous_evolution": "Sheep",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "!Grassland",
+      "diet": "Fallen Fruit",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 6
+  },
+  {
+    "name": "Duck",
+    "evolution_stage": 2,
+    "previous_evolution": "Chicken",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Water Lily",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 7
+  },
+  {
+    "name": "Salmon",
+    "evolution_stage": 2,
+    "previous_evolution": "Trout",
+    "evolution_requirement": {
+      "color": "Orange",
+      "nearby_species": "Water Lily",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 6.6
+    },
+    "id": 8
+  },
+  {
+    "name": "Rabbit",
+    "evolution_stage": 2,
+    "previous_evolution": "Guinea Pig",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Ash Tree;Sycamore Tree",
+      "satisfaction": 85,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 9
+  },
+  {
+    "name": "Sparrow",
+    "evolution_stage": 2,
+    "previous_evolution": "Chicken",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Woodland",
+      "diet": "Barley",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 10
+  },
+  {
+    "name": "Squirrel",
+    "evolution_stage": 2,
+    "previous_evolution": "Guinea Pig",
+    "evolution_requirement": {
+      "color": "Dark Orange",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "Nuts",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 11
+  },
+  {
+    "name": "Clown Fish",
+    "evolution_stage": 3,
+    "previous_evolution": "Redfish",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Tropical Seaweed",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Tropical",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 12
+  },
+  {
+    "name": "Deer",
+    "evolution_stage": 2,
+    "previous_evolution": "Sheep",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Woodland",
+      "diet": "Fruit Bushes",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 13
+  },
+  {
+    "name": "Angel Fish",
+    "evolution_stage": 3,
+    "previous_evolution": "Redfish",
+    "evolution_requirement": {
+      "color": "Light Blue",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Tropical;River Bed",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 14
+  },
+  {
+    "name": "Goat",
+    "evolution_stage": 2,
+    "previous_evolution": "Sheep",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Snow",
+      "diet": "",
+      "altitude": ">50",
+      "speed": 0
+    },
+    "id": 15
+  },
+  {
+    "name": "Desert Hare",
+    "evolution_stage": 3,
+    "previous_evolution": "Rabbit",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "Carrot",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 16
+  },
+  {
+    "name": "Royal Gramma",
+    "evolution_stage": 3,
+    "previous_evolution": "Salmon",
+    "evolution_requirement": {
+      "color": "Purple",
+      "nearby_species": "Salmons (Gold)",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 17
+  },
+  {
+    "name": "Warthog",
+    "evolution_stage": 3,
+    "previous_evolution": "Wild Boar",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 90,
+      "size": 0,
+      "biome": "",
+      "diet": "Potato",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 18
+  },
+  {
+    "name": "Lizard",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 19
+  },
+  {
+    "name": "Fox",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 20
+  },
+  {
+    "name": "Neon Fish",
+    "evolution_stage": 4,
+    "previous_evolution": "Angel Fish",
+    "evolution_requirement": {
+      "color": "Neon Pink",
+      "nearby_species": "Coral (Neon Blue);Reptiles",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 21
+  },
+  {
+    "name": "Frog",
+    "evolution_stage": 2,
+    "previous_evolution": "Lizard",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Jungle",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 22
+  },
+  {
+    "name": "Pike",
+    "evolution_stage": 3,
+    "previous_evolution": "Salmon",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Bulrush",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 23
+  },
+  {
+    "name": "Jellyfish",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 24
+  },
+  {
+    "name": "Eagle",
+    "evolution_stage": 3,
+    "previous_evolution": "Sparrow",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Spruce Tree",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 25
+  },
+  {
+    "name": "Turtle",
+    "evolution_stage": 2,
+    "previous_evolution": "Lizard",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Leafy Plant;Tropical Seaweed",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 26
+  },
+  {
+    "name": "Fly",
+    "evolution_stage": 2,
+    "previous_evolution": "Butterfly",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Mushrooms;Turnip",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 27
+  },
+  {
+    "name": "Butterfly",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 28
+  },
+  {
+    "name": "Toad",
+    "evolution_stage": 3,
+    "previous_evolution": "Frog",
+    "evolution_requirement": {
+      "color": "Mud",
+      "nearby_species": "",
+      "satisfaction": 95,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 29
+  },
+  {
+    "name": "Meerkat",
+    "evolution_stage": 4,
+    "previous_evolution": "Desert Hare",
+    "evolution_requirement": {
+      "color": "Beige",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "Desert Grass",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 30
+  },
+  {
+    "name": "Toucan",
+    "evolution_stage": 3,
+    "previous_evolution": "Sparrow",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Canopy Tree",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 31
+  },
+  {
+    "name": "Dove",
+    "evolution_stage": 3,
+    "previous_evolution": "Sparrow",
+    "evolution_requirement": {
+      "color": "White",
+      "nearby_species": "Primrose",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 32
+  },
+  {
+    "name": "Bee",
+    "evolution_stage": 2,
+    "previous_evolution": "Butterfly",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "Poppy",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 33
+  },
+  {
+    "name": "Wolf",
+    "evolution_stage": 2,
+    "previous_evolution": "Fox",
+    "evolution_requirement": {
+      "color": "Grey",
+      "nearby_species": "Snow Rocks",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 34
+  },
+  {
+    "name": "Dolphin",
+    "evolution_stage": 4,
+    "previous_evolution": "Pike",
+    "evolution_requirement": {
+      "color": "Grey",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Tropical",
+      "diet": "Angel Fish",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 35
+  },
+  {
+    "name": "Peacock",
+    "evolution_stage": 3,
+    "previous_evolution": "Duck",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "Hive",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 36
+  },
+  {
+    "name": "Beaver",
+    "evolution_stage": 3,
+    "previous_evolution": "Rabbit",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Bulrush;Wobbly Tree",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 37
+  },
+  {
+    "name": "Bear",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "diet": "",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 38
+  },
+  {
+    "name": "Camel",
+    "evolution_stage": 3,
+    "previous_evolution": "Deer",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Beaver Lodge",
+      "satisfaction": 0,
+      "size": 1.20,
+      "biome": "",
+      "diet": "Blueberry Bush",
+      "altitude": "",
+      "speed": 0
+    },
+    "id": 39
+  }
+]

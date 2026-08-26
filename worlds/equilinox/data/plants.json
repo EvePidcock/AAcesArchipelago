@@ -1,0 +1,1472 @@
+[
+  {
+    "name": "Grass Tuft",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 1
+  },
+  {
+    "name": "Daisy",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 2
+  },
+  {
+    "name": "Stones",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 3
+  },
+  {
+    "name": "Brown Stones",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 4
+  },
+  {
+    "name": "Wheat",
+    "evolution_stage": 2,
+    "previous_evolution": "Grass Tuft",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Stones",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 5
+  },
+  {
+    "name": "Buttercup",
+    "evolution_stage": 2,
+    "previous_evolution": "Daisy",
+    "evolution_requirement": {
+      "color": "Yellow",
+      "nearby_species": "",
+      "satisfaction": 85,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 6
+  },
+  {
+    "name": "Seaweed",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 7
+  },
+  {
+    "name": "Wild Mint",
+    "evolution_stage": 2,
+    "previous_evolution": "Grass Tuft",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 1.05,
+      "biome": "Grassland",
+      "altitude": ""
+    },
+    "id": 8
+  },
+  {
+    "name": "Tulip",
+    "evolution_stage": 2,
+    "previous_evolution": "Daisy",
+    "evolution_requirement": {
+      "color": "Light Blue",
+      "nearby_species": "Grassland Trees",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 9
+  },
+  {
+    "name": "Button Mushroom",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 10
+  },
+  {
+    "name": "Oak Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 11
+  },
+  {
+    "name": "Oregano",
+    "evolution_stage": 2,
+    "previous_evolution": "Grass Tuft",
+    "evolution_requirement": {
+      "color": "Mud Green",
+      "nearby_species": "Mushrooms",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 12
+  },
+  {
+    "name": "Rosemary",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 13
+  },
+  {
+    "name": "Kelp",
+    "evolution_stage": 2,
+    "previous_evolution": "Seaweed",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Large Rocks",
+      "satisfaction": 0,
+      "size": 1.04,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 14
+  },
+  {
+    "name": "Shell",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 15
+  },
+  {
+    "name": "Rock",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 16
+  },
+  {
+    "name": "Brown Rock",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 17
+  },
+  {
+    "name": "Water Lily",
+    "evolution_stage": 2,
+    "previous_evolution": "Seaweed",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Redfish",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": "<-4"
+    },
+    "id": 18
+  },
+  {
+    "name": "Birch Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 19
+  },
+  {
+    "name": "Sage",
+    "evolution_stage": 2,
+    "previous_evolution": "Rosemary",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Forest Trees;Stones",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 20
+  },
+  {
+    "name": "Heather",
+    "evolution_stage": 2,
+    "previous_evolution": "Rosemary",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Fallen Fruit;Rocks/Stones",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 21
+  },
+  {
+    "name": "Elm Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Oak Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Woodland",
+      "altitude": ""
+    },
+    "id": 22
+  },
+  {
+    "name": "Tall Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 23
+  },
+  {
+    "name": "Red Maple Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Birch Tree",
+    "evolution_requirement": {
+      "color": "Red",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ">35"
+    },
+    "id": 24
+  },
+  {
+    "name": "Sycamore Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Oak Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Herbs;Flowers",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 25
+  },
+  {
+    "name": "Juniper Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Tall Tree",
+    "evolution_requirement": {
+      "color": "Dark Green",
+      "nearby_species": "Animals",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 26
+  },
+  {
+    "name": "Apple Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Oak Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 50,
+      "size": 0,
+      "biome": "Forest",
+      "altitude": ""
+    },
+    "id": 27
+  },
+  {
+    "name": "Fern",
+    "evolution_stage": 2,
+    "previous_evolution": "Rosemary",
+    "evolution_requirement": {
+      "color": "Dark Green",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 1.10,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 28
+  },
+  {
+    "name": "Jungle Rocks",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 29
+  },
+  {
+    "name": "Pansies",
+    "evolution_stage": 2,
+    "previous_evolution": "Daisy",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Forest",
+      "altitude": ""
+    },
+    "id": 30
+  },
+  {
+    "name": "Bluebell",
+    "evolution_stage": 3,
+    "previous_evolution": "Tulip",
+    "evolution_requirement": {
+      "color": "Purple",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Snow",
+      "altitude": ""
+    },
+    "id": 31
+  },
+  {
+    "name": "Yucca",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 32
+  },
+  {
+    "name": "Snow Rocks",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 33
+  },
+  {
+    "name": "Tropical Mushroom",
+    "evolution_stage": 2,
+    "previous_evolution": "Button Mushroom",
+    "evolution_requirement": {
+      "color": "Light Blue",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Tropical",
+      "altitude": ""
+    },
+    "id": 34
+  },
+  {
+    "name": "Cedar Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Tall Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Heather",
+      "satisfaction": 0,
+      "size": 1.08,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 35
+  },
+  {
+    "name": "Barley",
+    "evolution_stage": 3,
+    "previous_evolution": "Heather",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Forest Trees",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 36
+  },
+  {
+    "name": "Tropical Seaweed",
+    "evolution_stage": 3,
+    "previous_evolution": "Kelp",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Large Rocks",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Tropical",
+      "altitude": ""
+    },
+    "id": 37
+  },
+  {
+    "name": "Wobbly Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Birch Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Sheep",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Grassland",
+      "altitude": "<15"
+    },
+    "id": 38
+  },
+  {
+    "name": "Poppy",
+    "evolution_stage": 3,
+    "previous_evolution": "Buttercup",
+    "evolution_requirement": {
+      "color": "Red",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Woodland",
+      "altitude": ""
+    },
+    "id": 39
+  },
+  {
+    "name": "Spruce Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Fir Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Bluebell",
+      "satisfaction": 0,
+      "size": 1.07,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 40
+  },
+  {
+    "name": "lily",
+    "evolution_stage": 3,
+    "previous_evolution": "Pansies",
+    "evolution_requirement": {
+      "color": "White",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 41
+  },
+  {
+    "name": "Tomato Plant",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 42
+  },
+  {
+    "name": "Snap Dragon",
+    "evolution_stage": 3,
+    "previous_evolution": "Buttercup",
+    "evolution_requirement": {
+      "color": "Purple",
+      "nearby_species": "Small Herbivores",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 43
+  },
+  {
+    "name": "Small Cactus",
+    "evolution_stage": 2,
+    "previous_evolution": "Yucca",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Rocks/Stones",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": "<15"
+    },
+    "id": 44
+  },
+  {
+    "name": "Jungle Mushroom",
+    "evolution_stage": 2,
+    "previous_evolution": "Button Mushroom",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 90,
+      "size": 0,
+      "biome": "Jungle",
+      "altitude": ""
+    },
+    "id": 45
+  },
+  {
+    "name": "Swamp Grass",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 46
+  },
+  {
+    "name": "Desert Grass",
+    "evolution_stage": 4,
+    "previous_evolution": "Barley",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Desert Rock",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 47
+  },
+  {
+    "name": "Carrot",
+    "evolution_stage": 3,
+    "previous_evolution": "Wild Mint",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Rabbit",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Grassland",
+      "altitude": ""
+    },
+    "id": 48
+  },
+  {
+    "name": "Jungle Grass",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 49
+  },
+  {
+    "name": "Jungle Flower",
+    "evolution_stage": 2,
+    "previous_evolution": "Jungle Grass",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Stones;Jungle Trees",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 50
+  },
+  {
+    "name": "Potato Plant",
+    "evolution_stage": 3,
+    "previous_evolution": "Sage",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Acer Tree",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Forest",
+      "altitude": ""
+    },
+    "id": 51
+  },
+  {
+    "name": "Prickly Pear",
+    "evolution_stage": 2,
+    "previous_evolution": "Yucca",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 1.08,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 52
+  },
+  {
+    "name": "Red Mushroom",
+    "evolution_stage": 2,
+    "previous_evolution": "Button Mushroom",
+    "evolution_requirement": {
+      "color": "Red",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Swamp",
+      "altitude": ""
+    },
+    "id": 53
+  },
+  {
+    "name": "Rose",
+    "evolution_stage": 3,
+    "previous_evolution": "Tulip",
+    "evolution_requirement": {
+      "color": "Red",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Woodland",
+      "altitude": ""
+    },
+    "id": 54
+  },
+  {
+    "name": "Coral",
+    "evolution_stage": 4,
+    "previous_evolution": "Tropical Seaweed",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Shell;Clown Fish (Cyan)",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Tropical",
+      "altitude": ""
+    },
+    "id": 55
+  },
+  {
+    "name": "Desert Rock",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 56
+  },
+  {
+    "name": "Marigolds",
+    "evolution_stage": 4,
+    "previous_evolution": "Lily",
+    "evolution_requirement": {
+      "color": "Orange",
+      "nearby_species": "Nuts",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Woodland",
+      "altitude": ""
+    },
+    "id": 57
+  },
+  {
+    "name": "Turnip",
+    "evolution_stage": 2,
+    "previous_evolution": "Swamp Grass",
+    "evolution_requirement": {
+      "color": "Mud Green",
+      "nearby_species": "Slimy Tree;Willow Tree",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 58
+  },
+  {
+    "name": "Berry Bush",
+    "evolution_stage": 2,
+    "previous_evolution": "Tomato Plant",
+    "evolution_requirement": {
+      "color": "Pink",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "!Grassland",
+      "altitude": ""
+    },
+    "id": 59
+  },
+  {
+    "name": "Lush Grass",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 60
+  },
+  {
+    "name": "Tropical Flower",
+    "evolution_stage": 2,
+    "previous_evolution": "Flowery Grass",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Lizard",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 61
+  },
+  {
+    "name": "Jungle Plant",
+    "evolution_stage": 2,
+    "previous_evolution": "Jungle Grass",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Jungle Rocks",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 62
+  },
+  {
+    "name": "Sunflower",
+    "evolution_stage": 4,
+    "previous_evolution": "Poppy",
+    "evolution_requirement": {
+      "color": "Yellow",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 1.10,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 63
+  },
+  {
+    "name": "Fir Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 64
+  },
+  {
+    "name": "Holly Bush",
+    "evolution_stage": 3,
+    "previous_evolution": "Berry Bush",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ">45;<60"
+    },
+    "id": 65
+  },
+  {
+    "name": "Leafy Plant",
+    "evolution_stage": 2,
+    "previous_evolution": "Flowery Grass",
+    "evolution_requirement": {
+      "color": "Green",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 1.10,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 66
+  },
+  {
+    "name": "Tall Mushroom",
+    "evolution_stage": 3,
+    "previous_evolution": "Red Mushroom",
+    "evolution_requirement": {
+      "color": "Pink",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Lush",
+      "altitude": ""
+    },
+    "id": 67
+  },
+  {
+    "name": "Willow Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 68
+  },
+  {
+    "name": "Medium Cactus",
+    "evolution_stage": 3,
+    "previous_evolution": "Small Cactus",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Desert Trees",
+      "satisfaction": 0,
+      "size": 1.12,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 69
+  },
+  {
+    "name": "Nut Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Sycamore Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Snap Dragon",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Woodland",
+      "altitude": ""
+    },
+    "id": 70
+  },
+  {
+    "name": "Acer Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Cedar Tree",
+    "evolution_requirement": {
+      "color": "Dark Orange",
+      "nearby_species": "Sage;Wild Boar",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 71
+  },
+  {
+    "name": "Flowery Grass",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 72
+  },
+  {
+    "name": "Joshua Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 73
+  },
+  {
+    "name": "Ash Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Elm Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Flowers",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Woodland",
+      "altitude": ""
+    },
+    "id": 74
+  },
+  {
+    "name": "Primrose",
+    "evolution_stage": 2,
+    "previous_evolution": "Lush Grass",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Rocks/Stones",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 75
+  },
+  {
+    "name": "Vine Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 76
+  },
+  {
+    "name": "Bromeliad",
+    "evolution_stage": 3,
+    "previous_evolution": "Tropical Flower",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Insects",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 77
+  },
+  {
+    "name": "Palm Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 78
+  },
+  {
+    "name": "Blueberry Bush",
+    "evolution_stage": 3,
+    "previous_evolution": "Berry Bush",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Bee",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 79
+  },
+  {
+    "name": "Bulrush",
+    "evolution_stage": 2,
+    "previous_evolution": "Swamp Grass",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Rocks/Stones",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": "<6"
+    },
+    "id": 80
+  },
+  {
+    "name": "Slimy Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Willow Tree",
+    "evolution_requirement": {
+      "color": "Grey",
+      "nearby_species": "Large Rocks",
+      "satisfaction": 0,
+      "size": 1.10,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 81
+  },
+  {
+    "name": "Red Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Pink Tree",
+    "evolution_requirement": {
+      "color": "Red",
+      "nearby_species": "Primrose;Tall Mushroom",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 82
+  },
+  {
+    "name": "Swamp Flower",
+    "evolution_stage": 3,
+    "previous_evolution": "Bulrush",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Toad",
+      "satisfaction": 90,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 83
+  },
+  {
+    "name": "Ficus Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Vine Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Jungle Mushroom",
+      "satisfaction": 0,
+      "size": 1.06,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 84
+  },
+  {
+    "name": "Pagoda Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Birch Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Sunflower",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 85
+  },
+  {
+    "name": "Bamboo",
+    "evolution_stage": 3,
+    "previous_evolution": "Primrose",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Tall Mushroom",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": "<20"
+    },
+    "id": 86
+  },
+  {
+    "name": "Flower Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Palm Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Reptiles;Tropical Mushroom",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 87
+  },
+  {
+    "name": "Pink Tree",
+    "evolution_stage": 1,
+    "previous_evolution": "",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 88
+  },
+  {
+    "name": "Healbloom",
+    "evolution_stage": 3,
+    "previous_evolution": "Tropical Flower",
+    "evolution_requirement": {
+      "color": "Purple",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 89
+  },
+  {
+    "name": "Banana Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Palm Tree",
+    "evolution_requirement": {
+      "color": "Mud Green",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 1.20,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 90
+  },
+  {
+    "name": "Eucalyptus Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Red Maple Tree",
+    "evolution_requirement": {
+      "color": "Light Green",
+      "nearby_species": "Insects",
+      "satisfaction": 0,
+      "size": 1.10,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 91
+  },
+  {
+    "name": "Umbrella Tree",
+    "evolution_stage": 2,
+    "previous_evolution": "Joshua Tree",
+    "evolution_requirement": {
+      "color": "Beige",
+      "nearby_species": "",
+      "satisfaction": 0,
+      "size": 1.15,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 92
+  },
+  {
+    "name": "Canopy Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Ficus Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Toad",
+      "satisfaction": 0,
+      "size": 1.20,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 93
+  },
+  {
+    "name": "Fly Trapper",
+    "evolution_stage": 4,
+    "previous_evolution": "Swamp Flower",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Fly",
+      "satisfaction": 0,
+      "size": 1.10,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 94
+  },
+  {
+    "name": "Orange Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Flower Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Bromeliad",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Tropical",
+      "altitude": ""
+    },
+    "id": 95
+  },
+  {
+    "name": "Autumnal Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Wobbly Tree",
+    "evolution_requirement": {
+      "color": "Orange",
+      "nearby_species": "Small Herbivores",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 96
+  },
+  {
+    "name": "Large Tree",
+    "evolution_stage": 4,
+    "previous_evolution": "Acer Tree",
+    "evolution_requirement": {
+      "color": "Cyan",
+      "nearby_species": "",
+      "satisfaction": 90,
+      "size": 1.20,
+      "biome": "",
+      "altitude": "<10"
+    },
+    "id": 97
+  },
+  {
+    "name": "Mango Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Flower Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Hive",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 98
+  },
+  {
+    "name": "Giant Cactus",
+    "evolution_stage": 4,
+    "previous_evolution": "Medium Cactus",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Desert Hare",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 99
+  },
+  {
+    "name": "Pine Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Spruce Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Herbivores",
+      "satisfaction": 0,
+      "size": 1.20,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 100
+  },
+  {
+    "name": "Witchwood Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Ficus Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Insects;Jungle Flower",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 101
+  },
+  {
+    "name": "Starbloom Bush",
+    "evolution_stage": 3,
+    "previous_evolution": "Ficus Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Jungle Flower (Pink);Jungle Plant (White);Toucan",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": ""
+    },
+    "id": 102
+  },
+  {
+    "name": "Dead Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Slimy Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Warthog;Toad",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Swamp",
+      "altitude": ""
+    },
+    "id": 103
+  },
+  {
+    "name": "Spiral Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Red Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Reptiles",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "",
+      "altitude": "<20"
+    },
+    "id": 104
+  },
+  {
+    "name": "Cherry Tree",
+    "evolution_stage": 3,
+    "previous_evolution": "Red Tree",
+    "evolution_requirement": {
+      "color": "",
+      "nearby_species": "Herbivores",
+      "satisfaction": 0,
+      "size": 0,
+      "biome": "Lush",
+      "altitude": ""
+    },
+    "id": 105
+  }
+]
