@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 from BaseClasses import Location, Region, Item
 
-from . import items
+from . import items, SpeciesUtils, Tasks, Evolution
 
 if TYPE_CHECKING:
     from .world import EquilinoxWorld
@@ -16,10 +16,26 @@ class EquilinoxLocation(Location):
         super().__init__(player, name, id, region)
 
 def get_loc_names_to_id_dict() -> dict[str, int]:
-    loc_name_to_id = {
+    loc_name_to_id = {}
+
+    all_species = SpeciesUtils.all_species
+    all_tasks = Tasks.all_tasks
+
+    for task in all_tasks:
+        loc_name_to_id[f"Complete Task '{task.name}'"] = task.id + 10000
+
+    for species in all_species:
+        if not species.is_base_species():
+            id = species.id
+            loc_name = f"Evolve {species.name}"
+            if species.is_plant:
+                id += 20000
+            else:
+                id += 21000
+            loc_name_to_id[loc_name] = id
 
 
-    }
+
     return loc_name_to_id
 
 def get_location_names_with_ids(location_names: list[str]) -> dict[str, int | None]:
@@ -33,14 +49,10 @@ def create_regular_locations(world: EquilinoxWorld) -> None:
 
     menu = world.get_region("Menu")
 
-
-    locs = []
-
-
-    menu.locations += locs
+    menu.add_locations(get_loc_names_to_id_dict(), EquilinoxLocation)
 
 
 def create_events(world: EquilinoxWorld) -> None:
-    world.get_region("Events").add_event(
+    world.get_region("Menu").add_event(
         "Game finished", "Victory", location_type=EquilinoxLocation, item_type=items.EquilinoxItem
     )

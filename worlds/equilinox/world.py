@@ -1,11 +1,12 @@
 from collections.abc import Mapping
 from typing import Any
 
+
 # Imports of base Archipelago modules must be absolute.
 from worlds.AutoWorld import World
 
 # Imports of your world's files must be relative.
-from . import items, locations, regions, rules, web_world
+from . import items, locations, regions, rules, web_world, Tasks, SpeciesUtils
 from . import options as equilinox_options  # rename due to a name conflict with World.options
 
 
@@ -19,13 +20,13 @@ class EquilinoxWorld(World):
 
     web = web_world.EquilinoxWebWorld()
 
-    starting_islands = []
-    starting_climates = []
-
     options_dataclass = equilinox_options.EquilinoxOptions
     options: equilinox_options.EquilinoxOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
 
+    SpeciesUtils.all_species = SpeciesUtils.get_species()
+
     items.set_item_names_to_id()
+    Tasks.init_tasks()
 
     location_name_to_id = locations.get_loc_names_to_id_dict()
     item_name_to_id = items.ITEM_NAME_TO_ID
@@ -33,6 +34,7 @@ class EquilinoxWorld(World):
     origin_region_name = "Menu"
 
     def generate_early(self) -> None:
+        self.push_precollected(self.create_item("Grass Tuft Permit"))
         return
 
     def create_regions(self) -> None:
@@ -52,11 +54,7 @@ class EquilinoxWorld(World):
         return items.get_random_filler_item_name(self)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        slot_data = {"starting_islands": self.starting_islands, "starting_climates": self.starting_climates}
-        slot_data.update(self.options.as_dict(
-            "flower_hunt", "flowers_required", "flowers_total", "starting_islands_count", "starting_climates_count", "kinder_card_logic", "allowed_progression_cards"
-        ))
-        return slot_data
+        return self.options.as_dict("test")
 
     @staticmethod
     def interpret_slot_data(slot_data: dict[str, Any]) -> Any:

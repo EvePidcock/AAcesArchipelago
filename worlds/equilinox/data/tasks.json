@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Watching Grass Grow",
+    "repeatable": false,
+    "required_species": "Grass Tuft",
+    "requires_species_satisfaction": false,
+    "id": 1
+  }
+]

@@ -261,7 +261,7 @@
     "previous_evolution": "Salmon",
     "evolution_requirement": {
       "color": "Purple",
-      "nearby_species": "Salmons (Gold)",
+      "nearby_species": "Salmon (Gold)",
       "satisfaction": 0,
       "size": 0,
       "biome": "",
@@ -281,7 +281,7 @@
       "satisfaction": 90,
       "size": 0,
       "biome": "",
-      "diet": "Potato",
+      "diet": "Potato Plant",
       "altitude": "",
       "speed": 0
     },

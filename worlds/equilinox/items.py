@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification
-from Species import get_species
+from . import SpeciesUtils, Tasks, Evolution
 
 if TYPE_CHECKING:
     from .world import EquilinoxWorld
@@ -17,14 +17,15 @@ species_unlock_items = []
 def set_item_names_to_id():
     #ITEM_NAME_TO_ID = {}
 
-    species = get_species()
+    all_species = SpeciesUtils.all_species
 
     # Base Species Unlocks
-    for thing in species:
-        if thing.is_base_species():
-            id = thing.id
-            item_name = f"{thing.name} Permit"
-            if thing.is_plant:
+    for species in all_species:
+        if species.is_base_species():
+
+            id = species.id
+            item_name = f"{species.name} Permit"
+            if species.is_plant:
                 id += 10000
             else:
                 id += 11000
@@ -56,6 +57,7 @@ def create_all_items(world: EquilinoxWorld) -> None:
     ]
 
     for unlock in species_unlock_items:
+        if unlock == "Grass Tuft Permit": continue
         item_pool.append(world.create_item(unlock))
 
 
