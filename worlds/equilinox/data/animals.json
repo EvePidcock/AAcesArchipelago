@@ -13,6 +13,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 600,
+      "dp_earn": 31,
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "Trees",
+      "preferred_altitude": "",
+      "eats": "Wheat;Barley"
+    },
     "id": 1
   },
   {
@@ -28,6 +38,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 750,
+      "dp_earn": 52,
+      "suitable_biomes": "Grassland;Forest;Snow;Swamp;Lush;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Honey;Fallen Fruit;Fruit Bushes;Grasses"
     },
     "id": 2
   },
@@ -45,6 +65,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 870,
+      "dp_earn": 23,
+      "suitable_biomes": "River Bed",
+      "unsuitable_biomes": "Tropical",
+      "liked_species": "Water Plants",
+      "disliked_species": "Tropical Seaweed",
+      "preferred_altitude": "",
+      "eats": ""
+    },
     "id": 3
   },
   {
@@ -60,6 +90,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 1860,
+      "dp_earn": 36,
+      "suitable_biomes": "River Bed;Tropical",
+      "unsuitable_biomes": "Jungle",
+      "liked_species": "Kelp",
+      "disliked_species": "Shell",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 4
   },
@@ -77,6 +117,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 3670,
+      "dp_earn": 60,
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Herbs;Flowers",
+      "disliked_species": "",
+      "preferred_altitude": "<55",
+      "eats": "Fallen Fruit;Vegetables;Nuts;Fruit Bushes;Herbs;Grasses"
+    },
     "id": 5
   },
   {
@@ -88,10 +138,20 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "!Grassland",
+      "biome": "Grassland;-1",
       "diet": "Fallen Fruit",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 4500,
+      "dp_earn": 72,
+      "suitable_biomes": "Forest;Swamp",
+      "unsuitable_biomes": "",
+      "liked_species": "Stones;Cedar Tree",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Vegetables;Potato Plant;Fallen Fruit;Fruit Bushes;Herbs"
     },
     "id": 6
   },
@@ -109,6 +169,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 4870,
+      "dp_earn": 67,
+      "suitable_biomes": "River Bed;Grassland;Forest;Swamp;Lush;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Water Plants;Trees",
+      "disliked_species": "Herbivores",
+      "preferred_altitude": "",
+      "eats": "Honey;Water Plants"
+    },
     "id": 7
   },
   {
@@ -124,6 +194,16 @@
       "diet": "",
       "altitude": "",
       "speed": 6.6
+    },
+    "traits": {
+      "cost": 6820,
+      "dp_earn": 41,
+      "suitable_biomes": "River Bed",
+      "unsuitable_biomes": "Tropical",
+      "liked_species": "Water Lily",
+      "disliked_species": "Redfish",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 8
   },
@@ -141,6 +221,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 9000,
+      "dp_earn": 73,
+      "suitable_biomes": "Grassland;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Carrot;Flowers",
+      "disliked_species": "",
+      "preferred_altitude": "<50",
+      "eats": "Root Vegetables;Fruit Bushes;Fallen Fruit"
+    },
     "id": 9
   },
   {
@@ -152,10 +242,20 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Woodland",
+      "biome": "Woodland;30",
       "diet": "Barley",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 10000,
+      "dp_earn": 65,
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "Snow;Lush",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 10
   },
@@ -173,6 +273,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 11800,
+      "dp_earn": 70,
+      "suitable_biomes": "Forest;Woodland;Grassland",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": "<65",
+      "eats": "Nuts"
+    },
     "id": 11
   },
   {
@@ -184,10 +294,20 @@
       "nearby_species": "Tropical Seaweed",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Tropical",
+      "biome": "Tropical;15",
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 14400,
+      "dp_earn": 55,
+      "suitable_biomes": "Tropical;River Bed",
+      "unsuitable_biomes": "",
+      "liked_species": "Tropical Seaweed",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 12
   },
@@ -200,10 +320,20 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Woodland",
+      "biome": "Woodland;70",
       "diet": "Fruit Bushes",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 15000,
+      "dp_earn": 95,
+      "suitable_biomes": "Barren;Grassland;Woodland",
+      "unsuitable_biomes": "Desert;Jungle;Swamp",
+      "liked_species": "Sycamore Tree;Bushes",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Honey;Fruit Bushes"
     },
     "id": 13
   },
@@ -216,10 +346,20 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Tropical;River Bed",
+      "biome": "Tropical;20;;River Bed;20",
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 15250,
+      "dp_earn": 55,
+      "suitable_biomes": "River Bed;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Tropical Seaweed;Stones",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 14
   },
@@ -232,10 +372,20 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Snow",
+      "biome": "Snow;35",
       "diet": "",
       "altitude": ">50",
       "speed": 0
+    },
+    "traits": {
+      "cost": 18000,
+      "dp_earn": 95,
+      "suitable_biomes": "Grassland;Forest;Snow;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees;Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": ">25",
+      "eats": "Fallen Fruit;Fruit Bushes;Small Plants"
     },
     "id": 15
   },
@@ -253,6 +403,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 19000,
+      "dp_earn": 82,
+      "suitable_biomes": "Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Desert Grass;Small Cactus"
+    },
     "id": 16
   },
   {
@@ -268,6 +428,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 22000,
+      "dp_earn": 68,
+      "suitable_biomes": "Tropical",
+      "unsuitable_biomes": "River Bed",
+      "liked_species": "Shell;Coral;Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 17
   },
@@ -285,6 +455,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 23370,
+      "dp_earn": 88,
+      "suitable_biomes": "Swamp;Jungle;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Large Rocks",
+      "disliked_species": "Grass Tuft",
+      "preferred_altitude": "",
+      "eats": "Root Vegetables;Fallen Fruit;Fruit Bushes"
+    },
     "id": 18
   },
   {
@@ -300,6 +480,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 24080,
+      "dp_earn": 65,
+      "suitable_biomes": "Tropical;Jungle;Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 19
   },
@@ -317,6 +507,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 26700,
+      "dp_earn": 100,
+      "suitable_biomes": "Grassland;Forest;Snow;Swamp;Lush;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Chicken;Small Herbivores"
+    },
     "id": 20
   },
   {
@@ -333,6 +533,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 28850,
+      "dp_earn": 66,
+      "suitable_biomes": "Tropical",
+      "unsuitable_biomes": "River Bed",
+      "liked_species": "Shell;Coral",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
+    },
     "id": 21
   },
   {
@@ -344,10 +554,20 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Jungle",
+      "biome": "Jungle;70",
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 31600,
+      "dp_earn": 80,
+      "suitable_biomes": "Jungle;Grassland;Swamp;Lush;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Insects;Mushrooms;Flowers",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 22
   },
@@ -365,6 +585,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 32310,
+      "dp_earn": 100,
+      "suitable_biomes": "River Bed;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Small Fish"
+    },
     "id": 23
   },
   {
@@ -380,6 +610,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 32500,
+      "dp_earn": 60,
+      "suitable_biomes": "Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Coral",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 24
   },
@@ -397,6 +637,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 33200,
+      "dp_earn": 65,
+      "suitable_biomes": "Snow",
+      "unsuitable_biomes": "",
+      "liked_species": "Spruce Tree",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Small Herbivores"
+    },
     "id": 25
   },
   {
@@ -412,6 +662,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 35750,
+      "dp_earn": 120,
+      "suitable_biomes": "River Bed;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Water Plants;Grasses;Flowers",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Water Plants;Fallen Fruit"
     },
     "id": 26
   },
@@ -429,6 +689,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 37200,
+      "dp_earn": 21,
+      "suitable_biomes": "Swamp",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
+    },
     "id": 27
   },
   {
@@ -444,6 +714,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 38000,
+      "dp_earn": 30,
+      "suitable_biomes": "Grassland;Forest;Jungle;Swamp;Lush;Woodland;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Flowers"
     },
     "id": 28
   },
@@ -461,6 +741,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 42000,
+      "dp_earn": 107,
+      "suitable_biomes": "Swamp;Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Mushrooms;Rocks/Stones",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
+    },
     "id": 29
   },
   {
@@ -476,6 +766,16 @@
       "diet": "Desert Grass",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 44750,
+      "dp_earn": 128,
+      "suitable_biomes": "Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": "<65",
+      "eats": "Desert Grass"
     },
     "id": 30
   },
@@ -493,6 +793,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 48000,
+      "dp_earn": 76,
+      "suitable_biomes": "Jungle;Lush;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
+    },
     "id": 31
   },
   {
@@ -508,6 +818,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 48200,
+      "dp_earn": 95,
+      "suitable_biomes": "Grassland;Forest;Woodland;Lush",
+      "unsuitable_biomes": "Snow",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 32
   },
@@ -525,6 +845,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 50000,
+      "dp_earn": 85,
+      "suitable_biomes": "Woodland;Grassland;Forest;Lush;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees;Flowers",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Flowers"
+    },
     "id": 33
   },
   {
@@ -541,6 +871,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 62000,
+      "dp_earn": 200,
+      "suitable_biomes": "Grassland;Forest;Snow;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees;Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": ">35",
+      "eats": "Medium Herbivores"
+    },
     "id": 34
   },
   {
@@ -552,10 +892,20 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Tropical",
+      "biome": "Tropical;50",
       "diet": "Angel Fish",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 78000,
+      "dp_earn": 200,
+      "suitable_biomes": "River Bed;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": ""
     },
     "id": 35
   },
@@ -573,6 +923,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 101000,
+      "dp_earn": 170,
+      "suitable_biomes": "Lush;Grassland;Woodland;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Flowers",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Wheat;Fruit Bushes;Fallen Fruit"
+    },
     "id": 36
   },
   {
@@ -588,6 +948,16 @@
       "diet": "",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 115000,
+      "dp_earn": 135,
+      "suitable_biomes": "Grassland;Forest;River Bed;Jungle;Swamp;Woodland;Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "Water Plants",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Trees;Water Plants"
     },
     "id": 37
   },
@@ -605,6 +975,16 @@
       "altitude": "",
       "speed": 0
     },
+    "traits": {
+      "cost": 135000,
+      "dp_earn": 225,
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Honey;Fruit Bushes"
+    },
     "id": 38
   },
   {
@@ -620,6 +1000,16 @@
       "diet": "Blueberry Bush",
       "altitude": "",
       "speed": 0
+    },
+    "traits": {
+      "cost": 140000,
+      "dp_earn": 230,
+      "suitable_biomes": "Barren;Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "Desert Trees;Cacti",
+      "disliked_species": "",
+      "preferred_altitude": "",
+      "eats": "Prickly Pear"
     },
     "id": 39
   }

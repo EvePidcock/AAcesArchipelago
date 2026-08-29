@@ -33,7 +33,7 @@ def set_evolution_rules(world: EquilinoxWorld) -> None:
             evo_species.append(species)
 
     for species in evo_species:
-        #if species.name == "Camel": raise RuntimeError("Camel")
+        #if species.name == "Camel": raise RuntimeError("Camel") # Debug
         loc = world.get_location(f"Evolve {species.name}")
         world.set_rule(loc, CanEvolveSpecies(species))
 

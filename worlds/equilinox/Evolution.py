@@ -41,8 +41,6 @@ class ColorRequirement(EvolutionRequirement):
         return True_()
 
 
-
-
 class NearbySpeciesRequirement(EvolutionRequirement):
     def __init__(self, species_str: str):
         super().__init__(RequirementType.NEARBY_SPECIES)
@@ -53,12 +51,15 @@ class NearbySpeciesRequirement(EvolutionRequirement):
 
     def get_rule(self, species: SpeciesUtils.Species, species_to_ignore: list[SpeciesUtils.Species], depth: int) -> Rule['EquilinoxWorld']:
         rule = True_()
+
         print(f"Testing {species.name} (nearby):")
         for req_set in self.get_required_species():
             if len(req_set) == 0: continue
             print(f"\t{[s.name for s in req_set if s is not None]}")
+
         for req_set in self.get_required_species():
             if len(req_set) == 0: continue
+            req_set = SpeciesUtils.remove_later_evo_stages(req_set)
             for s in SpeciesUtils.get_species_evo_tree(species):
                 if s in req_set: req_set.remove(s)
             for s in species_to_ignore:
@@ -118,12 +119,15 @@ class DietRequirement(EvolutionRequirement):
     def get_rule(self, species: SpeciesUtils.Species, species_to_ignore: list[SpeciesUtils.Species], depth: int) -> Rule['EquilinoxWorld']:
         required_species = SpeciesUtils.get_required_species_from_string(self.diet)
         rule = True_()
+
         print(f"Testing {species.name} (diet):")
         for req_set in required_species:
             if len(req_set) == 0: continue
             print(f"\t{[s.name for s in req_set if s is not None]}")
+
         for req_set in required_species:
             if len(req_set) == 0: continue
+            req_set = SpeciesUtils.remove_later_evo_stages(req_set)
             for s in SpeciesUtils.get_species_evo_tree(species):
                 if s in req_set: req_set.remove(s)
             for s in species_to_ignore:

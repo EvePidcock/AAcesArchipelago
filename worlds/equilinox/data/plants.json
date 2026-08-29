@@ -11,6 +11,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 100,
+      "spreads": "Grassland",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "Desert;Snow;Swamp",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<50"
+    },
     "id": 1
   },
   {
@@ -24,6 +33,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 140,
+      "spreads": "Grassland",
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "Desert;Jungle;Swamp",
+      "liked_species": "Grasses",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 2
   },
@@ -39,6 +57,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 170,
+      "spreads": "",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 3
   },
   {
@@ -52,6 +79,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 170,
+      "spreads": "",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 4
   },
@@ -67,6 +103,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 215,
+      "spreads": "Grassland",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "Desert;Snow;Jungle;Lush",
+      "liked_species": "Stones",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
+    },
     "id": 5
   },
   {
@@ -80,6 +125,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 425,
+      "spreads": "Woodland",
+      "suitable_biomes": "Woodland;Barren;Grassland;Forest;Lush",
+      "unsuitable_biomes": "Desert;Snow",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<55"
     },
     "id": 6
   },
@@ -95,6 +149,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 480,
+      "spreads": "River Bed",
+      "suitable_biomes": "Barren;River Bed",
+      "unsuitable_biomes": "Jungle;Tropical",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 7
   },
   {
@@ -106,8 +169,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 1.05,
-      "biome": "Grassland",
+      "biome": "Grassland;85",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 490,
+      "spreads": "Grassland",
+      "suitable_biomes": "Grassland;Lush;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Stones;Flowers",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 8
   },
@@ -123,6 +195,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 515,
+      "spreads": "Grassland",
+      "suitable_biomes": "Grassland;Forest;Jungle;Woodland;Snow",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 9
   },
   {
@@ -136,6 +217,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 590,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Swamp;Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 10
   },
@@ -151,6 +241,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 600,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "Desert",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<40"
+    },
     "id": 11
   },
   {
@@ -164,6 +263,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 650,
+      "spreads": "Woodland",
+      "suitable_biomes": "Barren;Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Woodland Trees",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 12
   },
@@ -179,6 +287,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 720,
+      "spreads": "Forest",
+      "suitable_biomes": "Barren;Grassland;Forest;Woodland",
+      "unsuitable_biomes": "Desert;Snow;Swamp;Tropical",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": ">15;<55"
+    },
     "id": 13
   },
   {
@@ -192,6 +309,15 @@
       "size": 1.04,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 950,
+      "spreads": "River Bed",
+      "suitable_biomes": "Barren;River Bed;Tropical",
+      "unsuitable_biomes": "Swamp",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 14
   },
@@ -207,6 +333,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 990,
+      "spreads": "",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 15
   },
   {
@@ -220,6 +355,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 995,
+      "spreads": "",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 16
   },
@@ -235,6 +379,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 995,
+      "spreads": "",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 17
   },
   {
@@ -248,6 +401,15 @@
       "size": 0,
       "biome": "",
       "altitude": "<-4"
+    },
+    "traits": {
+      "cost": 1100,
+      "spreads": "River Bed",
+      "suitable_biomes": "River Bed;Swamp;Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Fish",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 18
   },
@@ -263,6 +425,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 1260,
+      "spreads": "",
+      "suitable_biomes": "Grassland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<60"
+    },
     "id": 19
   },
   {
@@ -276,6 +447,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 1800,
+      "spreads": "Forest",
+      "suitable_biomes": "Barren;Grassland;Forest",
+      "unsuitable_biomes": "",
+      "liked_species": "Stones;Grasses",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 20
   },
@@ -291,6 +471,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 2025,
+      "spreads": "Forest",
+      "suitable_biomes": "Barren;Forest;Woodland",
+      "unsuitable_biomes": "Jungle;Swamp;Tropical",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
+    },
     "id": 21
   },
   {
@@ -302,8 +491,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Woodland",
+      "biome": "Woodland;30",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 2040,
+      "spreads": "Woodland",
+      "suitable_biomes": "Woodland",
+      "unsuitable_biomes": "Jungle;Swamp",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<65"
     },
     "id": 22
   },
@@ -319,6 +517,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 2200,
+      "spreads": "Forest",
+      "suitable_biomes": "Forest",
+      "unsuitable_biomes": "Desert;Snow;Jungle;Swamp;Lush",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<75"
+    },
     "id": 23
   },
   {
@@ -332,6 +539,15 @@
       "size": 0,
       "biome": "",
       "altitude": ">35"
+    },
+    "traits": {
+      "cost": 2900,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Lush",
+      "unsuitable_biomes": "Desert;Snow",
+      "liked_species": "",
+      "disliked_species": "Large Rocks",
+      "preferred_altitude": ">35;<65"
     },
     "id": 24
   },
@@ -347,6 +563,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 3400,
+      "spreads": "Woodland",
+      "suitable_biomes": "Woodland;Forest",
+      "unsuitable_biomes": "",
+      "liked_species": "Herbs",
+      "disliked_species": "",
+      "preferred_altitude": "<32"
+    },
     "id": 25
   },
   {
@@ -361,6 +586,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 3460,
+      "spreads": "Forest",
+      "suitable_biomes": "Forest;Snow;Grassland",
+      "unsuitable_biomes": "Desert;Jungle;Swamp",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">15"
+    },
     "id": 26
   },
   {
@@ -372,8 +606,17 @@
       "nearby_species": "",
       "satisfaction": 50,
       "size": 0,
-      "biome": "Forest",
+      "biome": "Forest;10",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 3500,
+      "spreads": "",
+      "suitable_biomes": "Forest;Woodland",
+      "unsuitable_biomes": "Jungle;Swamp;Desert",
+      "liked_species": "Animals",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 27
   },
@@ -389,6 +632,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 3570,
+      "spreads": "Forest",
+      "suitable_biomes": "Forest;Woodland",
+      "unsuitable_biomes": "Desert;Jungle;Swamp;Lush",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<60"
+    },
     "id": 28
   },
   {
@@ -403,6 +655,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 3650,
+      "spreads": "",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 29
   },
   {
@@ -414,8 +675,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Forest",
+      "biome": "Forest;35",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 3800,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "Desert;Jungle;Swamp",
+      "liked_species": "Grasses",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 30
   },
@@ -428,8 +698,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Snow",
+      "biome": "Snow;20",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 4024,
+      "spreads": "Snow",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "Desert;Jungle;Swamp;River Bed;Tropical",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">50"
     },
     "id": 31
   },
@@ -445,6 +724,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 4050,
+      "spreads": "Desert",
+      "suitable_biomes": "Barren;Desert;Jungle;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "Stones",
+      "preferred_altitude": "<50"
+    },
     "id": 32
   },
   {
@@ -459,6 +747,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 4500,
+      "spreads": "",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 33
   },
   {
@@ -470,8 +767,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Tropical",
+      "biome": "Tropical;20",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 4500,
+      "spreads": "",
+      "suitable_biomes": "Tropical;Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 34
   },
@@ -487,6 +793,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 4500,
+      "spreads": "Forest",
+      "suitable_biomes": "Forest;Woodland;Grassland",
+      "unsuitable_biomes": "Desert;Snow;Jungle;Swamp;Lush",
+      "liked_species": "Flowers",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
+    },
     "id": 35
   },
   {
@@ -501,6 +816,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 4560,
+      "spreads": "",
+      "suitable_biomes": "Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Herbs;Stones",
+      "disliked_species": "",
+      "preferred_altitude": "<50"
+    },
     "id": 36
   },
   {
@@ -512,8 +836,17 @@
       "nearby_species": "Large Rocks",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Tropical",
+      "biome": "Tropical;15",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 4790,
+      "spreads": "Tropical",
+      "suitable_biomes": "River Bed;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "Water Lily",
+      "preferred_altitude": ""
     },
     "id": 37
   },
@@ -526,8 +859,17 @@
       "nearby_species": "Sheep",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Grassland",
+      "biome": "Grassland;70",
       "altitude": "<15"
+    },
+    "traits": {
+      "cost": 4999,
+      "spreads": "",
+      "suitable_biomes": "Grassland",
+      "unsuitable_biomes": "",
+      "liked_species": "Stones;Birds",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
     },
     "id": 38
   },
@@ -540,8 +882,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Woodland",
+      "biome": "Woodland;60",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 5200,
+      "spreads": "Woodland",
+      "suitable_biomes": "Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Stones",
+      "disliked_species": "",
+      "preferred_altitude": "<50"
     },
     "id": 39
   },
@@ -557,6 +908,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 5300,
+      "spreads": "Snow",
+      "suitable_biomes": "Barren;Snow",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "Large Rocks",
+      "preferred_altitude": ">50"
+    },
     "id": 40
   },
   {
@@ -570,6 +930,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 5600,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Woodland;Lush",
+      "unsuitable_biomes": "Desert;Jungle;Swamp",
+      "liked_species": "Stones",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 41
   },
@@ -585,6 +954,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 5700,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<15"
+    },
     "id": 42
   },
   {
@@ -598,6 +976,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 6600,
+      "spreads": "Woodland",
+      "suitable_biomes": "Woodland",
+      "unsuitable_biomes": "Snow;Jungle;Swamp",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<30"
     },
     "id": 43
   },
@@ -613,6 +1000,15 @@
       "biome": "",
       "altitude": "<15"
     },
+    "traits": {
+      "cost": 6760,
+      "spreads": "Desert",
+      "suitable_biomes": "Barren;Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "",
+      "preferred_altitude": "<100"
+    },
     "id": 44
   },
   {
@@ -624,8 +1020,17 @@
       "nearby_species": "",
       "satisfaction": 90,
       "size": 0,
-      "biome": "Jungle",
+      "biome": "Jungle;50",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 6900,
+      "spreads": "",
+      "suitable_biomes": "Barren;Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">15"
     },
     "id": 45
   },
@@ -641,6 +1046,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 7100,
+      "spreads": "Swamp",
+      "suitable_biomes": "Barren;Swamp",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<12"
+    },
     "id": 46
   },
   {
@@ -655,6 +1069,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 7720,
+      "spreads": "Desert",
+      "suitable_biomes": "Barren;Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "Medium Cactus",
+      "preferred_altitude": ""
+    },
     "id": 47
   },
   {
@@ -666,8 +1089,17 @@
       "nearby_species": "Rabbit",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Grassland",
+      "biome": "Grassland;90",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 7890,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Stones",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 48
   },
@@ -683,6 +1115,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 8100,
+      "spreads": "Jungle",
+      "suitable_biomes": "Barren;Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 49
   },
   {
@@ -697,6 +1138,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 8500,
+      "spreads": "Jungle",
+      "suitable_biomes": "Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
+    },
     "id": 50
   },
   {
@@ -708,8 +1158,17 @@
       "nearby_species": "Acer Tree",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Forest",
+      "biome": "Forest;80",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 8950,
+      "spreads": "Forest",
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 51
   },
@@ -725,6 +1184,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 9300,
+      "spreads": "Desert",
+      "suitable_biomes": "Barren;Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "Large Rocks",
+      "preferred_altitude": ""
+    },
     "id": 52
   },
   {
@@ -736,8 +1204,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Swamp",
+      "biome": "Swamp;35",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 9400,
+      "spreads": "Swamp",
+      "suitable_biomes": "Swamp;Lush",
+      "unsuitable_biomes": "Desert;Tropical",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<15"
     },
     "id": 53
   },
@@ -750,8 +1227,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Woodland",
+      "biome": "Woodland;40",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 10000,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Woodland;Lush",
+      "unsuitable_biomes": "Desert;Jungle;Swamp",
+      "liked_species": "Trees",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 54
   },
@@ -764,8 +1250,17 @@
       "nearby_species": "Shell;Clown Fish (Cyan)",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Tropical",
+      "biome": "Tropical;30",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 10000,
+      "spreads": "Tropical",
+      "suitable_biomes": "Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Shell",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 55
   },
@@ -781,6 +1276,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 11850,
+      "spreads": "",
+      "suitable_biomes": "",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 56
   },
   {
@@ -792,8 +1296,17 @@
       "nearby_species": "Nuts",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Woodland",
+      "biome": "Woodland;50",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 12000,
+      "spreads": "Woodland",
+      "suitable_biomes": "Grassland;Woodland;Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "Stones",
+      "preferred_altitude": ">30"
     },
     "id": 57
   },
@@ -809,6 +1322,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 12300,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Woodland;Swamp",
+      "unsuitable_biomes": "",
+      "liked_species": "Flowers",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 58
   },
   {
@@ -820,8 +1342,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "!Grassland",
+      "biome": "Grassland;-1",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 12505,
+      "spreads": "",
+      "suitable_biomes": "Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "Large Rocks",
+      "preferred_altitude": "<50"
     },
     "id": 59
   },
@@ -837,6 +1368,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 12890,
+      "spreads": "Lush",
+      "suitable_biomes": "Barren;Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<65"
+    },
     "id": 60
   },
   {
@@ -850,6 +1390,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 13600,
+      "spreads": "Tropical",
+      "suitable_biomes": "Barren;Jungle;Lush;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 61
   },
@@ -865,6 +1414,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 13880,
+      "spreads": "Jungle",
+      "suitable_biomes": "Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "",
+      "preferred_altitude": "<60"
+    },
     "id": 62
   },
   {
@@ -878,6 +1436,15 @@
       "size": 1.10,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 14800,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Woodland",
+      "unsuitable_biomes": "Desert;Jungle;Swamp",
+      "liked_species": "",
+      "disliked_species": "Trees",
+      "preferred_altitude": "<25"
     },
     "id": 63
   },
@@ -893,6 +1460,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 16000,
+      "spreads": "Snow",
+      "suitable_biomes": "Barren;Snow",
+      "unsuitable_biomes": "",
+      "liked_species": "Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": ">45"
+    },
     "id": 64
   },
   {
@@ -906,6 +1482,15 @@
       "size": 0,
       "biome": "",
       "altitude": ">45;<60"
+    },
+    "traits": {
+      "cost": 16500,
+      "spreads": "Snow",
+      "suitable_biomes": "Barren;Grassland;Forest;Woodland;Snow",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">45"
     },
     "id": 65
   },
@@ -921,6 +1506,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 17250,
+      "spreads": "Tropical",
+      "suitable_biomes": "Tropical",
+      "unsuitable_biomes": "Desert;Snow;Jungle;Swamp",
+      "liked_species": "Stones",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
+    },
     "id": 66
   },
   {
@@ -932,8 +1526,17 @@
       "nearby_species": "",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Lush",
+      "biome": "Lush;40",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 17400,
+      "spreads": "",
+      "suitable_biomes": "Lush;Barren;Grassland;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "Stones",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 67
   },
@@ -949,6 +1552,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 18560,
+      "spreads": "Swamp",
+      "suitable_biomes": "Barren;Swamp",
+      "unsuitable_biomes": "Desert;Lush;Tropical",
+      "liked_species": "",
+      "disliked_species": "Stones",
+      "preferred_altitude": "<13"
+    },
     "id": 68
   },
   {
@@ -963,6 +1575,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 18800,
+      "spreads": "Desert",
+      "suitable_biomes": "Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 69
   },
   {
@@ -974,8 +1595,17 @@
       "nearby_species": "Snap Dragon",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Woodland",
+      "biome": "Woodland;85",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 18900,
+      "spreads": "",
+      "suitable_biomes": "Woodland;Grassland",
+      "unsuitable_biomes": "Jungle;Swamp",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">25;<70"
     },
     "id": 70
   },
@@ -991,6 +1621,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 19700,
+      "spreads": "Forest",
+      "suitable_biomes": "Forest;Grassland;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "Tall Tree",
+      "preferred_altitude": "<65"
+    },
     "id": 71
   },
   {
@@ -1004,6 +1643,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 20000,
+      "spreads": "Tropical",
+      "suitable_biomes": "Tropical;Barren;Lush;Grassland",
+      "unsuitable_biomes": "Desert;Snow;Jungle;Swamp",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<65"
     },
     "id": 72
   },
@@ -1019,6 +1667,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 20000,
+      "spreads": "",
+      "suitable_biomes": "Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<25"
+    },
     "id": 73
   },
   {
@@ -1030,8 +1687,17 @@
       "nearby_species": "Flowers",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Woodland",
+      "biome": "Woodland;80",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 22050,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "Tropical",
+      "liked_species": "Large Rocks;Flowers",
+      "disliked_species": "",
+      "preferred_altitude": ">20;<60"
     },
     "id": 74
   },
@@ -1047,6 +1713,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 23000,
+      "spreads": "Lush",
+      "suitable_biomes": "Lush;Barren;Grassland;Woodland",
+      "unsuitable_biomes": "Desert;Snow;Jungle;Swamp",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<65"
+    },
     "id": 75
   },
   {
@@ -1060,6 +1735,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 25000,
+      "spreads": "Jungle",
+      "suitable_biomes": "Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": ""
     },
     "id": 76
   },
@@ -1075,6 +1759,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 26000,
+      "spreads": "Tropical",
+      "suitable_biomes": "Tropical;Jungle",
+      "unsuitable_biomes": "Desert;Snow;Swamp",
+      "liked_species": "",
+      "disliked_species": "Large Rocks",
+      "preferred_altitude": "<65"
+    },
     "id": 77
   },
   {
@@ -1088,6 +1781,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 26000,
+      "spreads": "",
+      "suitable_biomes": "Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
     },
     "id": 78
   },
@@ -1103,6 +1805,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 27000,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Woodland;Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<60"
+    },
     "id": 79
   },
   {
@@ -1116,6 +1827,15 @@
       "size": 0,
       "biome": "",
       "altitude": "<6"
+    },
+    "traits": {
+      "cost": 29300,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;River Bed;Swamp;Lush;Woodland",
+      "unsuitable_biomes": "Jungle;Tropical",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">-10;<5"
     },
     "id": 80
   },
@@ -1131,6 +1851,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 30000,
+      "spreads": "Swamp",
+      "suitable_biomes": "Barren;Swamp",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "",
+      "preferred_altitude": "<12"
+    },
     "id": 81
   },
   {
@@ -1144,6 +1873,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 31000,
+      "spreads": "Lush",
+      "suitable_biomes": "Lush;Forest;Grassland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "Mushrooms",
+      "preferred_altitude": "<75"
     },
     "id": 82
   },
@@ -1159,6 +1897,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 31890,
+      "spreads": "Swamp",
+      "suitable_biomes": "Swamp",
+      "unsuitable_biomes": "",
+      "liked_species": "Large Rocks",
+      "disliked_species": "Mushrooms",
+      "preferred_altitude": ""
+    },
     "id": 83
   },
   {
@@ -1172,6 +1919,15 @@
       "size": 1.06,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 32700,
+      "spreads": "Jungle",
+      "suitable_biomes": "Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": "<70"
     },
     "id": 84
   },
@@ -1187,6 +1943,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 34240,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Jungle;Swamp",
+      "unsuitable_biomes": "Tropical;Snow",
+      "liked_species": "Stones",
+      "disliked_species": "",
+      "preferred_altitude": "<55"
+    },
     "id": 85
   },
   {
@@ -1200,6 +1965,15 @@
       "size": 0,
       "biome": "",
       "altitude": "<20"
+    },
+    "traits": {
+      "cost": 34700,
+      "spreads": "Lush",
+      "suitable_biomes": "Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
     },
     "id": 86
   },
@@ -1215,6 +1989,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 36000,
+      "spreads": "",
+      "suitable_biomes": "Tropical;Grassland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">16;<60"
+    },
     "id": 87
   },
   {
@@ -1228,6 +2011,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 38060,
+      "spreads": "Lush",
+      "suitable_biomes": "Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<68"
     },
     "id": 88
   },
@@ -1243,6 +2035,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 40000,
+      "spreads": "",
+      "suitable_biomes": "Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">15"
+    },
     "id": 89
   },
   {
@@ -1256,6 +2057,15 @@
       "size": 1.20,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 44000,
+      "spreads": "",
+      "suitable_biomes": "Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">15"
     },
     "id": 90
   },
@@ -1271,6 +2081,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 45000,
+      "spreads": "",
+      "suitable_biomes": "Grassland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<60"
+    },
     "id": 91
   },
   {
@@ -1284,6 +2103,15 @@
       "size": 1.15,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 47000,
+      "spreads": "",
+      "suitable_biomes": "Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones",
+      "disliked_species": "",
+      "preferred_altitude": ">20;<50"
     },
     "id": 92
   },
@@ -1299,6 +2127,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 47000,
+      "spreads": "",
+      "suitable_biomes": "Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Mushrooms",
+      "disliked_species": "",
+      "preferred_altitude": ">20"
+    },
     "id": 93
   },
   {
@@ -1313,6 +2150,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 48900,
+      "spreads": "",
+      "suitable_biomes": "Swamp",
+      "unsuitable_biomes": "",
+      "liked_species": "Mushrooms;Dead Tree;Insects",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 94
   },
   {
@@ -1324,8 +2170,17 @@
       "nearby_species": "Bromeliad",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Tropical",
+      "biome": "Tropical;80",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 55700,
+      "spreads": "",
+      "suitable_biomes": "Tropical;Grassland;Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
     },
     "id": 95
   },
@@ -1341,6 +2196,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 65000,
+      "spreads": "",
+      "suitable_biomes": "Grassland;Forest;Woodland",
+      "unsuitable_biomes": "Desert;Snow;Jungle",
+      "liked_species": "Large Rocks",
+      "disliked_species": "",
+      "preferred_altitude": "<50"
+    },
     "id": 96
   },
   {
@@ -1354,6 +2218,15 @@
       "size": 1.20,
       "biome": "",
       "altitude": "<10"
+    },
+    "traits": {
+      "cost": 68000,
+      "spreads": "",
+      "suitable_biomes": "Forest;Grassland;Lush;Woodland;Tropical",
+      "unsuitable_biomes": "",
+      "liked_species": "Flowers;Herbs",
+      "disliked_species": "",
+      "preferred_altitude": "<40"
     },
     "id": 97
   },
@@ -1369,6 +2242,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 71000,
+      "spreads": "",
+      "suitable_biomes": "Tropical;Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones;Flowers",
+      "disliked_species": "",
+      "preferred_altitude": ">15"
+    },
     "id": 98
   },
   {
@@ -1382,6 +2264,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 75000,
+      "spreads": "Desert",
+      "suitable_biomes": "Desert",
+      "unsuitable_biomes": "",
+      "liked_species": "Small Cactus;Large Rocks",
+      "disliked_species": "Trees",
+      "preferred_altitude": ""
     },
     "id": 99
   },
@@ -1397,6 +2288,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 82300,
+      "spreads": "",
+      "suitable_biomes": "Snow;Forest;Woodland",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ">50"
+    },
     "id": 100
   },
   {
@@ -1410,6 +2310,15 @@
       "size": 0,
       "biome": "",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 95000,
+      "spreads": "",
+      "suitable_biomes": "Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "Jungle Flower;Frog",
+      "disliked_species": "",
+      "preferred_altitude": "<15"
     },
     "id": 101
   },
@@ -1425,6 +2334,15 @@
       "biome": "",
       "altitude": ""
     },
+    "traits": {
+      "cost": 100000,
+      "spreads": "",
+      "suitable_biomes": "Jungle",
+      "unsuitable_biomes": "",
+      "liked_species": "",
+      "disliked_species": "",
+      "preferred_altitude": ""
+    },
     "id": 102
   },
   {
@@ -1436,8 +2354,17 @@
       "nearby_species": "Warthog;Toad",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Swamp",
+      "biome": "Swamp;80",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 120000,
+      "spreads": "Swamp",
+      "suitable_biomes": "Swamp",
+      "unsuitable_biomes": "",
+      "liked_species": "Mushrooms",
+      "disliked_species": "Large Rocks",
+      "preferred_altitude": ""
     },
     "id": 103
   },
@@ -1453,6 +2380,15 @@
       "biome": "",
       "altitude": "<20"
     },
+    "traits": {
+      "cost": 140000,
+      "spreads": "",
+      "suitable_biomes": "Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "Bamboo",
+      "disliked_species": "",
+      "preferred_altitude": "<20"
+    },
     "id": 104
   },
   {
@@ -1464,8 +2400,17 @@
       "nearby_species": "Herbivores",
       "satisfaction": 0,
       "size": 0,
-      "biome": "Lush",
+      "biome": "Lush;70",
       "altitude": ""
+    },
+    "traits": {
+      "cost": 140000,
+      "spreads": "Lush",
+      "suitable_biomes": "Lush",
+      "unsuitable_biomes": "",
+      "liked_species": "Rocks/Stones;Mushrooms",
+      "disliked_species": "",
+      "preferred_altitude": ">25;<75"
     },
     "id": 105
   }
