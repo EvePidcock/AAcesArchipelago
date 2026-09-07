@@ -360,7 +360,7 @@ def get_species_from_category(cat: str) -> list[Species]:
                         "Prickly Pear",
                         "Nut Tree",
                         "Wheat",
-                        "Barely",
+                        "Barley",
                         "Desert Grass",
                         "Palm Tree",
                         "Witchwood Tree"
@@ -368,13 +368,15 @@ def get_species_from_category(cat: str) -> list[Species]:
         case "Nuts":
             list_str = ["Nut Tree"]
         case _:
-            raise ValueError(f"Equilinox: Invalid species category: {cat}")
+            raise ValueError(f"Equilinox: Invalid species category: \"{cat}\"")
 
     species_list = [get_species_from_name(s) for s in list_str]
     if any(s is None for s in species_list): raise ValueError(f"Equilinox: Species category {cat} got a None species")
     return [s for s in species_list if s is not None]
 
 def get_required_species_from_string(string: str) -> list[list[Species]]:
+    if string is "" or string is None:
+        return []
     required : list[list[Species]] = []
     species = string.split(";")
     for species in species:
@@ -386,10 +388,18 @@ def get_required_species_from_string(string: str) -> list[list[Species]]:
             s = get_species_from_name("Bee")
             assert s is not None
             required.append([s])
+            required.append(get_species_from_category("Flowers"))
         elif species == "Beaver Lodge": #TODO: More
             s = get_species_from_name("Beaver")
             assert s is not None
             required.append([s])
+            required.append(get_species_from_category("Trees"))
+        elif species == "Nest": #TODO: More
+            s = get_species_from_name("Sparrow")
+            t = get_species_from_name("Oak Tree")
+            assert s,t is not None
+            required.append([s])
+            required.append([t])
         else:
             required.append(get_species_from_category(species))
     return required

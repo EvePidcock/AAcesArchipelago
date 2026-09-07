@@ -54,7 +54,7 @@ class EquilinoxWorld(World):
         return items.get_random_filler_item_name(self)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        return self.options.as_dict("test")
+        return self.options.as_dict("money_sanity")
 
     @staticmethod
     def interpret_slot_data(slot_data: dict[str, Any]) -> Any:

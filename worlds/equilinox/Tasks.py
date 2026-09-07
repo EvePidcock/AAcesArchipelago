@@ -14,18 +14,21 @@ class Task:
                  repeatable: bool,
                  required_species: str,
                  requires_species_satisfaction: bool,
+                 cash_reward: int,
                  id: int):
         self.name = name
         self.repeatable = repeatable
         self.required_species = required_species
         self.requires_species_satisfaction = requires_species_satisfaction
+        self.cash_reward = cash_reward
         self.id = id
 
     def get_required_species(self) -> list[list[SpeciesUtils.Species | None]]:
+        print(f"Getting required species for task {self.name}")
         return SpeciesUtils.get_required_species_from_string(self.required_species)
 
 def task_object_decoder(t_obj) -> Task:
-    return Task(t_obj["name"], t_obj["repeatable"], t_obj["required_species"], t_obj["requires_species_satisfaction"], t_obj["id"])
+    return Task(t_obj["name"], t_obj["repeatable"], t_obj["required_species"], t_obj["requires_species_satisfaction"], t_obj["cash_reward"], t_obj["id"])
 
 def init_tasks() -> None:
     global all_tasks

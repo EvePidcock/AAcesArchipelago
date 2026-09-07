@@ -2,27 +2,27 @@ from dataclasses import dataclass
 
 from Options import OptionGroup, PerGameCommonOptions, Range, Toggle
 
-class Test(Toggle):
+class MoneySanity(Toggle):
     """
-    Require a certain number of "Flower" items to goal
+    Shuffle Task DP rewards into the item pool
     """
-    display_name = "Test"
-    default = True
+    display_name = "Money Sanity"
+    default = False
 
 @dataclass
 class EquilinoxOptions(PerGameCommonOptions):
-    test: Test
+    money_sanity: MoneySanity
 
 
 option_groups = [
     OptionGroup(
         "Gameplay Options",
-        [Test]
+        [MoneySanity],
     )
 ]
 
 option_presets = {
     "Default": {
-        "test": True
+        "money_sanity": False
     }
 }

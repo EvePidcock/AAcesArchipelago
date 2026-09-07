@@ -21,6 +21,7 @@ def set_all_rules(world: EquilinoxWorld) -> None:
 
 def set_all_location_rules(world: EquilinoxWorld) -> None:
     set_evolution_rules(world)
+    set_task_rules(world)
 
     victory = world.get_location("Game finished")
     world.set_rule(victory, CanEvolveSpecies(SpeciesUtils.get_species_from_name("Dolphin")) & CanEvolveSpecies(SpeciesUtils.get_species_from_name("Sunflower")) & CanEvolveSpecies(SpeciesUtils.get_species_from_name("Camel")))
@@ -37,6 +38,26 @@ def set_evolution_rules(world: EquilinoxWorld) -> None:
         loc = world.get_location(f"Evolve {species.name}")
         world.set_rule(loc, CanEvolveSpecies(species))
 
+
+def set_task_rules(world: EquilinoxWorld) -> None:
+    tasks = Tasks.all_tasks
+    for task in tasks:
+        task_loc = world.get_location(f"Complete Task '{task.name}'")
+        rule = True_()
+        for req_list in task.get_required_species():
+            if len(req_list) == 0:
+                continue
+            can_get_at_least_one_from_list = False_()
+            for species in req_list:
+                can_get_at_least_one_from_list = can_get_at_least_one_from_list | CanEvolveSpecies(species)
+            rule = rule & can_get_at_least_one_from_list
+
+        if task.name == "Completionist":
+            pass
+        elif task.name == "Cashing In":
+            pass
+
+        world.set_rule(task_loc, rule)
 
 def set_completion_condition(world: EquilinoxWorld) -> None:
     world.set_completion_rule(Has("Victory"))
