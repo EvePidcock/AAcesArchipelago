@@ -51,17 +51,17 @@ def set_item_names_to_id():
     DEFAULT_ITEM_CLASSIFICATIONS["100 dp"] = ItemClassification.filler
     DEFAULT_ITEM_CLASSIFICATIONS["500 dp"] = ItemClassification.filler
 
-    DEFAULT_ITEM_CLASSIFICATIONS["1,000 dp"] = ItemClassification.useful | ItemClassification.filler
-    DEFAULT_ITEM_CLASSIFICATIONS["2,500 dp"] = ItemClassification.useful | ItemClassification.filler
-    DEFAULT_ITEM_CLASSIFICATIONS["5,000 dp"] = ItemClassification.useful | ItemClassification.filler
-    DEFAULT_ITEM_CLASSIFICATIONS["7,500 dp"] = ItemClassification.useful | ItemClassification.filler
+    DEFAULT_ITEM_CLASSIFICATIONS["1,000 dp"] = ItemClassification.progression | ItemClassification.filler
+    DEFAULT_ITEM_CLASSIFICATIONS["2,500 dp"] = ItemClassification.progression | ItemClassification.filler
+    DEFAULT_ITEM_CLASSIFICATIONS["5,000 dp"] = ItemClassification.progression | ItemClassification.filler
+    DEFAULT_ITEM_CLASSIFICATIONS["7,500 dp"] = ItemClassification.progression | ItemClassification.filler
 
-    DEFAULT_ITEM_CLASSIFICATIONS["10,000 dp"] = ItemClassification.progression_skip_balancing
-    DEFAULT_ITEM_CLASSIFICATIONS["25,000 dp"] = ItemClassification.progression_skip_balancing
-    DEFAULT_ITEM_CLASSIFICATIONS["50,000 dp"] = ItemClassification.progression_skip_balancing
-    DEFAULT_ITEM_CLASSIFICATIONS["75,000 dp"] = ItemClassification.progression_skip_balancing
+    DEFAULT_ITEM_CLASSIFICATIONS["10,000 dp"] = ItemClassification.progression
+    DEFAULT_ITEM_CLASSIFICATIONS["25,000 dp"] = ItemClassification.progression
+    DEFAULT_ITEM_CLASSIFICATIONS["50,000 dp"] = ItemClassification.progression_skip_balancing | ItemClassification.useful
+    DEFAULT_ITEM_CLASSIFICATIONS["75,000 dp"] = ItemClassification.progression_skip_balancing | ItemClassification.useful
 
-    DEFAULT_ITEM_CLASSIFICATIONS["100,000 dp"] = ItemClassification.useful
+    DEFAULT_ITEM_CLASSIFICATIONS["100,000 dp"] = ItemClassification.progression_skip_balancing | ItemClassification.useful
 
     DEFAULT_ITEM_CLASSIFICATIONS["Filler"] = 90001
     DEFAULT_ITEM_CLASSIFICATIONS["Filler"] = ItemClassification.filler
@@ -73,7 +73,7 @@ class EquilinoxItem(Item):
 
 def get_random_filler_item_name(world: EquilinoxWorld) -> str:
     filler_items = ["100 dp", "500 dp", "1,000 dp", "2,500 dp", "5,000 dp", "7,500 dp", "10,000 dp"]
-    weights =      [ 10,       15,       5,          4,          3,          2,          1         ]
+    weights =      [ 5,        10,       15,         10,         5,          3,          1         ]
     return world.random.choices(filler_items, weights=weights, k=1)[0]
 
 
@@ -82,41 +82,71 @@ def create_item_with_correct_classification(world: EquilinoxWorld, name: str) ->
     return EquilinoxItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
 def get_nearest_money_item(world: EquilinoxWorld, amt: int) -> EquilinoxItem:
-    if amt >= 100000:
+    if amt >= 90000:
         return world.create_item("100,000 dp")
-    elif amt >= 75000:
+    elif amt >= 65000:
         return world.create_item("75,000 dp")
-    elif amt >= 50000:
+    elif amt >= 40000:
         return world.create_item("50,000 dp")
-    elif amt >= 25000:
+    elif amt >= 20000:
         return world.create_item("25,000 dp")
-    elif amt >= 10000:
+    elif amt >= 9000:
         return world.create_item("10,000 dp")
-    elif amt >= 7500:
+    elif amt >= 6500:
         return world.create_item("7,500 dp")
-    elif amt >= 5000:
+    elif amt >= 4000:
         return world.create_item("5,000 dp")
-    elif amt >= 2500:
+    elif amt >= 2000:
         return world.create_item("2,500 dp")
-    elif amt >= 1000:
+    elif amt >= 750:
         return world.create_item("1,000 dp")
-    elif amt >= 500:
+    elif amt >= 400:
         return world.create_item("500 dp")
     else:
         return world.create_item("100 dp")
 
+def approx_money_as_sum(amt: int, max_summands: int, possible_values=None) -> list[int]:
+    if amt < 100: return []
+    if possible_values is None:
+        possible_values = [100000, 75000, 50000, 25000, 10000, 7500, 5000, 2500, 1000, 500, 100]
+    possible_values = sorted(possible_values, reverse=True)
+    running_sum = 0
+    summands = []
+
+    for val in possible_values:
+        while running_sum < amt:
+            if len(summands) >= max_summands: break
+            if (running_sum + val) > amt: break
+            running_sum += val
+            summands.append(val)
+
+    return summands
+
 def create_all_items(world: EquilinoxWorld) -> None:
     item_pool: list[Item] = [
-
+        get_nearest_money_item(world, 25000)
     ]
 
     for unlock in species_unlock_items:
         if unlock == "Grass Tuft Permit": continue
         item_pool.append(world.create_item(unlock))
 
-    if world.options.money_sanity:
+    if not world.options.tasks_reward_dp:
         for task in Tasks.all_tasks:
             item_pool.append(get_nearest_money_item(world, task.cash_reward))
+
+    dp_in_pool = world.options.itempool_dp.value
+    dp_to_add = []
+    if dp_in_pool > 100:
+        if dp_in_pool > 250000:
+            dp_to_add = [100000, 75000] + approx_money_as_sum(dp_in_pool-175000, 5, possible_values=[50000, 25000, 10000, 7500, 5000, 2500, 1000])
+        elif dp_in_pool > 100000:
+            dp_to_add = [75000] + approx_money_as_sum(dp_in_pool-75000, 5, possible_values=[50000, 25000, 10000, 7500, 5000, 2500, 1000])
+        else:
+            dp_to_add = approx_money_as_sum(dp_in_pool, 6, possible_values=[50000, 25000, 10000, 7500, 5000, 2500, 1000])
+
+    for dp in dp_to_add:
+        item_pool.append(get_nearest_money_item(world, dp))
 
 
     # Filler items

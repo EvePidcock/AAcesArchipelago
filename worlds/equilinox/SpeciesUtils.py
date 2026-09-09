@@ -103,6 +103,13 @@ def remove_later_evo_stages(species_list: list[Species | None]) -> list[Species]
 
     return new_list
 
+def get_children(species: Species) -> list[Species]:
+    children = []
+    for s in all_species:
+        if species in get_all_priors(s):
+            children.append(s)
+    return children
+
 def get_species_from_category(cat: str) -> list[Species]:
     list_str = []
     match cat:
@@ -375,7 +382,7 @@ def get_species_from_category(cat: str) -> list[Species]:
     return [s for s in species_list if s is not None]
 
 def get_required_species_from_string(string: str) -> list[list[Species]]:
-    if string is "" or string is None:
+    if string == "" or string is None:
         return []
     required : list[list[Species]] = []
     species = string.split(";")
@@ -397,7 +404,8 @@ def get_required_species_from_string(string: str) -> list[list[Species]]:
         elif species == "Nest": #TODO: More
             s = get_species_from_name("Sparrow")
             t = get_species_from_name("Oak Tree")
-            assert s,t is not None
+            assert s is not None
+            assert t is not None
             required.append([s])
             required.append([t])
         else:
