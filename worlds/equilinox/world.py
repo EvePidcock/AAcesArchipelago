@@ -108,21 +108,29 @@ class EquilinoxWorld(World):
                         species = species_lists[cat_index][0]
                         if species.is_base_species():
                             has_prereq = state.has(f"{species.name} Permit", self.player)
-                            messages.append({"type": "color", "color": "green" if has_prereq else "salmon",
+                            can_afford = self.can_afford_dp(species.cost * 3, state)
+                            messages.append({"type": "color", "color": "green" if has_prereq and can_afford else "salmon",
                                              "text": f"\n    {species.name}"})
-                            if not has_prereq: messages.append({"type": "text", "text": f" (missing unlock permit)"})
+                            if not has_prereq:
+                                messages.append({"type": "text", "text": f" (missing unlock permit)"})
+                            elif not can_afford:
+                                messages.append({"type": "text", "text": f" (unlocked, but cost not in logic)"})
                         else:
                             has_prereq = self.get_location(f"Evolve {species.name}").can_reach(state)
+                            can_afford = self.can_afford_dp(species.cost * 3, state)
                             messages.append({"type": "color", "color": "green" if has_prereq else "salmon",
                                              "text": f"\n    {species.name}"})
-                            if not has_prereq: messages.append({"type": "text", "text": f" (evolution not in logic)"})
+                            if not has_prereq:
+                                messages.append({"type": "text", "text": f" (evolution not in logic)"})
+                            elif not can_afford:
+                                messages.append({"type": "text", "text": f" (evolution in logic, but cost not in logic)"})
                     else:
                         has_prereq = False
                         for species in species_lists[cat_index]:
                             if species.is_base_species():
-                                has_prereq |= state.has(f"{species.name} Permit", self.player)
+                                has_prereq |= (state.has(f"{species.name} Permit", self.player) and self.can_afford(species.cost * 3, state))
                             else:
-                                has_prereq |= self.get_location(f"Evolve {species.name}").can_reach(state)
+                                has_prereq |= (self.get_location(f"Evolve {species.name}").can_reach(state) and self.can_afford(species.cost * 3, state))
                         messages.append({"type": "color", "color": "green" if has_prereq else "salmon",
                                          "text": f"\n    {categories[cat_index]}"})
         elif "Evolve" in location_name:
@@ -135,19 +143,88 @@ class EquilinoxWorld(World):
             messages.append({"type": "text", "text": f"\nEvolves From: "})
             if previous_evo.is_base_species():
                 has_prereq = state.has(f"{previous_evo.name} Permit", self.player)
-                messages.append({"type": "color", "color": "green" if has_prereq else "salmon", "text": previous_evo.name})
-                if not has_prereq: messages.append({"type": "text", "text": f" (missing unlock permit)"})
+                can_afford = self.can_afford_dp(previous_evo.cost * 2, state)
+                messages.append({"type": "color", "color": "green" if has_prereq and can_afford else "salmon", "text": previous_evo.name})
+                if not has_prereq:
+                    messages.append({"type": "text", "text": f" (missing unlock permit)"})
+                elif not can_afford:
+                    messages.append({"type": "text", "text": f" (unlocked, but cost not in logic)"})
             else:
                 has_prereq = self.get_location(f"Evolve {previous_evo.name}").can_reach(state)
+                can_afford = self.can_afford_dp(previous_evo.cost * 2, state)
                 messages.append({"type": "color", "color": "green" if has_prereq else "salmon", "text": previous_evo.name})
-                if not has_prereq: messages.append({"type": "text", "text": f" (evolution not in logic)"})
+                if not has_prereq:
+                    messages.append({"type": "text", "text": f" (evolution not in logic)"})
+                elif not can_afford:
+                    messages.append({"type": "text", "text": f" (evolution in logic, but cost not in logic)"})
             messages.append({"type": "text", "text": f"\nEvolution Requirements: "})
             if len(species.evolution_requirements) == 0:
                 messages.append({"type": "color", "color": "green", "text": "None"})
             else:
                 for evo_req in species.evolution_requirements:
                     messages.extend(evo_req.explain(self, species, state))
+        elif "(Size " in location_name:
+            if "1.10" in location_name:
+                species_name = location_name[4:-13]
+                cost = 20000
+            elif "0.90" in location_name:
+                species_name = location_name[6:-13]
+                cost = 22000
+            species = SpeciesUtils.get_species_from_name(species_name)
+            if species is None:
+                messages.append({"type": "text", "text": "No species with this name found?"})
+                return messages
+            can_afford = self.can_afford_dp(species.cost + cost, state)
+            messages.append({"type": "text", "text": "\nSpecies: "})
+            if species.is_base_species():
+                has_prereq = state.has(f"{species.name} Permit", self.player)
+                messages.append({"type": "color", "color": "green" if has_prereq else "salmon", "text": species.name})
+                if has_prereq:
+                    messages.append({"type": "text", "text": " (unlocked)"})
+                else:
+                    messages.append({"type": "text", "text": " (missing unlock permit)"})
+            else:
+                has_prereq = self.get_location(f"Evolve {species.name}").can_reach(state)
+                messages.append({"type": "color", "color": "green" if has_prereq else "salmon", "text": species.name})
+                if has_prereq:
+                    messages.append({"type": "text", "text": " (evolution in logic)"})
+                else:
+                    messages.append({"type": "text", "text": " (evolution not in logic)"})
+            messages.append({"type": "text", "text": "\nSelective Breeding Cost: "})
+            if can_afford:
+                messages.append({"type": "color", "color": "green", "text": "In Logic"})
+            else:
+                messages.append({"type": "color", "color": "salmon", "text": "Not In Logic"})
         else:
             messages.append({"type": "text", "text": "Unknown location type"})
 
         return messages
+
+    # Copy of ReceivedEnoughDP rule for use in UT explanations
+    def can_afford_dp(self, target: int, state: CollectionState) -> bool:
+        padding = 0.8 # Leniency factor. Lower = more forgiving
+        if self.options.tasks_reward_dp.value == 1: padding = 1.0
+        balance = 2500
+        balance += state.count("100,000 dp", self.player) * 100000 * padding
+        balance += state.count("75,000 dp", self.player)  *  75000 * padding
+        balance += state.count("50,000 dp", self.player)  *  50000 * padding
+        balance += state.count("25,000 dp", self.player)  *  25000 * padding
+        balance += state.count("10,000 dp", self.player)  *  10000 * padding
+        balance += state.count("7,500 dp", self.player)   *   7500 * padding
+        balance += state.count("5,000 dp", self.player)   *   5000 * padding
+        balance += state.count("2,500 dp", self.player)   *   2500 * padding
+        balance += state.count("1,000 dp", self.player)   *   1000 * padding
+
+        # Account for dp earn per minute by animals. There isn't a great way to do this cleanly,
+        # so we just look at the base species. These factors are an attempt to account for
+        # having later evolution stages (children) unlocked
+
+        max_minutes_to_wait = 15
+        children_factor = 2
+
+        for animal in SpeciesUtils.get_species_from_category("Animals"):
+            if not animal.is_base_species(): continue
+            if state.has(f"{animal.name} Permit", self.player):
+                balance += animal.dp_earn * max_minutes_to_wait * children_factor
+
+        return balance >= target
