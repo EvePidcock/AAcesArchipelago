@@ -4,8 +4,9 @@ from Options import OptionGroup, PerGameCommonOptions, Range, Toggle
 
 class TasksRewardDP(Toggle):
     """
-    Should tasks reward the normal DP amount upon completion. If off, some filler DP items are replaced with larger
-    sums of DP to replace the missing task reward.
+    Should tasks reward the normal DP amount upon completion.
+    If off, some filler DP items are replaced with larger
+    sums of DP to replace the missing task rewards.
     """
     display_name = "Tasks Reward DP"
     default = True
@@ -22,11 +23,12 @@ class StartingDP(Range):
 
 class DPInItempool(Range):
     """
-    How much DP should be in the itempool? Note, currently the only filler item is small amounts of DP, so there will
-    be more than just this much in the item pool. This option allows you to force the addition of larger DP items
-    to the pool. If 'Tasks Reward DP' is off, some larger DP amounts have already been added.
-    We recommend at least some additional DP, since you may receive expensive Species before having
-    a lot of DP earn per minute.
+    How much DP should be in the itempool? Note, currently the only filler
+    item is small amounts of DP, so there will be more than just this much
+    in the item pool. This option allows you to force the addition of larger
+    DP items to the pool. If 'Tasks Reward DP' is off, some larger DP amounts
+    will have already been added. We recommend at least some additional DP,
+    since you may receive expensive Species before having a lot of DP earn per minute.
     """
     display_name = "Additional DP in Itempool"
     range_start = 0

@@ -100,19 +100,27 @@ class NearbySpeciesRequirement(EvolutionRequirement):
                 species = species_lists[cat_index][0]
                 if species.is_base_species():
                     has_prereq = state.has(f"{species.name} Permit", world.player)
-                    messages.append({"type": "color", "color": "green" if has_prereq else "salmon", "text": f"\n        {species.name}"})
-                    if not has_prereq: messages.append({"type": "text", "text": f" (missing unlock permit)"})
+                    can_afford = world.can_afford_dp(species.cost, state)
+                    messages.append({"type": "color", "color": "green" if has_prereq and can_afford else "salmon", "text": f"\n        {species.name}"})
+                    if not has_prereq:
+                        messages.append({"type": "text", "text": f" (missing unlock permit)"})
+                    elif not can_afford:
+                        messages.append({"type": "text", "text": f" (unlocked, but cost not in logic)"})
                 else:
                     has_prereq = world.get_location(f"Evolve {species.name}").can_reach(state)
-                    messages.append({"type": "color", "color": "green" if has_prereq else "salmon", "text": f"\n        {species.name}"})
-                    if not has_prereq: messages.append({"type": "text", "text": f" (evolution not in logic)"})
+                    can_afford = world.can_afford_dp(species.cost, state)
+                    messages.append({"type": "color", "color": "green" if has_prereq and can_afford else "salmon", "text": f"\n        {species.name}"})
+                    if not has_prereq:
+                        messages.append({"type": "text", "text": f" (evolution not in logic)"})
+                    elif not can_afford:
+                        messages.append({"type": "text", "text": f" (evolution in logic, but cost not in logic)"})
             else:
                 has_prereq = False
                 for species in species_lists[cat_index]:
                     if species.is_base_species():
-                        has_prereq |= state.has(f"{species.name} Permit", world.player)
+                        has_prereq |= (state.has(f"{species.name} Permit", world.player) and world.can_afford_dp(species.cost, state))
                     else:
-                        has_prereq |= world.get_location(f"Evolve {species.name}").can_reach(state)
+                        has_prereq |= (world.get_location(f"Evolve {species.name}").can_reach(state) and world.can_afford_dp(species.cost, state))
                 messages.append({"type": "color", "color": "green" if has_prereq else "salmon", "text": f"\n        {categories[cat_index]}"})
 
         return messages
@@ -218,21 +226,29 @@ class DietRequirement(EvolutionRequirement):
             species = required_species[0]
             if species.is_base_species():
                 has_prereq = state.has(f"{species.name} Permit", world.player)
+                can_afford = world.can_afford_dp(species.cost, state)
                 messages.append(
-                    {"type": "color", "color": "green" if has_prereq else "salmon", "text": f"\n        {species.name}"})
-                if not has_prereq: messages.append({"type": "text", "text": f" (missing unlock permit)"})
+                    {"type": "color", "color": "green" if has_prereq and can_afford else "salmon", "text": f"\n        {species.name}"})
+                if not has_prereq:
+                    messages.append({"type": "text", "text": f" (missing unlock permit)"})
+                elif not can_afford:
+                    messages.append({"type": "text", "text": f" (unlocked, but cost not in logic)"})
             else:
                 has_prereq = world.get_location(f"Evolve {species.name}").can_reach(state)
+                can_afford = world.can_afford_dp(species.cost, state)
                 messages.append(
-                    {"type": "color", "color": "green" if has_prereq else "salmon", "text": f"\n        {species.name}"})
-                if not has_prereq: messages.append({"type": "text", "text": f" (evolution not in logic)"})
+                    {"type": "color", "color": "green" if has_prereq and can_afford else "salmon", "text": f"\n        {species.name}"})
+                if not has_prereq:
+                    messages.append({"type": "text", "text": f" (evolution not in logic)"})
+                elif not can_afford:
+                    messages.append({"type": "text", "text": f" (evolution in logic, but cost not in logic)"})
         else:
             has_prereq = False
             for species in required_species:
                 if species.is_base_species():
-                    has_prereq |= state.has(f"{species.name} Permit", world.player)
+                    has_prereq |= (state.has(f"{species.name} Permit", world.player) and world.can_afford_dp(species.cost, state))
                 else:
-                    has_prereq |= world.get_location(f"Evolve {species.name}").can_reach(state)
+                    has_prereq |= (world.get_location(f"Evolve {species.name}").can_reach(state) and world.can_afford_dp(species.cost, state))
             messages.append(
                 {"type": "color", "color": "green" if has_prereq else "salmon", "text": f"\n\t{self.diet}"})
 

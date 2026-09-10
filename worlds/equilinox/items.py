@@ -15,8 +15,6 @@ DEFAULT_ITEM_CLASSIFICATIONS = {}
 species_unlock_items = []
 
 def set_item_names_to_id():
-    #ITEM_NAME_TO_ID = {}
-
     all_species = SpeciesUtils.all_species
 
     # Base Species Unlocks
@@ -73,7 +71,7 @@ class EquilinoxItem(Item):
 
 def get_random_filler_item_name(world: EquilinoxWorld) -> str:
     filler_items = ["100 dp", "500 dp", "1,000 dp", "2,500 dp", "5,000 dp", "7,500 dp", "10,000 dp"]
-    weights =      [ 5,        10,       15,         10,         5,          3,          1         ]
+    weights =      [ 6,        12,       15,         10,         5,          3,          1         ]
     return world.random.choices(filler_items, weights=weights, k=1)[0]
 
 
@@ -83,27 +81,27 @@ def create_item_with_correct_classification(world: EquilinoxWorld, name: str) ->
 
 def get_nearest_money_item(world: EquilinoxWorld, amt: int) -> EquilinoxItem:
     if amt >= 90000:
-        return world.create_item("100,000 dp")
+        return world.create_item("100,000 dp") # 90,000 -
     elif amt >= 65000:
-        return world.create_item("75,000 dp")
+        return world.create_item("75,000 dp")  # 65,000 - 90,000
     elif amt >= 40000:
-        return world.create_item("50,000 dp")
+        return world.create_item("50,000 dp")  # 40,000 - 65,000
     elif amt >= 20000:
-        return world.create_item("25,000 dp")
+        return world.create_item("25,000 dp")  # 20,000 - 40,000
     elif amt >= 9000:
-        return world.create_item("10,000 dp")
+        return world.create_item("10,000 dp")  # 9,000 - 20,000
     elif amt >= 6500:
-        return world.create_item("7,500 dp")
+        return world.create_item("7,500 dp")   # 6,500 - 9,000
     elif amt >= 4000:
-        return world.create_item("5,000 dp")
+        return world.create_item("5,000 dp")   # 4,000 - 6,500
     elif amt >= 2000:
-        return world.create_item("2,500 dp")
+        return world.create_item("2,500 dp")   # 2,000 - 4,000
     elif amt >= 750:
-        return world.create_item("1,000 dp")
+        return world.create_item("1,000 dp")   # 750 - 2,000
     elif amt >= 400:
-        return world.create_item("500 dp")
+        return world.create_item("500 dp")     # 400 - 750
     else:
-        return world.create_item("100 dp")
+        return world.create_item("100 dp")     # 0 - 400
 
 def approx_money_as_sum(amt: int, max_summands: int, possible_values=None) -> list[int]:
     if amt < 100: return []
