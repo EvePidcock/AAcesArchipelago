@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification
-from . import SpeciesUtils, Tasks, Evolution
+from . import SpeciesUtils, Tasks
 
 if TYPE_CHECKING:
     from .world import EquilinoxWorld
