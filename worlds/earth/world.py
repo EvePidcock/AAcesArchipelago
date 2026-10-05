@@ -11,7 +11,7 @@ from . import options as earth_options  # rename due to a name conflict with Wor
 
 class EarthWorld(World):
     """
-    Earth is a tableau-building, engine-building board game for 1-6 players. This implementation is of the solo game mode
+    Earth is an engine-building tableau-building board game for 1-6 players. This AP implementation is for the solo mode.
     """
 
     game = "Earth"
