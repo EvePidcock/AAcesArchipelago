@@ -1,0 +1,482 @@
+[
+  {
+    "name": "Watching Grass Grow",
+    "repeatable": false,
+    "required_species": "Grass Tuft",
+    "requires_species_satisfaction": false,
+    "cash_reward": 150,
+    "id": 1
+  },
+  {
+    "name": "Flower Power",
+    "repeatable": false,
+    "required_species": "Grass Tuft;Daisy",
+    "requires_species_satisfaction": false,
+    "cash_reward": 650,
+    "id": 2
+  },
+  {
+    "name": "My First Tree",
+    "repeatable": false,
+    "required_species": "Oak Tree",
+    "requires_species_satisfaction": true,
+    "cash_reward": 1500,
+    "id": 3
+  },
+  {
+    "name": "More Grass",
+    "repeatable": false,
+    "required_species": "Grass Tuft",
+    "requires_species_satisfaction": false,
+    "cash_reward": 750,
+    "id": 4
+  },
+  {
+    "name": "Sheepish",
+    "repeatable": false,
+    "required_species": "Sheep",
+    "requires_species_satisfaction": true,
+    "cash_reward": 2000,
+    "id": 5
+  },
+  {
+    "name": "Wheat Breeder",
+    "repeatable": false,
+    "required_species": "Wheat",
+    "requires_species_satisfaction": false,
+    "cash_reward": 450,
+    "id": 6
+  },
+  {
+    "name": "Genetic Modification",
+    "repeatable": false,
+    "required_species": "Daisy (Light Blue)",
+    "requires_species_satisfaction": false,
+    "cash_reward": 1000,
+    "id": 7
+  },
+  {
+    "name": "Chicken Farm",
+    "repeatable": false,
+    "required_species": "Chicken",
+    "requires_species_satisfaction": true,
+    "cash_reward": 2000,
+    "id": 8
+  },
+  {
+    "name": "This is Boar-ing",
+    "repeatable": false,
+    "required_species": "Wild Boar",
+    "requires_species_satisfaction": true,
+    "cash_reward": 15000,
+    "id": 9
+  },
+  {
+    "name": "Under the Sea",
+    "repeatable": false,
+    "required_species": "Seaweed",
+    "requires_species_satisfaction": false,
+    "cash_reward": 1200,
+    "id": 10
+  },
+  {
+    "name": "Gone Fishing",
+    "repeatable": false,
+    "required_species": "Trout;Redfish;Kelp;Water Lily",
+    "requires_species_satisfaction": false,
+    "cash_reward": 12500,
+    "id": 11
+  },
+  {
+    "name": "Diversify",
+    "repeatable": false,
+    "required_species": "Buttercup;Wheat;Tulip;Kelp",
+    "requires_species_satisfaction": false,
+    "cash_reward": 2500,
+    "id": 12
+  },
+  {
+    "name": "An Apple a Day",
+    "repeatable": false,
+    "required_species": "Sheep;Apple Tree",
+    "requires_species_satisfaction": false,
+    "cash_reward": 8500,
+    "id": 13
+  },
+  {
+    "name": "An Apple Every Day",
+    "repeatable": true,
+    "required_species": "Apple Tree",
+    "requires_species_satisfaction": false,
+    "cash_reward": 5000,
+    "id": 14
+  },
+  {
+    "name": "Completionist",
+    "repeatable": false,
+    "required_species": "",
+    "requires_species_satisfaction": false,
+    "cash_reward": 10000000,
+    "id": 15
+  },
+  {
+    "name": "A Bird in the Hand",
+    "repeatable": false,
+    "required_species": "Nest",
+    "requires_species_satisfaction": false,
+    "cash_reward": 11800,
+    "id": 16
+  },
+  {
+    "name": "Totally Quackers",
+    "repeatable": false,
+    "required_species": "Duck",
+    "requires_species_satisfaction": true,
+    "cash_reward": 6000,
+    "id": 17
+  },
+  {
+    "name": "Grassy Plains",
+    "repeatable": false,
+    "required_species": "Red Maple Tree;Wobbly Tree;Wild Mint",
+    "requires_species_satisfaction": false,
+    "cash_reward": 16000,
+    "id": 18
+  },
+  {
+    "name": "Merry Berry",
+    "repeatable": false,
+    "required_species": "Sheep;Berry Bush",
+    "requires_species_satisfaction": false,
+    "cash_reward": 7500,
+    "id": 19
+  },
+  {
+    "name": "Deserted",
+    "repeatable": false,
+    "required_species": "Small Cactus;Prickly Pear;Yucca",
+    "requires_species_satisfaction": false,
+    "cash_reward": 7000,
+    "id": 20
+  },
+  {
+    "name": "Woodland Biome",
+    "repeatable": false,
+    "required_species": "Elm Tree;Sycamore Tree;Oregano",
+    "requires_species_satisfaction": false,
+    "cash_reward": 18000,
+    "id": 21
+  },
+  {
+    "name": "Rabbit Food",
+    "repeatable": false,
+    "required_species": "Rabbit;Carrot",
+    "requires_species_satisfaction": false,
+    "cash_reward": 15000,
+    "id": 22
+  },
+  {
+    "name": "24 Carrot Gold",
+    "repeatable": true,
+    "required_species": "Rabbit;Carrot (Gold)",
+    "requires_species_satisfaction": false,
+    "cash_reward": 15000,
+    "id": 23
+  },
+  {
+    "name": "Forest Flora and Fauna",
+    "repeatable": false,
+    "required_species": "Heather;Fern;Sage;Forest Trees",
+    "requires_species_satisfaction": false,
+    "cash_reward": 17000,
+    "id": 24
+  },
+  {
+    "name": "Mountaineering",
+    "repeatable": false,
+    "required_species": "Goat;Holly Bush",
+    "requires_species_satisfaction": false,
+    "cash_reward": 35000,
+    "id": 25
+  },
+  {
+    "name": "Totally Nuts!",
+    "repeatable": false,
+    "required_species": "Squirrel;Nut Tree",
+    "requires_species_satisfaction": false,
+    "cash_reward": 27500,
+    "id": 26
+  },
+  {
+    "name": "Oh Deer",
+    "repeatable": false,
+    "required_species": "Deer",
+    "requires_species_satisfaction": true,
+    "cash_reward": 20000,
+    "id": 27
+  },
+  {
+    "name": "The Tropics",
+    "repeatable": false,
+    "required_species": "Flowery Grass;Leafy Plant",
+    "requires_species_satisfaction": false,
+    "cash_reward": 18500,
+    "id": 28
+  },
+  {
+    "name": "Totally Coconuts!",
+    "repeatable": false,
+    "required_species": "Palm Tree",
+    "requires_species_satisfaction": true,
+    "cash_reward": 12000,
+    "id": 29
+  },
+  {
+    "name": "Tropical Waters",
+    "repeatable": false,
+    "required_species": "Tropical Seaweed;Clown Fish",
+    "requires_species_satisfaction": false,
+    "cash_reward": 20000,
+    "id": 30
+  },
+  {
+    "name": "Control a Sheep",
+    "repeatable": false,
+    "required_species": "Sheep",
+    "requires_species_satisfaction": false,
+    "cash_reward": 300,
+    "id": 31
+  },
+  {
+    "name": "Swamped",
+    "repeatable": false,
+    "required_species": "Swamp Grass;Red Mushroom",
+    "requires_species_satisfaction": false,
+    "cash_reward": 20000,
+    "id": 32
+  },
+  {
+    "name": "Potato Potahto",
+    "repeatable": false,
+    "required_species": "Wild Boar;Potato Plant",
+    "requires_species_satisfaction": false,
+    "cash_reward": 28000,
+    "id": 33
+  },
+  {
+    "name": "In the Jungle",
+    "repeatable": false,
+    "required_species": "Jungle Grass;Jungle Plant",
+    "requires_species_satisfaction": false,
+    "cash_reward": 27300,
+    "id": 34
+  },
+  {
+    "name": "The Mighty Jungle",
+    "repeatable": false,
+    "required_species": "Ficus Tree;Jungle Flower;Jungle Mushroom",
+    "requires_species_satisfaction": false,
+    "cash_reward": 40000,
+    "id": 35
+  },
+  {
+    "name": "Catching Butterflies",
+    "repeatable": false,
+    "required_species": "Frog;Butterfly",
+    "requires_species_satisfaction": false,
+    "cash_reward": 40000,
+    "id": 36
+  },
+  {
+    "name": "A Turnip for the Books",
+    "repeatable": false,
+    "required_species": "Warthog;Turnip",
+    "requires_species_satisfaction": false,
+    "cash_reward": 50000,
+    "id": 37
+  },
+  {
+    "name": "Beavering Away",
+    "repeatable": false,
+    "required_species": "Beaver Lodge",
+    "requires_species_satisfaction": false,
+    "cash_reward": 60000,
+    "id": 38
+  },
+  {
+    "name": "Flutter By",
+    "repeatable": false,
+    "required_species": "Butterfly",
+    "requires_species_satisfaction": false,
+    "cash_reward": 45000,
+    "id": 39
+  },
+  {
+    "name": "Honey, I'm Home!",
+    "repeatable": false,
+    "required_species": "Hive",
+    "requires_species_satisfaction": false,
+    "cash_reward": 75000,
+    "id": 40
+  },
+  {
+    "name": "Hungry Turtle",
+    "repeatable": false,
+    "required_species": "Turtle;Palm Tree;Seaweed",
+    "requires_species_satisfaction": false,
+    "cash_reward": 58000,
+    "id": 41
+  },
+  {
+    "name": "Mushroom Mastery",
+    "repeatable": false,
+    "required_species": "Tall Mushroom;Jungle Mushroom;Red Mushroom;Tropical Mushroom",
+    "requires_species_satisfaction": false,
+    "cash_reward": 48000,
+    "id": 42
+  },
+  {
+    "name": "Lush!",
+    "repeatable": false,
+    "required_species": "Primrose;Lush Grass;Pink Tree",
+    "requires_species_satisfaction": false,
+    "cash_reward": 54000,
+    "id": 43
+  },
+  {
+    "name": "On your Pike",
+    "repeatable": false,
+    "required_species": "Pike;Trout;Redfish",
+    "requires_species_satisfaction": false,
+    "cash_reward": 30000,
+    "id": 44
+  },
+  {
+    "name": "Logger Rhythm",
+    "repeatable": true,
+    "required_species": "Beaver;Trees",
+    "requires_species_satisfaction": false,
+    "cash_reward": 50000,
+    "id": 45
+  },
+  {
+    "name": "Hungry Fish",
+    "repeatable": true,
+    "required_species": "Pike;Trout;Redfish;Clown Fish",
+    "requires_species_satisfaction": false,
+    "cash_reward": 10000,
+    "id": 46
+  },
+  {
+    "name": "Butterfly Hunter",
+    "repeatable": true,
+    "required_species": "Butterfly;Frog",
+    "requires_species_satisfaction": false,
+    "cash_reward": 18000,
+    "id": 47
+  },
+  {
+    "name": "Banana Farmer",
+    "repeatable": true,
+    "required_species": "Banana Tree",
+    "requires_species_satisfaction": true,
+    "cash_reward": 30000,
+    "id": 48
+  },
+  {
+    "name": "Honey Harvester",
+    "repeatable": true,
+    "required_species": "Hive",
+    "requires_species_satisfaction": true,
+    "cash_reward": 8000,
+    "id": 49
+  },
+  {
+    "name": "Digging a Hole",
+    "repeatable": true,
+    "required_species": "Wild Boar;Potato Plant",
+    "requires_species_satisfaction": false,
+    "cash_reward": 17500,
+    "id": 50
+  },
+  {
+    "name": "Fox Hunting",
+    "repeatable": false,
+    "required_species": "Fox;Chicken",
+    "requires_species_satisfaction": false,
+    "cash_reward": 44000,
+    "id": 51
+  },
+  {
+    "name": "Wolf in Sheep's Clothing",
+    "repeatable": false,
+    "required_species": "Wolf;Sheep",
+    "requires_species_satisfaction": false,
+    "cash_reward": 80000,
+    "id": 52
+  },
+  {
+    "name": "Cashing In",
+    "repeatable": false,
+    "required_species": "Herbivores;Birds;Reptiles",
+    "requires_species_satisfaction": false,
+    "cash_reward": 2000,
+    "id": 53
+  },
+  {
+    "name": "Potato Party",
+    "repeatable": true,
+    "required_species": "Guinea Pig;Potato Plant",
+    "requires_species_satisfaction": false,
+    "cash_reward": 10000,
+    "id": 54
+  },
+  {
+    "name": "Spitting Image",
+    "repeatable": true,
+    "required_species": "Camel",
+    "requires_species_satisfaction": false,
+    "cash_reward": 50000,
+    "id": 55
+  },
+  {
+    "name": "Fish Mastery",
+    "repeatable": false,
+    "required_species": "Royal Gramma;Neon Fish;Clown Fish;Pike",
+    "requires_species_satisfaction": false,
+    "cash_reward": 200000,
+    "id": 56
+  },
+  {
+    "name": "Blooming Gorgeous",
+    "repeatable": false,
+    "required_species": "Starbloom Bush",
+    "requires_species_satisfaction": true,
+    "cash_reward": 100000,
+    "id": 57
+  },
+  {
+    "name": "It's a Trap!",
+    "repeatable": true,
+    "required_species": "Fly Trapper;Fly",
+    "requires_species_satisfaction": false,
+    "cash_reward": 40000,
+    "id": 58
+  },
+  {
+    "name": "Desert Eagle",
+    "repeatable": false,
+    "required_species": "Eagle;Desert Hare",
+    "requires_species_satisfaction": false,
+    "cash_reward": 35000,
+    "id": 59
+  },
+  {
+    "name": "Hole in One",
+    "repeatable": false,
+    "required_species": "Meerkat",
+    "requires_species_satisfaction": true,
+    "cash_reward": 80000,
+    "id": 60
+  }
+]

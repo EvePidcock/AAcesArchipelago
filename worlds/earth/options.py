@@ -1,23 +1,7 @@
 from dataclasses import dataclass
 
-from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle
+from Options import OptionGroup, PerGameCommonOptions, Range, Toggle
 
-# In this file, we define the options the player can pick.
-# The most common types of options are Toggle, Range and Choice.
-
-# Options will be in the game's template yaml.
-# They will be represented by checkboxes, sliders etc. on the game's options page on the website.
-# (Note: Options can also be made invisible from either of these places by overriding Option.visibility.
-#  APQuest doesn't have an example of this, but this can be used for secret / hidden / advanced options.)
-
-# For further reading on options, you can also read the Options API Document:
-# https://github.com/ArchipelagoMW/Archipelago/blob/main/docs/options%20api.md
-
-
-# The first type of Option we'll discuss is the Toggle.
-# A toggle is an option that can either be on or off. This will be represented by a checkbox on the website.
-# The default for a toggle is "off".
-# If you want a toggle to be on by default, you can use the "DefaultOnToggle" class instead of the "Toggle" class.
 class FlowerHunt(Toggle):
     """
     Require a certain number of "Flower" items to goal
@@ -25,10 +9,10 @@ class FlowerHunt(Toggle):
     display_name = "Flower Hunt"
     default = True
 
-
 class FlowerItemsRequired(Range):
     """
-    How many "Flower" items needed to goal. Does nothing if Flower Hunt is off.
+    How many "Flower" items needed to goal.
+    Does nothing if Flower Hunt is off.
     """
     display_name = "Required Flowers to Goal"
     range_start = 10
@@ -38,7 +22,8 @@ class FlowerItemsRequired(Range):
 
 class FlowerItemsTotal(Range):
     """
-    How many "Flower" items to put in the item pool. Does nothing if Flower Hunt is off.
+    How many "Flower" items to put in the item pool.
+    Does nothing if Flower Hunt is off.
     """
     display_name = "Total Flowers"
     range_start = 10
@@ -95,14 +80,24 @@ class StartingPersonalEcosystem(Toggle):
 
 class KinderCardLogic(Toggle):
     """
-    If on, you will not be logically required to play a card with a black or brown ability you can not activate
+    If on, you will not be logically required to play
+    a card with a black or brown ability you can not activate
     """
     display_name = "Kinder Card Logic"
     default = True
 
+class ProgressionCardCount(Range):
+    """
+    The maximum number of "Play card..." locations that can contain progression items.
+    Smaller numbers increase the chances that event cards will hold progression items.
+    """
+    display_name = "Card Play Prog Item Cap"
+    range_start = 0
+    range_end = 300
+    default = 100
 
-# We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
-# This is in the format "option_name_in_snake_case: OptionClassName".
+
+
 @dataclass
 class EarthOptions(PerGameCommonOptions):
     flower_hunt: FlowerHunt
@@ -115,9 +110,9 @@ class EarthOptions(PerGameCommonOptions):
     starting_seed: StartingSeed
     starting_personal_ecosystem: StartingPersonalEcosystem
     kinder_card_logic: KinderCardLogic
+    allowed_progression_cards: ProgressionCardCount
 
 
-# If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
     OptionGroup(
         "Goal Options",
@@ -125,11 +120,10 @@ option_groups = [
     ),
     OptionGroup(
         "Gameplay Options",
-        [StartingIslandsCount, StartingClimatesCount, StartWithSproutStorage, StartingLeaf, StartingSeed, StartingPersonalEcosystem, KinderCardLogic]
+        [StartingIslandsCount, StartingClimatesCount, StartWithSproutStorage, StartingLeaf, StartingSeed, StartingPersonalEcosystem, KinderCardLogic, ProgressionCardCount]
     )
 ]
 
-# Finally, we can define some option presets if we want the player to be able to quickly choose a specific "mode".
 option_presets = {
     "Default": {
         "flower_hunt": True,
@@ -141,7 +135,8 @@ option_presets = {
         "starting_leaf": True,
         "starting_seed": False,
         "starting_personal_ecosystem": False,
-        "kinder_card_logic": True
+        "kinder_card_logic": True,
+        "allowed_progression_cards": 50
     },
     "Pain": {
         "flower_hunt": True,
@@ -153,7 +148,8 @@ option_presets = {
         "starting_leaf": False,
         "starting_seed": False,
         "starting_personal_ecosystem": False,
-        "kinder_card_logic": False
+        "kinder_card_logic": False,
+        "allowed_progression_cards": 300
     },
     "Easier Start": {
         "flower_hunt": True,
@@ -165,6 +161,7 @@ option_presets = {
         "starting_leaf": True,
         "starting_seed": True,
         "starting_personal_ecosystem": True,
-        "kinder_card_logic": True
+        "kinder_card_logic": True,
+        "allowed_progression_cards": 50
     }
 }

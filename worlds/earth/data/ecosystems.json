@@ -1,0 +1,702 @@
+[
+	{
+		"name": "Finland Snow Forest",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30001
+	},
+	{
+		"name": "Chic-Choc Mountains",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30002
+	},
+	{
+		"name": "Irati",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30003
+	},
+	{
+		"name": "Odisha Semi-Evergreen",
+		"points": 21,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30004
+	},
+	{
+		"name": "Daintree",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30005
+	},
+	{
+		"name": "Blackforest",
+		"points": 28,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30006
+	},
+	{
+		"name": "Reunion Island",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30007
+	},
+	{
+		"name": "Sakurajima",
+		"points": 18,
+		"needs_event_cards": true,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30008
+	},
+	{
+		"name": "Namib Desert",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30009
+	},
+	{
+		"name": "Denali National Park",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30010
+	},
+	{
+		"name": "Monteverde Cloud Forest",
+		"points": 28,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30011
+	},
+	{
+		"name": "Everglades",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30012
+	},
+	{
+		"name": "Amazon Rain Forest",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 3,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 0,
+		"id": 30013
+	},
+	{
+		"name": "Borneo Lowland Rain Forest",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 3,
+		"played_cards_needed": 0,
+		"id": 30014
+	},
+	{
+		"name": "MacMillan Park",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 1,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30015
+	},
+	{
+		"name": "Great Basin Desert",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30016
+	},
+	{
+		"name": "Ngorongoro Crater",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30017
+	},
+	{
+		"name": "Waiotapu",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30018
+	},
+	{
+		"name": "Tasmanian Temperate Rain Forest",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 4,
+		"id": 30019
+	},
+	{
+		"name": "Batanta Island",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 4,
+		"id": 30020
+	},
+	{
+		"name": "Mauna Kea",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30021
+	},
+	{
+		"name": "Aconcagua",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30022
+	},
+	{
+		"name": "Bashkiriya National Park",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 10,
+		"id": 30023
+	},
+	{
+		"name": "Valin Mountain",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 15,
+		"id": 30024
+	},
+	{
+		"name": "Arabian Desert",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 10,
+		"id": 30025
+	},
+	{
+		"name": "Bhutan Rain Forest",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30026
+	},
+	{
+		"name": "Tai Poutini National Park",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 3,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30027
+	},
+	{
+		"name": "Madagascar Humid Canopy",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 4,
+		"played_cards_needed": 8,
+		"id": 30028
+	},
+	{
+		"name": "Great Hungarian Plain",
+		"points": 28,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30029
+	},
+	{
+		"name": "Caerlaverock Nature Reserve",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30030
+	},
+	{
+		"name": "Yuanjiang Savanna",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 3,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30031
+	},
+	{
+		"name": "Sierra Nevada de Santa Marta",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 3,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30032
+	},
+	{
+		"name": "Knysna-Amatole Forests",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30033
+	},
+	{
+		"name": "Jiuzhaigou Valley",
+		"points": 22,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 4,
+		"id": 30034
+	},
+	{
+		"name": "Tongass National Forest",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 4,
+		"yellow_calls": 0,
+		"played_cards_needed": 10,
+		"id": 30035
+	},
+	{
+		"name": "Bwindi Impenetrable Forest",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 4,
+		"played_cards_needed": 10,
+		"id": 30036
+	},
+	{
+		"name": "New Guinea Rain Forest",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30037
+	},
+	{
+		"name": "Atacama Desert",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 16,
+		"id": 30038
+	},
+	{
+		"name": "Twin Islands",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 15,
+		"id": 30039
+	},
+	{
+		"name": "Lonely Island",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 10,
+		"id": 30040
+	},
+	{
+		"name": "Serengeti",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 9,
+		"id": 30041
+	},
+	{
+		"name": "Okavango Delta",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 9,
+		"id": 30042
+	},
+	{
+		"name": "Antarctica",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 4,
+		"id": 30043
+	},
+	{
+		"name": "Great Plains",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 3,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 0,
+		"id": 30044
+	},
+	{
+		"name": "Himalayas",
+		"points": 21,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 4,
+		"played_cards_needed": 12,
+		"id": 30045
+	},
+	{
+		"name": "Alps",
+		"points": 21,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 4,
+		"played_cards_needed": 12,
+		"id": 30046
+	},
+	{
+		"name": "Thai Highlands",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30047
+	},
+	{
+		"name": "Sudd Swamp",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30048
+	},
+	{
+		"name": "Tangkoko Nature Reserve",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30049
+	},
+	{
+		"name": "Siberian Taiga",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 10,
+		"id": 30050
+	},
+	{
+		"name": "Australian Temperate Forest",
+		"points": 21,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30051
+	},
+	{
+		"name": "Yagishiri Island",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30052
+	},
+	{
+		"name": "Mount Kilimanjaro",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30053
+	},
+	{
+		"name": "Indian Evergreen Forest",
+		"points": 30,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30054
+	},
+	{
+		"name": "Mbeliling Mountain",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30055
+	},
+	{
+		"name": "Atlas Mountains",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30056
+	},
+	{
+		"name": "Rocky Mountains",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30057
+	},
+	{
+		"name": "Nile Delta",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 12,
+		"id": 30058
+	},
+	{
+		"name": "Redwood National Park",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 4,
+		"played_cards_needed": 6,
+		"id": 30059
+	},
+	{
+		"name": "Congolian Rain Forest",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 4,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30060
+	},
+	{
+		"name": "Yellowstone Caldera",
+		"points": 18,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 9,
+		"id": 30061
+	},
+	{
+		"name": "Angat Watershed Forest",
+		"points": 25,
+		"needs_event_cards": true,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 0,
+		"id": 30062
+	},
+	{
+		"name": "Great Steppe",
+		"points": 28,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30063
+	},
+	{
+		"name": "Florida Scrub",
+		"points": 24,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 6,
+		"id": 30064
+	},
+	{
+		"name": "Okefenokee Swamp",
+		"points": 14,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 14,
+		"id": 30065
+	},
+	{
+		"name": "Magdelen Islands",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 10,
+		"id": 30066
+	},
+	{
+		"name": "Miyawaki Forest",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30067
+	},
+	{
+		"name": "Quiver Tree Forest",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 8,
+		"id": 30068
+	},
+	{
+		"name": "St-Hilaire Mount",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 10,
+		"id": 30069
+	},
+	{
+		"name": "Khao Yai",
+		"points": 20,
+		"needs_event_cards": false,
+		"red_calls": 0,
+		"blue_calls": 0,
+		"yellow_calls": 0,
+		"played_cards_needed": 10,
+		"id": 30070
+	}
+]
