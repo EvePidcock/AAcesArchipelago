@@ -35,16 +35,41 @@ class DPInItempool(Range):
     range_end = 500000
     default = 150000
 
+class FreeEvolution(Toggle):
+    """
+    Removes the DP cost from evolution. Other requirements
+    still must be fulfilled.
+    """
+    display_name = "Free Evolution"
+    default = True
+
+class SizeChecks(Toggle):
+    """
+    Adds checks for breeding species of size 1.10 and 1.20.
+    """
+    display_name = "Include Size Checks"
+    default = True
+
 @dataclass
 class EquilinoxOptions(PerGameCommonOptions):
     tasks_reward_dp: TasksRewardDP
     starting_dp: StartingDP
     itempool_dp: DPInItempool
+    size_checks: SizeChecks
+    free_evolution: FreeEvolution
 
 option_groups = [
     OptionGroup(
         "Gameplay Options",
+        [FreeEvolution]
+    ),
+    OptionGroup(
+        "DP Options",
         [TasksRewardDP, StartingDP, DPInItempool],
+    ),
+    OptionGroup(
+        "Trait Checks",
+        [SizeChecks]
     )
 ]
 
@@ -52,6 +77,8 @@ option_presets = {
     "Default": {
         "tasks_reward_dp": True,
         "starting_dp": 5000,
-        "itempool_dp": 150000
+        "itempool_dp": 150000,
+        "size_checks": True,
+        "free_evolution": True
     }
 }
