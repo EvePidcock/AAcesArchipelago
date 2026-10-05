@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 import pkgutil
 
-from . import Evolution
 from . import SpeciesUtils
 
 all_tasks: list[Task] = []
@@ -23,7 +22,7 @@ class Task:
         self.cash_reward = cash_reward
         self.id = id
 
-    def get_required_species(self) -> list[list[SpeciesUtils.Species | None]]:
+    def get_required_species(self) -> list[set[SpeciesUtils.Species | None]]:
         return SpeciesUtils.get_required_species_from_string(self.required_species)
 
 def task_object_decoder(t_obj) -> Task:
